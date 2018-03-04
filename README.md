@@ -4,11 +4,13 @@
 How to import from Eclipse
 1. Open Eclipse. Install PyDev from marketplace
 2. File > Import > Project from Git
+
 https://github.com/yoser174/ciremai.git
 
 3. Import existing Eclipse projects
 
 4. Install python modules:
+
 Django==1.11
 django-annoying==0.10.4
 django-appconf==1.0.2
@@ -28,15 +30,19 @@ django-widget-tweaks==1.4.1
 num2words
 
 5. run make migration
+
 python manage.py makemigrations
 
 6. run migration
+
 python manage.py migrate
 
 7. Create superuser for administator user
+
 python manage.py createsuperuser
 
 8. run server
+
 python manage.py runserver
 
 9. Browser http://127.0.0.1/billing
