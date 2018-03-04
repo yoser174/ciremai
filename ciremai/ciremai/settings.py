@@ -26,6 +26,13 @@ SECRET_KEY = 'dare7z2*px2lwmab_(04ghyt4s)2f8g!&oo^66n$f6!20@l#=r'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+SITE_TITLE = 'ciremai'
+
+ANONYMOUS_USER_ID = -1
+AUTH_USER_MODEL = "auth.User"
+
+LOGIN_URL = "/inventory/login/"
+LOGIN_URL_BILLING = "/billing/login/"
 
 
 # Application definition
@@ -37,6 +44,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
+    
+    #
+    'crispy_forms',
+    'datetimewidget',
+    'django_tables2',
+    'bootstrap3',
+    'avatar',
+    'annoying',
+    'simple_history',
+    'widget_tweaks',
+    'dal',
+    'dal_select2',
+    #
+    #'inventory',
+    'billing',
 ]
 
 MIDDLEWARE = [
@@ -51,10 +74,22 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'ciremai.urls'
 
+#########
+# PATHS #
+#########
+
+# Full filesystem path to the project.
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+HL7_ORDER_DIR = 'C:\\HL7'
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(PROJECT_ROOT, "templates"),
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,10 +108,21 @@ WSGI_APPLICATION = 'ciremai.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'ciremai',
+        'USER': 'root',
+        'PASSWORD': '123',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
@@ -117,4 +163,35 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
+# Internationalization
+# https://docs.djangoproject.com/en/1.10/topics/i18n/
+
+LANGUAGE_CODE = 'id'
+
+TIME_ZONE = 'UTC'
+
+USE_I18N = False
+
+USE_L10N = True
+
+USE_TZ = True
+
+AVATAR_AUTO_GENERATE_SIZES = (60,)
+
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.10/howto/static-files/
+
+CRISPY_TEMPLATE_PACK="bootstrap3"
+
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+
