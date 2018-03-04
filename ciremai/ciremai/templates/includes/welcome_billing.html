@@ -1,0 +1,8 @@
+<div style="margin-left: 50px;">
+    <h1>Welcome to billing</h1>
+    <h5>Registrasi Laboratorium</h5>
+    <br><br>
+    {% if not request.user.is_authenticated %}
+    <p>Please <a href="/inventory/login/">login</a></p>
+    {% endif %}
+</div>
