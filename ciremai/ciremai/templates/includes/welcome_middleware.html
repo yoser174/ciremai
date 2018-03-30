@@ -1,0 +1,8 @@
+<div style="margin-left: 50px;">
+    <h1>Welcome to middleware</h1>
+    <h5>Entry and validate results</h5>
+    <br><br>
+    {% if not request.user.is_authenticated %}
+    <p>Please <a href="/middleware/login/">login</a></p>
+    {% endif %}
+</div>
