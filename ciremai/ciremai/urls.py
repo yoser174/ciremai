@@ -7,6 +7,8 @@ from django.views.static import serve
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^billing/', include('billing.urls')),
+    # midleware - Worklist - entry result - validate
+    url(r'^middleware/', include('middleware.urls')),
 ]
 
 if settings.DEBUG:

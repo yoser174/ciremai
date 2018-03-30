@@ -55,11 +55,13 @@ INSTALLED_APPS = [
     'annoying',
     'simple_history',
     'widget_tweaks',
-    'dal',
-    'dal_select2',
+    #'dal',
+    #'dal_select2',
     #
     #'inventory',
     'billing',
+    'middleware',
+    
 ]
 
 MIDDLEWARE = [
@@ -120,7 +122,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql', 
         'NAME': 'ciremai',
         'USER': 'root',
-        'PASSWORD': '123',
+        'PASSWORD': 'P455word',
         'HOST': 'localhost',
         'PORT': '3306',
     }

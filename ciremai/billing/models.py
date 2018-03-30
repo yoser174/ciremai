@@ -140,8 +140,21 @@ class Genders(models.Model):
     class Meta:
         verbose_name = _("Gender")
         verbose_name_plural = _("Genders")
+        
+class SuperGroups(models.Model):
+    abbreviation = models.CharField(max_length=100,verbose_name=_("Abbreviation"))
+    name = models.CharField(max_length=100,verbose_name=_("Name"))
+    
+    lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
+    lastmodifiedby = models.ForeignKey(
+        settings.AUTH_USER_MODEL, limit_choices_to={'is_staff': True},
+        blank=True, verbose_name=_("Last modified by"), null=True)
+    
+    def __str__(self):
+        return "%s %s" % (self.abbreviation,self.name)
 
 class TestGroups(models.Model):
+    supergroup = models.ForeignKey(SuperGroups,on_delete=models.PROTECT,verbose_name=_("Super Group"),related_name='testgroup_supergroup',blank=True)
     name = models.CharField(max_length=100,verbose_name=_("Group Name"))
     sort = models.IntegerField(verbose_name=_("Sort"),help_text=_("Sorted priority"))
     dateofcreation = CreationDateTimeField(verbose_name=_("Created at"))
