@@ -58,7 +58,7 @@ INSTALLED_APPS = [
     #'dal',
     #'dal_select2',
     #
-    #'inventory',
+    'inventory',
     'billing',
     'middleware',
     

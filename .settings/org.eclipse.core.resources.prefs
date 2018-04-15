@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
+encoding//ciremai/billing/forms.py=utf-8
 encoding//ciremai/billing/migrations/0001_initial.py=utf-8
+encoding//ciremai/billing/migrations/0003_auto_20180415_2235.py=utf-8
 encoding//ciremai/middleware/admin.py=utf-8
 encoding//ciremai/middleware/models.py=utf-8
 encoding//ciremai/middleware/views.py=utf-8

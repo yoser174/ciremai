@@ -50,7 +50,7 @@ class Priority(models.Model):
         verbose_name = _("Priority")
         verbose_name_plural = _("Priorities")
         
-class Insurence(models.Model):
+class Insurance(models.Model):
     name = models.CharField(max_length=100,verbose_name=_("Insurence Name"))
     ext_code = models.CharField(max_length=30,verbose_name=_("External code"))
     lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
@@ -154,7 +154,7 @@ class SuperGroups(models.Model):
         return "%s %s" % (self.abbreviation,self.name)
 
 class TestGroups(models.Model):
-    supergroup = models.ForeignKey(SuperGroups,on_delete=models.PROTECT,verbose_name=_("Super Group"),related_name='testgroup_supergroup',blank=True)
+    supergroup = models.ForeignKey(SuperGroups,on_delete=models.PROTECT,verbose_name=_("Super Group"),related_name='testgroup_supergroup',null=True)
     name = models.CharField(max_length=100,verbose_name=_("Group Name"))
     sort = models.IntegerField(verbose_name=_("Sort"),help_text=_("Sorted priority"))
     dateofcreation = CreationDateTimeField(verbose_name=_("Created at"))
@@ -180,6 +180,7 @@ class TestGroups(models.Model):
         
 class Tests(models.Model):
     test_group = models.ForeignKey(TestGroups,on_delete=models.PROTECT,verbose_name=_("Test Group"),related_name='tests')
+    parent = models.IntegerField(verbose_name=_("Parent"),help_text=_("Parent"),null=True)
     name = models.CharField(max_length=100,verbose_name=_("Test Name"))
     sort = models.IntegerField(verbose_name=_("Sort"),help_text=_("Sorted priority"))
     ext_code = models.CharField(max_length=30,verbose_name=_("External code"))
@@ -305,9 +306,9 @@ class Orders(models.Model):
     number = models.CharField(max_length=100,verbose_name=_("Number"),default=auto_order_no,blank=True,null=True,unique=True)
     origin = models.ForeignKey(Origins,on_delete=models.PROTECT,verbose_name=_("Origin"))
     doctor = models.ForeignKey(Doctors,on_delete=models.PROTECT,verbose_name=_("Sender doctor"))
-    diagnosis = models.ForeignKey(Diagnosis,on_delete=models.PROTECT,verbose_name=_("Diagnosis"),default=1)
-    priority = models.ForeignKey(Priority,on_delete=models.PROTECT,verbose_name=_("Order priority"))
-    insurence = models.ForeignKey(Insurence,on_delete=models.PROTECT,verbose_name=_("Insurence"))
+    diagnosis = models.ForeignKey(Diagnosis,on_delete=models.PROTECT,verbose_name=_("Diagnosis"),null=True)
+    priority = models.ForeignKey(Priority,on_delete=models.PROTECT,verbose_name=_("Order priority"),null=True)
+    insurance = models.ForeignKey(Insurance,on_delete=models.PROTECT,verbose_name=_("Insurance"),null=True)
     note = models.CharField(max_length=100,verbose_name=_("Note/Comment"),blank=True,null=True)
     patient = models.ForeignKey(Patients,on_delete=models.PROTECT,verbose_name=_("Patient"))
     dateofcreation = CreationDateTimeField(verbose_name=_("Created at"),auto_now_add=True)

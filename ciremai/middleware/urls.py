@@ -20,6 +20,11 @@ urlpatterns = [
     #################
     url(r'^rcvsample/$', views.ListReceivedSample.as_view(), name='receivedsample_list'),
     
+    #################
+    # Order Results
+    #################
+    url(r'^orders/$', views.orders, name='order_list'),
+    
     
     # #############
     # Test Groups urls

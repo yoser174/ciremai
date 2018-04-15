@@ -100,4 +100,4 @@ class OrderForm(forms.ModelForm):
             return self.cleaned_data['number']
     class Meta:
         model = Orders
-        fields = ('id','number','origin','priority','insurence','doctor','diagnosis','note')
+        fields = ('id','number','origin','priority','insurance','doctor','diagnosis','note')

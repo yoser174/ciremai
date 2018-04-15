@@ -7,7 +7,7 @@ from braces.views import PermissionRequiredMixin, LoginRequiredMixin
 from django_tables2 import SingleTableView, RequestConfig
 from django.conf import settings
 
-from . import models,tables,filters
+from . import models,tables,filters,forms
 
 
 class FilteredSingleTableView(SingleTableView):
@@ -24,6 +24,16 @@ class FilteredSingleTableView(SingleTableView):
         return context
 
 
+#####################
+# Middleware function
+#####################
+
+def orders(request):
+    template = 'middleware/list_orders.html'
+    #context = {'form':forms.PatientForm}
+    context = {}
+    return render(request,template,context)
+
 
 # ###################
 # ##   Base Views  ##
@@ -37,6 +47,16 @@ class ListReceivedSample(LoginRequiredMixin, PermissionRequiredMixin, FilteredSi
     table_data = models.ReceivedSamples.objects.all()
     context_table_name = 'receivedsamplestable'
     filter_class = filters.ReceivedSamplesFilter
+    table_pagination = 10
+    
+class ListResults(LoginRequiredMixin, PermissionRequiredMixin, FilteredSingleTableView):    
+    model = models.Orders
+    permission_required = 'billing.view_orders'
+    login_url = settings.LOGIN_URL_BILLING
+    table_class = tables.OrderResultTable
+    table_data = models.Orders.objects.all()
+    context_table_name = 'orderstable'
+    filter_class = filters.OrderFilter
     table_pagination = 10
     
 
