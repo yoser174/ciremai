@@ -1,31 +1,26 @@
-{% extends "base/table_view_base_billing.html" %}
+{% extends "base/table_view_base_middleware.html" %}
 {% load render_table from django_tables2 %}
 {% load  i18n bootstrap3 %}
 {% load widget_tweaks %}
 
 {% block meta_title %}
-    {% trans "Select patient" %}
+    {% trans "Order list" %}
 {% endblock %}
 
 {% block title %}
-    {% trans "Select patient" %}
+    {% trans "Order list" %}
 {% endblock %}
 
 {% block breadcrumb_menu %}
-    <li class="active"><a href="{% url 'orders_list' %}">{% trans "Orders" %}</a></li>
-    <li class="active">{% if patient %}{% trans "Select patient" %}{% else %}{% trans "Select patient" %}{% endif%}</li>
+    <li class="active"><a href="{% url 'orders' %}">{% trans "Orders" %}</a></li>
+    <li class="active">{% trans "List" %}</li>
 {% endblock %}
 
 {% block main_header %}
-    {% trans "Select patient" %}
+    {% trans "List billing orders" %}
 {% endblock %}
 
 {% block main_toolbar %}
-    {% if perms.dreamlab2.add_patients %}
-        <button class="btn btn-success" onclick="location.href='{% url 'order_add_patient' %}'"
-                title="{% trans 'Create Patient' %}" data-toggle="tooltip" data-placement="top">
-            <span class="glyphicon glyphicon-plus"></span></button>
-    {% endif %}
 {% endblock %}
 
 
@@ -49,5 +44,5 @@
       </button>
       </div>
   </form>
-{% render_table patienttable "tables2/bootstrapped-tables2.html" %}
+{% render_table ordertable "tables2/bootstrapped-tables2.html" %}
 {% endblock %}

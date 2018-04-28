@@ -178,10 +178,26 @@ class TestGroups(models.Model):
         ordering = ['name']
         
         
+TEST_RESULT_TYPE = (
+    ('NUM','NUMERIC'),
+    ('ALF','ALFANUMERIC'),
+    ('TXT','TEXT'),
+    ('IMG','IMAGE')
+    )        
 class Tests(models.Model):
+    NUMERIC = 'NUM'
+    ALFANUMERIC = 'ALF'
+    TEXT = 'TXT'
+    IMAGE = 'IMG'
     test_group = models.ForeignKey(TestGroups,on_delete=models.PROTECT,verbose_name=_("Test Group"),related_name='tests')
-    parent = models.IntegerField(verbose_name=_("Parent"),help_text=_("Parent"),null=True)
-    name = models.CharField(max_length=100,verbose_name=_("Test Name"))
+    parent = models.ForeignKey('self', blank=True, null=True, related_name='children')
+    name = models.CharField(max_length=100,verbose_name=_("Test Name"),null=True)
+    result_type =  models.CharField(
+        max_length=3,
+        verbose_name=_("Result Type"),
+        choices=TEST_RESULT_TYPE,
+        default=NUMERIC,
+    )
     sort = models.IntegerField(verbose_name=_("Sort"),help_text=_("Sorted priority"))
     ext_code = models.CharField(max_length=30,verbose_name=_("External code"))
     dateofcreation = CreationDateTimeField(verbose_name=_("Created at"))

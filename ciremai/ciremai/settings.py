@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'annoying',
     'simple_history',
     'widget_tweaks',
+    'mptt',
     #'dal',
     #'dal_select2',
     #

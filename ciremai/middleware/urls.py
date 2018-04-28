@@ -23,7 +23,8 @@ urlpatterns = [
     #################
     # Order Results
     #################
-    url(r'^orders/$', views.orders, name='order_list'),
+    url(r'^orders/$', views.show_all_orders, name='orders'),
+    url(r'^orders/results/(?P<pk>\d+)/$', views.order_results, name='order_results'),
     
     
     # #############

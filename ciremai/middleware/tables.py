@@ -24,9 +24,9 @@ class ReceivedSamplesTable(tables.Table):
         
         
 class OrderResultTable(tables.Table):
-    total_price = CssFieldColumn('record.get_total_price.total',verbose_name=_('Total Price'),attrs = {"td":{"align":"right"}})
+    #total_price = CssFieldColumn('record.get_total_price.total',verbose_name=_('Total Price'),attrs = {"td":{"align":"right"}})
     edit_order = IncludeColumn(
-        'includes/billing/orders_row_edit_toolbar.html',
+        'middleware/include/orders_row_edit_toolbar.html',
         attrs={"th": {"width": "120px"}},
         verbose_name=" ",
         orderable=False
@@ -37,5 +37,6 @@ class OrderResultTable(tables.Table):
         model = Orders
         exclude = ('id')
         #sequence = ('number')
-        fields = ('order_date','number','priority','origin','patient.patient_id','patient.name','total_price')
+        fields = ('order_date','number','priority','origin','patient.patient_id','patient.name')
         order_by = ('-number',)
+        
