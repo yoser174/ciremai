@@ -103,6 +103,27 @@
 	</fieldset>
 </div>
 
+{% if samples %}
+<div class="col-lg-4">
+	<fieldset>		
+		<table class="table">
+			<thead>
+			<tr>
+				<td>Sample No.</td>
+				<td>Specimen</td>
+			</tr>
+		</thead>
+		{% for sample in samples %}
+			<tr>
+				<td>{{ sample.sample_no }}</td>
+				<td>{{ sample.specimen.name }}</td>
+			</tr>
+		{% endfor %}
+		</table>
+	</fieldset>
+</div>
+{% endif %}
+
 <div class="col-md-12">
 <table class="table">
 	<thead>
@@ -145,7 +166,10 @@
     <a href="print/worklist" target="_blank" class="btn btn-info" role="button">
     <span class="fa fa-print"></span>&nbsp;{% trans "Print Worklist" %}</a>
     
-    <a href="send/lis" class="btn btn-info" role="button">
-    <span class="fa fa-paper-plane-o"></span>&nbsp;{% trans "Send to LIS" %}</a>
+    <a href="print/barcode" class="btn btn-info" role="button">
+    <span class="fa fa-barcode"></span>&nbsp;{% trans "Print Barcode" %}</a>
+    
+    <!-- <a href="send/lis" class="btn btn-info" role="button">
+    <span class="fa fa-paper-plane-o"></span>&nbsp;{% trans "Send to LIS" %}</a> -->
     
 {% endblock %}

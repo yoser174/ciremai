@@ -84,8 +84,17 @@ ROOT_URLCONF = 'ciremai.urls'
 # Full filesystem path to the project.
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-HL7_ORDER_DIR = 'C:\\HL7'
+#########################
+# CIREMAI CONFIGURATION #
+#########################
 
+# HL7 Message
+HL7_ORDER_DIR = 'C:\\HL7'
+# label barcode pritner port
+LABEL_PRINTER_PORT = 'COM10'
+
+
+#########################
 
 TEMPLATES = [
     {

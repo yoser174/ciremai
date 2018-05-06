@@ -34,14 +34,20 @@
 {% endblock %}
 
 {% block main_inner %}
+<style>
+.form-control-ok {
+  color:  red;
+}
+</style>
 <table class="table table-responsive table-hover">
 	<thead>
 		<tr>
-			<th></th>
+			<th>&nbsp;&nbsp;</th>
 			<th>Name</th>
 			<th>Result</th>
 			<th>Unit</th>
 			<th>Ref.Range</th>
+			<th>Mark</th>
 		</tr>
 	</thead>
 	
@@ -77,12 +83,13 @@
 	     	{% endif %}
 	     	<td>
 	     	{% if not o.is_header %}
-	     	{% if  o.test__result_type  == 'ALF' %}<input type="text" name="test_{{ o.test_id }}" class="form-control"   value="{{ o.result__alfa_result|default:"" }}" />{% endif %}
-	     	{% if  o.test__result_type  == 'NUM' %}<input type="text" name="test_{{ o.test_id }}" class="form-control" value="{{ o.result__alfa_result|default:"" }}" />{% endif %}
-	     	{% if  o.test__result_type  == 'TXT' %}<textarea name="test_{{ o.test_id }}" class="form-control"" id="" cols="45" rows="10"></textarea> {% endif %}
+	     	{% if  o.test__result_type  == 'ALF' %}<input type="text" name="test_{{ o.test_id }}" class="form-control form-control-ok"   value="{{ o.result__alfa_result|default:"" }}" />{% endif %}
+	     	{% if  o.test__result_type  == 'NUM' %}<input type="text" name="test_{{ o.test_id }}" class="form-control {% if o.result__mark and o.result__mark != '' %} form-control-ok {% endif %}" value="{{ o.result__alfa_result|default:"" }}" />{% endif %}
+	     	{% if  o.test__result_type  == 'TXT' %}<textarea name="test_{{ o.test_id }}" class="form-control text-danger has-warning" id="" cols="45" rows="10"></textarea> {% endif %}
 	     	</td>
 	     	<td>{{ o.unit|default:"" }}</td>
-	     	<td>{{ o.ref_range|default:"" }}</td>
+	     	<td>{{ o.result__ref_range|default:"" }}</td>
+	     	<td>{{ o.result__mark|default:"" }}</td>
 	     	{% endif %}
 	     	
 	     	

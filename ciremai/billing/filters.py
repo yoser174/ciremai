@@ -28,3 +28,11 @@ class PatientFilter(django_filters.FilterSet):
     class Meta:
         model = Patients
         fields = ['patient_id','name','address']
+
+class JMFilter(django_filters.FilterSet):
+    #start_date = django_filters.DateFilter(name='order_date',lookup_type=('gt'))
+    #end_date = django_filters.DateFilter(name='order_date',lookup_type=('lt'))
+    #date_range = django_filters.DateRangeFilter(name='order_date')
+    class Meta:
+        model = Orders
+        fields = ['order_date']

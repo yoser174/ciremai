@@ -136,12 +136,12 @@
                   </li>
                   
                   <li class="sub-menu">
-                      <a {% if request.path == '/billing/reptest/' %} class="active"{% endif %} href="javascript:;" >
+                      <a {% if request.path == '/billing/reptest/' or request.path == '/billing/reports/jm/'  %} class="active"{% endif %} href="javascript:;" >
                           <i class="fa fa-file-o"></i>
                           <span>Report</span>
                       </a>
                       <ul class="sub">
-                          
+                          {% if perms.billing.view_orders %} <li {% if request.path == '/billing/reports/jm/'%} class="active"{% endif %} ><a href="/billing/reports/jm/">Jasa Medis</a></li>{% endif %}
                       </ul>
                   </li>
                   

@@ -141,6 +141,21 @@ class Genders(models.Model):
         verbose_name = _("Gender")
         verbose_name_plural = _("Genders")
         
+        
+class Specimens(models.Model):
+    name = models.CharField(max_length=100,verbose_name=_("Specimen Name"))
+    suffix_code = models.CharField(max_length=3,verbose_name=_("Suffix code"))
+    
+    def get_absolute_url(self):
+        return reverse('specimen_detail', args=[str(self.id)])
+    
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = _("Specimen")
+        verbose_name_plural = _("Specimens")
+        
 class SuperGroups(models.Model):
     abbreviation = models.CharField(max_length=100,verbose_name=_("Abbreviation"))
     name = models.CharField(max_length=100,verbose_name=_("Name"))
@@ -198,6 +213,7 @@ class Tests(models.Model):
         choices=TEST_RESULT_TYPE,
         default=NUMERIC,
     )
+    specimen = models.ForeignKey(Specimens,on_delete=models.PROTECT,verbose_name=_("Specimen"),related_name='test_specimen',null=True)
     sort = models.IntegerField(verbose_name=_("Sort"),help_text=_("Sorted priority"))
     ext_code = models.CharField(max_length=30,verbose_name=_("External code"))
     dateofcreation = CreationDateTimeField(verbose_name=_("Created at"))
@@ -345,6 +361,14 @@ class Orders(models.Model):
                                      order_items__test__test_price__priority=self.priority).values_list(
                                          'order_items__test__name',flat=True)
     
+    def get_test_str(self):
+        order_result = Orders.objects.filter(pk=self.pk,
+                                     order_items__test__test_price__priority=self.priority).values_list(
+                                         'order_items__test__name',flat=False)
+        data = [entry[0] for entry in order_result]
+        return ", ".join(map(str,data))
+                            
+                                     
     def get_test_price(self):
         return Orders.objects.filter(pk=self.pk,
                                      order_items__test__test_price__priority=self.priority).values(
@@ -366,7 +390,18 @@ class Orders(models.Model):
                                      order_items__test__test_price__priority=self.priority).aggregate(
                                          tariff_subtotal=Sum(F('order_items__test__test_price__tariff')),
                                          service_subtotal=Sum(F('order_items__test__test_price__service'))
-                                         )                                     
+                                         )   
+    def get_sub_total_price_tariff(self):
+        return Orders.objects.filter(pk=self.pk,
+                                     order_items__test__test_price__priority=self.priority).aggregate(
+                                         tariff_subtotal=Sum(F('order_items__test__test_price__tariff'))
+                                         ).values()[0]
+    def get_sub_total_price_service(self):
+        return Orders.objects.filter(pk=self.pk,
+                                     order_items__test__test_price__priority=self.priority).aggregate(
+                                         tariff_subtotal=Sum(F('order_items__test__test_price__service'))
+                                         ).values()[0]
+                                                                      
     def get_total_price_words(self):
         return num2words(int(self.get_total_price()['total']),lang='id')
     
@@ -406,3 +441,28 @@ class OrderTests(models.Model):
             ('view_ordertests', 'Can view order tests'),
         )
         ordering = ['order','test']
+
+class OrderSamples(models.Model):
+    order = models.ForeignKey(Orders,on_delete=models.PROTECT,verbose_name=_("Order"),related_name='sample_order')
+    specimen = models.ForeignKey(Specimens,on_delete=models.PROTECT,verbose_name=_("Specimen"),related_name='sample_specimen')
+    sample_no = models.CharField(max_length=100,verbose_name=_("Name"),help_text=_("Patient Name"))
+    dateofcreation = CreationDateTimeField(verbose_name=_("Created at"),auto_now_add=True)
+    lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
+    lastmodifiedby = models.ForeignKey(
+        settings.AUTH_USER_MODEL, limit_choices_to={'is_staff': True},
+        blank=True, verbose_name=_("Last modified by"), null=True)
+    
+    def get_absolute_url(self):
+        return reverse('ordersamples_detail', args=[str(self.id)])
+    
+    def __str__(self):
+        return '%s' % (self.sample_no)
+
+    class Meta:
+        verbose_name = _("Order samples")
+        verbose_name_plural = _("Order samples")
+        permissions = (
+            ('view_ordersamples', 'Can view order samples'),
+        )
+        ordering = ['order','sample_no']
+    

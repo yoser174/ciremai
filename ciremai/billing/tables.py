@@ -7,6 +7,11 @@ from django.contrib.humanize.templatetags.humanize import intcomma
 
 from django.utils.translation import ugettext_lazy as _
 
+
+class ColumnWithThausandSeparator(tables.Column):
+    def render(self,value):
+        return intcomma(value)
+
 class TestGroupsTable(tables.Table):
     edit_test_group = IncludeColumn(
         'includes/testgroups_row_edit_toolbar.html',
@@ -66,6 +71,7 @@ class PatientsTable(tables.Table):
         fields = ('patient_id','name','gender','dob','address',)
         exclude = ('id')
         
+        
 class SelectPatientsTable(tables.Table):
     use_product = ButtonColumn(gl_icon="external-link",
                             extra_class="btn-info",
@@ -76,3 +82,14 @@ class SelectPatientsTable(tables.Table):
     class Meta:
         model = Patients
         exclude = ('id')
+        
+class JMTable(tables.Table):
+    export_formats = ['csv', 'xls']
+    ColumnWithThausandSeparator('get_sub_total_price_tariff')
+    ColumnWithThausandSeparator('get_sub_total_price_service')
+    
+    class Meta:
+        model = Orders
+        fields = ('order_date','number','priority','patient','insurance','origin','get_test_str','doctor','get_sub_total_price_tariff','get_sub_total_price_service',)
+        exclude = ('id')
+        template = 'django_tables2/bootstrap.html'

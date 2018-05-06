@@ -7,7 +7,7 @@ from braces.views import PermissionRequiredMixin, LoginRequiredMixin
 from django_tables2 import SingleTableView, RequestConfig
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
-from .tables import TestGroupsTable,PatientsTable,SelectPatientsTable
+from .tables import TestGroupsTable,PatientsTable,SelectPatientsTable,JMTable
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
@@ -24,6 +24,9 @@ from avatar.utils import invalidate_cache
 import datetime
 from django.contrib.messages.views import SuccessMessageMixin
 from django.utils.dateformat import DateFormat
+from django_tables2.config import RequestConfig
+from django_tables2.export.export import TableExport
+import serial,time
 
 
 def direct_to_template(request,template,extra_context=None, **kwargs):
@@ -143,6 +146,41 @@ def AvatarAdd(request,extra_context=None,next_override=None,upload_form=UploadAv
 # ##   Billing Function Views  ##
 # #################################
 
+
+def report_jm(request):
+    template = 'report/jm.html'
+    #orders = models.Orders.objects.all()
+    data = models.Orders.objects.all()
+    
+        
+    
+    if request.GET.get('order_date'):
+        d_range = request.GET.get('order_date')
+        #04/01/2018 - 04/30/2018
+        start_date = d_range[:10]
+        end_date = d_range[13:23]
+        print start_date
+        print end_date
+        
+        data = data.filter(order_date__range=[start_date,end_date] )
+    
+    filter = filters.JMFilter(request.GET,queryset=data)
+    orderstable = JMTable(data)
+    orderstable.paginate(page=request.GET.get('page', 1), per_page=10)
+    
+    
+    RequestConfig(request).configure(orderstable)
+
+    export_format = request.GET.get('_export', None)
+    if TableExport.is_valid_format(export_format):
+        exporter = TableExport(export_format, orderstable)
+        return exporter.response('table.{}'.format(export_format))
+
+        
+    context = {'orderstable':orderstable,'filter':filter}
+    return render(request,template,context)  
+    
+
 def order_patient(request):
     if request.method == 'POST':  
         patient_pk = request.POST.get('patient','')  
@@ -200,6 +238,66 @@ def order_print_worklist(request,order_pk):
     template = 'billing/order_print_worklist.html'
     context = {'order':order}
     return render(request,template,context) 
+
+def order_print_barcode(request,order_pk):
+    order = models.Orders.objects.get(pk=order_pk)
+    samples = models.OrderTests.objects.filter(order = order).values('test__specimen__id','test__specimen__suffix_code').distinct()
+    print samples.query
+    for sample in samples:
+        #print sample
+        #print order.number+sample['test__specimen__suffix_code']
+        #print sample['test__specimen__id']
+        models.OrderSamples.objects.get_or_create(order=order,specimen_id=sample['test__specimen__id'],sample_no=str(order.number+sample['test__specimen__suffix_code']))
+    #print sample
+    # Print label barcode disini
+    labels = models.OrderSamples.objects.filter(order=order).values('sample_no','specimen__name')
+    LF  = b'\x0A'
+    """
+    Form:
+    [LF]N[LF]A128,16,0,0,1,1,N,"5953762"[LF]A16,104
+                    ,0,0,1,1,N,""[LF]A8,48,0,0,1,1,N,"SUGENG SANTOS
+                    O"[LF]A64,80,0,0,1,1,N,"1865342"[LF]A8,16,0,0,1
+                    ,1,N,"Order Id :"[LF]A8,80,0,0,1,1,N,"RM :"[LF]
+                    A352,80,3,0,1,1,N,"3091"[LF]A200,80,0,0,1,1,N,"
+                    19/04/1969"[LF]B16,104,0,1,2,4,120,B,"5953762"[
+                    LF]P2[LF][LF]
+    Label:
+    [LF]N[LF]A32,80,0,0,1,1,N,""[LF]A136,8,0,0,1,1,
+                    N,"5953762"[LF]A368,120,3,0,1,1,N,"SERUM"[LF]A1
+                    6,32,0,0,1,1,N,"SUGENG SANTOSO"[LF]A16,8,0,0,1,
+                    1,N,"Order Id :"[LF]A16,56,0,0,1,1,N,"RM :"[LF]
+                    A336,64,3,0,1,1,N,"3091"[LF]A208,48,0,0,1,1,N,"
+                    19/04/1969"[LF]A72,48,0,0,1,1,N,"1865342"[LF]B3
+                    2,80,0,1,2,4,136,B,"5953762SE"[LF]P1[LF][LF]
+    """
+    
+    label_com = serial.Serial(port= settings.LABEL_PRINTER_PORT,baudrate=9600,
+                                    timeout=10, writeTimeout=10,stopbits=serial.STOPBITS_ONE,
+                                    bytesize=serial.EIGHTBITS,parity=serial.PARITY_NONE)
+    for label in labels:
+        #print label
+        zpl_str = ''
+        zpl_str = LF+'N'+LF
+        zpl_str += 'A32,80,0,0,1,1,N,""'+LF
+        zpl_str += 'A136,8,0,0,1,1,N,"'+order.number+'"'+LF
+        zpl_str += 'A368,120,3,0,1,1,N,"'+label['specimen__name']+'"'+LF
+        zpl_str += 'A16,32,0,0,1,1,N,"'+order.patient.name+'"'+LF
+        zpl_str += 'A16,8,0,0,1,1,N,"Order Id :"'+LF
+        zpl_str += 'A16,56,0,0,1,1,N,"RM :"'+LF
+        zpl_str += 'A336,64,3,0,1,1,N,""'+LF # nomor urut
+        zpl_str += 'A208,48,0,0,1,1,N,"'+order.patient.dob.strftime("%Y-%m-%d")+'"'+LF
+        zpl_str += 'A72,48,0,0,1,1,N,"'+order.patient.patient_id+'"'+LF
+        zpl_str += 'B32,80,0,1,2,4,136,B,"'+label['sample_no']+'"'+LF
+        zpl_str += 'P1'+LF+LF
+        
+        #print zpl_str
+        # print to COM
+        
+        label_com.write(zpl_str.encode())
+        time.sleep(1)
+        
+        
+    return redirect('order_detail', pk=order.pk)
 
 def order_send_lis(request,order_pk):
     order = models.Orders.objects.get(pk=order_pk)
@@ -373,6 +471,11 @@ class ViewOrder(LoginRequiredMixin, PermissionRequiredMixin, DetailView):
     model = models.Orders
     permission_required = 'billing.view_orders'
     login_url = settings.LOGIN_URL_BILLING
+    
+    def get_context_data(self, **kwargs):
+        context = super(ViewOrder, self).get_context_data(**kwargs)
+        context['samples'] = models.OrderSamples.objects.filter(order_id=self.kwargs['pk'])
+        return context
 
 
 class DeleteOrder(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
@@ -421,3 +524,12 @@ class DeletePatient(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     success_url = reverse_lazy('patient_list')
     table_pagination = 10
     
+class Listjm(LoginRequiredMixin, PermissionRequiredMixin, FilteredSingleTableView):    
+    model = models.Orders
+    permission_required = 'billing.view_patients'
+    login_url = settings.LOGIN_URL_BILLING
+    table_class = JMTable
+    table_data = models.Orders.objects.all()
+    context_table_name = 'patientstable'
+    filter_class = filters.JMFilter
+    table_pagination = 10

@@ -46,6 +46,7 @@ urlpatterns = [
     url(r'^orders/detail/(?P<order_pk>\d+)/print/receipt$', views.order_print_receipt, name='order_print_receipt'),
     url(r'^orders/detail/(?P<order_pk>\d+)/print/bill$', views.order_print_bill, name='order_print_bill'),
     url(r'^orders/detail/(?P<order_pk>\d+)/print/worklist$', views.order_print_worklist, name='order_print_worklist'),
+    url(r'^orders/detail/(?P<order_pk>\d+)/print/barcode', views.order_print_barcode, name='order_barcode'),
     url(r'^orders/detail/(?P<order_pk>\d+)/send/lis$', views.order_send_lis, name='order_send_lis'),
     
     # #############
@@ -57,4 +58,8 @@ urlpatterns = [
     url(r'^patients/edit/(?P<pk>\d+)/$', views.EditPatient.as_view(), name='patient_edit'),
     url(r'^patients/delete/(?P<pk>\d+)/$', views.DeletePatient.as_view(), name='patient_delete'),
     
+     # #############
+    # Report urls
+    # #############
+    url(r'^reports/jm/$', views.report_jm, name='jm_list'),
     ]

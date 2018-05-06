@@ -34,6 +34,7 @@ def show_all_orders(request):
     context = {'ordertable':ordertable}
     return render(request,tempate,context)
 
+
 def order_results(request,pk):
     if request.method == 'POST': 
         for p_tes in request.POST:
@@ -42,24 +43,34 @@ def order_results(request,pk):
                 o_test = Tests.objects.get(pk=p_tes.split('_')[1])
                 # get unit and refrange
                 #m_test_unit = 
+                # check current result
                 if request.POST.get( p_tes, '')<>'':
-                    o_result = models.Results(order=o_order,test=o_test,alfa_result=request.POST.get( p_tes, ''))
-                    o_result.save()
-                    # try delete existing result
+                    # get current result
+                    cr_res_a = ''
                     try:
-                        o_orderresult = models.OrderResults.objects.get(order=o_order,test=o_test)
-                        o_orderresult.delete()
+                        cr_res = models.OrderResults.objects.get(order=o_order,test=o_test)
+                        cr_res_a = cr_res.result.alfa_result
                     except models.OrderResults.DoesNotExist,e:
-                        print 'recrod doesnot exist. skip delete'
-                    # try get unit
-                    s_unit = ''
-                    try:
-                        test_unit = models.TestParameters.objects.get(test=o_test)
-                        print test_unit
-                        s_unit = test_unit.unit
-                    except models.TestParameters.DoesNotExist,e:
-                        print 'Doesnt have unit'
-                    o_orderresult = models.OrderResults.objects.get_or_create(order=o_order,test=o_test,result=o_result,validation_status=1,unit=s_unit)
+                        pass
+                    
+                    if not cr_res_a == request.POST.get( p_tes, ''):           
+                        o_result = models.Results(order=o_order,test=o_test,alfa_result=request.POST.get( p_tes, ''))
+                        o_result.save()
+                        # try delete existing result
+                        try:
+                            o_orderresult = models.OrderResults.objects.get(order=o_order,test=o_test)
+                            o_orderresult.delete()
+                        except models.OrderResults.DoesNotExist,e:
+                            pass
+                        # try get unit
+                        s_unit = ''
+                        try:
+                            test_unit = models.TestParameters.objects.get(test=o_test)
+                            #print test_unit
+                            s_unit = test_unit.unit
+                        except models.TestParameters.DoesNotExist,e:
+                            pass
+                        o_orderresult = models.OrderResults.objects.get_or_create(order=o_order,test=o_test,result=o_result,validation_status=1,unit=s_unit)
     else:
         # cek if record OrderResults exist if not create it based on order
         order_tests = OrderTests.objects.filter(order_id=pk)
@@ -71,9 +82,15 @@ def order_results(request,pk):
             try:
                 test_unit = models.TestParameters.objects.get(pk=ot.test_id)
                 s_unit = test_unit.unit
-                print s_unit
+                #print s_unit
             except models.TestParameters.DoesNotExist,e:
-                print 'Doesnt have unit'
+                pass
+                
+            # reference ranges
+            s_ref_range = ''
+            test_refrange = models.TestRefRanges.objects.filter(test_id=ot.test_id)
+            #print test_refrange
+            
             o_tes = models.OrderResults.objects.get(order_id=pk,test_id=ot.test_id)
             o_tes.unit = s_unit
             o_tes.save()
@@ -95,9 +112,9 @@ def order_results(request,pk):
                         try:
                             test_unit = models.TestParameters.objects.get(pk=child.id)
                             s_unit = test_unit.unit
-                            print s_unit
+                            #print s_unit
                         except models.TestParameters.DoesNotExist,e:
-                            print 'Doesnt have unit'
+                            pass
                         m_child = models.OrderResults.objects.get_or_create(order_id=pk,test_id=child.id,unit=s_unit)
                         #print child.id
                         # last try for child
@@ -112,13 +129,14 @@ def order_results(request,pk):
                             for child_child in m_child_child:
                                 m_child_child = models.OrderResults.objects.get_or_create(order_id=pk,test_id=child_child.id)
                         except Tests.DoesNotExist,e:
-                            print 'doesnt have child child'
+                            pass
             except Tests.DoesNotExist,e:
-                print 'doesnt have child'
+                pass
             
             
             #print o_tes
             
+    # Reference Range update from 
 
     orders = Orders.objects.get(pk=pk)
     ordertests = models.OrderResults.objects.filter(order = orders).values('test_id',
@@ -128,9 +146,10 @@ def order_results(request,pk):
                                                                            'result__alfa_result',
                                                                            'is_header',
                                                                            'unit',
-                                                                           'ref_range',
+                                                                           'result__ref_range',
+                                                                           'result__mark',
                                                                            'validation_status').order_by('test__test_group__sort','test__sort')
-    print ordertests
+    #print ordertests
     tempate = 'middleware/order_results.html'
     context = {'orders':orders,'ordertests':ordertests}
     return render(request,tempate,context)
