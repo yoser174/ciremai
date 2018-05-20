@@ -101,7 +101,6 @@ class TestRefRanges(models.Model):
 class Results(models.Model):
     order =  models.ForeignKey(Orders,on_delete=models.PROTECT,verbose_name=_("Order"),related_name='results_order')
     test = models.ForeignKey(Tests,on_delete=models.PROTECT,verbose_name=_("Test"),related_name='results_test')
-    #order_test = models.ForeignKey(OrderTests,on_delete=models.PROTECT,verbose_name=_("Order test"),related_name='order_test')
     numeric_result = models.FloatField(verbose_name=_("Numeric result"),null=True)
     alfa_result = models.CharField(max_length=100,verbose_name=_("Alfanumeric result"),null=True)
     text_result = models.TextField(verbose_name=_("Text result"),null=True)
@@ -122,13 +121,8 @@ class Results(models.Model):
             return False
         
     def get_patient_age_in_day(self):
-        #today.year - born.year - ((today.month, today.day) < (born.month, born.day))
-        #order_date = datetime.strptime(self.order.order_date,"%Y-%m-%d")
         return (self.order.order_date - self.order.patient.dob).days
-        
-        #print 
-        #return self.order.order_date.year - self.order.patient.dob.year - ((self.order.order_date.month, self.order.order_date.day) < self.order.patient.dob.month, self.order.patient.dob.day)
-        
+             
     def setup_range(self,alfa_value=None,operator=None,operator_value=None,lower=None,upper=None):
         if alfa_value:
             self.ref_range = alfa_value
@@ -155,14 +149,14 @@ class Results(models.Model):
             else:
                 # range
                 self.ref_range = str(lower)+' - '+str(upper)
-                if self.is_number(self.alfa_result):
-                    if float(self.alfa_result)<float(lower):
-                        self.mark = 'L'
-                    if float(self.alfa_result)>float(upper):
-                        self.mark = 'H'
+                if self.alfa_result:
+                    if self.is_number(self.alfa_result):
+                        if float(self.alfa_result)<float(lower):
+                            self.mark = 'L'
+                        if float(self.alfa_result)>float(upper):
+                            self.mark = 'H'
                      
-        
-    
+   
     def save(self, *args, **kwargs):
         refrange = TestRefRanges.objects.filter(test=self.test).values('any_age','gender','age_type','age_from','age_to','operator','operator_value','lower','upper','alfa_value','special_info','gender_id')
         if refrange.count()>0:
@@ -248,6 +242,11 @@ class OrderResults(models.Model):
     ref_range = models.CharField(max_length=200,verbose_name=_("Reference range"),null=True)
     patologi_mark = models.CharField(max_length=2,verbose_name=_("Patologi mark"),null=True)
     validation_status = models.IntegerField(verbose_name=_("Validation status"),default=0)
+    validation_user = models.CharField(max_length=20,verbose_name=_("Validated by"),null=True)
+    validation_date = models.DateTimeField(verbose_name=_("Validated date"),null=True)
+    print_status = models.IntegerField(verbose_name=_("Print status"),default=0)
+    print_user = models.CharField(max_length=20,verbose_name=_("Print by"),null=True)
+    print_date = models.DateTimeField(verbose_name=_("Print date"),null=True)
     lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
     lastmodifiedby = models.ForeignKey(
         settings.AUTH_USER_MODEL, limit_choices_to={'is_staff': True},

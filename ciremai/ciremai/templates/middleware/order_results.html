@@ -48,6 +48,7 @@
 			<th>Unit</th>
 			<th>Ref.Range</th>
 			<th>Mark</th>
+			<th>Val.user</th>
 		</tr>
 	</thead>
 	
@@ -70,7 +71,7 @@
                 	<div class="progress-bar progress-bar-success" role="progressbar" style="width: 60%;">
                 {% endif %}
                 {% if o.validation_status == 3 %}
-                	<div class="progress-bar progress-bar-info" role="progressbar" style="width: 80%;">
+                	<div class="progress-bar progress-bar-info" role="progressbar" style="width: 100%;">
                 {% endif %}
                 {% if o.validation_status == 4 %}
                 	<div class="progress-bar progress-bar-info" role="progressbar" style="width: 100%;">
@@ -90,6 +91,7 @@
 	     	<td>{{ o.unit|default:"" }}</td>
 	     	<td>{{ o.result__ref_range|default:"" }}</td>
 	     	<td>{{ o.result__mark|default:"" }}</td>
+	     	<td>{{ o.validation_user|default:"" }}</td>
 	     	{% endif %}
 	     	
 	     	
@@ -109,5 +111,12 @@
             onclick="window.location.assign('{% url 'orders' %}')">
         {% trans "Cancel" %}
     </button>
+    
+    <a href="validate?id={{ orders.id }}" class="btn btn-default" role="button">
+    <span class="fa fa-check"></span>&nbsp;{% trans "Validate" %}</a>
+    
+    <a href="print" target="_blank" class="btn btn-default" role="button">
+    <span class="fa fa-print"></span>&nbsp;{% trans "Print Result" %}</a>
+    
     </form>
 {% endblock %}

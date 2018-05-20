@@ -25,6 +25,8 @@ urlpatterns = [
     #################
     url(r'^orders/$', views.show_all_orders, name='orders'),
     url(r'^orders/results/(?P<pk>\d+)/$', views.order_results, name='order_results'),
+    url(r'^orders/results/(?P<pk>\d+)/validate/$', views.order_results_validate, name='order_results_validate'),
+    url(r'^orders/results/(?P<pk>\d+)/print/$', views.order_results_print, name='order_results_print'),
     
     
     # #############
