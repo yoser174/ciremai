@@ -268,7 +268,10 @@ class Patients(models.Model):
     name = models.CharField(max_length=100,verbose_name=_("Name"),help_text=_("Patient Name"))
     gender = models.ForeignKey(Genders,on_delete=models.PROTECT,verbose_name=_("Gender"))
     dob = models.DateField(verbose_name=_("Date of birth"),help_text=_("Date format: DD-MM-YYYY"))
-    address = models.CharField(max_length=100,verbose_name=_("Address"),help_text=_("Patient Address")) 
+    address = models.CharField(max_length=100,verbose_name=_("Address"),help_text=_("Patient Address"))
+    data0 = models.CharField(max_length=100,verbose_name=_("Data 0"),help_text=_("Additional data 0"),blank=True,null=True)
+    data1 = models.CharField(max_length=100,verbose_name=_("Data 1"),help_text=_("Additional data 1"),blank=True,null=True)
+    data2 = models.CharField(max_length=100,verbose_name=_("Data 2"),help_text=_("Additional data 3"),blank=True,null=True)
     dateofcreation = CreationDateTimeField(verbose_name=_("Created at"),null=True)
     lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
     lastmodifiedby = models.ForeignKey(

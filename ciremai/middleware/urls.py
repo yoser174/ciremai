@@ -25,8 +25,11 @@ urlpatterns = [
     #################
     url(r'^orders/$', views.show_all_orders, name='orders'),
     url(r'^orders/results/(?P<pk>\d+)/$', views.order_results, name='order_results'),
-    url(r'^orders/results/(?P<pk>\d+)/validate/$', views.order_results_validate, name='order_results_validate'),
+    #url(r'^orders/results/(?P<pk>\d+)/validate/$', views.order_results_validate, name='order_results_validate'),
+    url(r'^orders/results/(?P<pk>\d+)/techval/$', views.order_results_techval, name='order_results_techval'),
+    url(r'^orders/results/(?P<pk>\d+)/medval/$', views.order_results_medval, name='order_results_medval'),
     url(r'^orders/results/(?P<pk>\d+)/print/$', views.order_results_print, name='order_results_print'),
+    url(r'^orders/results/(?P<pk>\d+)/repeat/$', views.order_results_repeat, name='order_results_repeat'),
     
     
     # #############

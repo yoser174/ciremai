@@ -23,8 +23,128 @@ class ReceivedSamples(models.Model):
     def __str__(self):
         return "%s%s" % (self.order.number,self.suffix)
 
+CONN_TYPE = (
+    ('SER','Serial'),
+    ('TCP','TCP/IP')
+    )
+SER_PORT = (
+    ('COM1','COM1'),
+    ('COM2','COM2'),
+    ('COM3','COM3'),
+    ('COM4','COM4'),
+    ('COM5','COM5'),
+    ('COM6','COM6'),
+    ('COM7','COM7'),
+    ('COM8','COM8'),
+    ('COM9','COM9'),
+    ('COM10','COM10'),
+    ('COM11','COM11'),
+    ('COM12','COM12'),
+    ('COM13','COM13'),
+    ('COM14','COM14'),
+    ('COM15','COM15'),
+    ('COM16','COM16'),
+    ('COM17','COM17'),
+    ('COM18','COM18'),
+    ('COM19','COM19'),
+    ('COM20','COM20'),
+    ('COM21','COM21'),
+    ('COM22','COM22'),
+    ('COM23','COM23'),
+    ('COM24','COM24'),
+    ('COM25','COM25'),
+    ('COM26','COM26'),
+    ('COM27','COM27'),
+    ('COM28','COM28'),
+    ('COM29','COM29'),
+    ('COM30','COM30'),
+    ('COM31','COM31'),
+    ('COM32','COM32'),
+    ('COM33','COM33'),
+    ('COM34','COM34'),
+    ('COM35','COM35'),
+    ('COM36','COM36'),
+    ('COM37','COM37'),
+    ('COM38','COM38'),
+    ('COM39','COM39'),
+    ('COM40','COM40')
+    )
+SER_BAUDRATE = (
+    ('9600','9600'),
+    ('19200','19200')
+    )
+SER_DATABIT = (
+    ('7','7'),
+    ('8','8')
+    )
+SER_STOPBIT = (
+    ('1','1'),
+    ('2','2')
+    )
+SER_PARITY = (
+    ('N','None'),
+    ('E','Even')
+    )
+TCP_TYPE = (
+    ('S','Server'),
+    ('C','Client')
+    )
 class Instruments(models.Model):
+    code = models.CharField(max_length=10,verbose_name=_("Code"),unique=True)
     name = models.CharField(max_length=100,verbose_name=_("Name"))
+    active = models.BooleanField(verbose_name=_("Active?"), default=True,blank=True)
+    driver = models.CharField(max_length=100,verbose_name=_("Driver name"),blank=True,null=True)
+    connection_type = models.CharField(
+        max_length=3,
+        verbose_name=_("Connection type"),
+        choices=CONN_TYPE,
+        null=True,
+        blank=True,
+    )
+    serial_port = models.CharField(
+        max_length=3,
+        verbose_name=_("Serial port name"),
+        choices=SER_PORT,
+        null=True,
+        blank=True,
+    )
+    serial_baud_rate = models.CharField(
+        max_length=3,
+        verbose_name=_("Serial baud rate"),
+        choices=SER_BAUDRATE,
+        null=True,
+        blank=True,
+    ) 
+    serial_data_bit = models.CharField(
+        max_length=3,
+        verbose_name=_("Serial data bit"),
+        choices=SER_DATABIT,
+        null=True,
+        blank=True,
+    )
+    serial_stop_bit = models.CharField(
+        max_length=3,
+        verbose_name=_("Serial stop bit"),
+        choices=SER_STOPBIT,
+        null=True,
+        blank=True,
+    )
+    serial_data_bit = models.CharField(
+        max_length=3,
+        verbose_name=_("Serial parity"),
+        choices=SER_PARITY,
+        null=True,
+        blank=True,
+    )
+    tcp_conn_type = models.CharField(
+        max_length=3,
+        verbose_name=_("TCP/IP Connection type"),
+        choices=TCP_TYPE,
+        null=True,
+        blank=True,
+    )
+    tcp_host = models.GenericIPAddressField(verbose_name=_("TCP Host name (IP Address)"),blank=True,null=True)
+    tcp_port = models.IntegerField(verbose_name=_("Driver name"),blank=True,null=True)
     lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
     lastmodifiedby = models.ForeignKey(
         settings.AUTH_USER_MODEL, limit_choices_to={'is_staff': True},
@@ -33,6 +153,43 @@ class Instruments(models.Model):
     def __str__(self):
         return "%s" % (self.name)
 
+
+REST_INST_TYPE = (
+    ('R','RAW'),
+    ('N','NUMBERIC'),
+    ('A','ALFANUMERIC')
+    )
+class InstrumentTests(models.Model):
+    instrument =  models.ForeignKey(Instruments,on_delete=models.PROTECT,verbose_name=_("Instrument"),related_name='instrumentflags_instrument')
+    test =  models.ForeignKey(Tests,on_delete=models.PROTECT,verbose_name=_("Test"),related_name='instrumentflags_test')
+    test_code = models.CharField(max_length=100,verbose_name=_("Host test code"))
+    result_type = models.CharField(
+        max_length=3,
+        verbose_name=_("Result type"),
+        choices=REST_INST_TYPE,
+        default = 'R',
+    )
+    lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
+    lastmodifiedby = models.ForeignKey(
+        settings.AUTH_USER_MODEL, limit_choices_to={'is_staff': True},
+        blank=True, verbose_name=_("Last modified by"), null=True)
+    
+    def __str__(self):
+        return "%s %s" % (self.instrument,self.test)
+
+class InstrumentFlags(models.Model):
+    instrument =  models.ForeignKey(Instruments,on_delete=models.PROTECT,verbose_name=_("Instrument"),related_name='instrumenttests_instrument')
+    flag_code = models.CharField(max_length=100,verbose_name=_("Host flag code"))
+    flag_description = models.CharField(max_length=100,verbose_name=_("Host flag description"))
+    flag_mark = models.CharField(max_length=100,verbose_name=_("Host flag mark"),null=True,blank=True)
+    lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
+    lastmodifiedby = models.ForeignKey(
+        settings.AUTH_USER_MODEL, limit_choices_to={'is_staff': True},
+        blank=True, verbose_name=_("Last modified by"), null=True)
+    
+    def __str__(self):
+        return "%s %s" % (self.instrument,self.flag_code)
+ 
 AGE_UNIT = (
     ('D','DAY'),
     ('M','MONTH'),
@@ -44,8 +201,7 @@ REF_OPERATOR = (
     ('>=','GTE'),
     ('<','LT'),
     ('<=','LTE'),
-    )
-    
+    )   
 class TestRefRanges(models.Model):
     DAY = 'D'
     MONTH = 'M'
@@ -108,6 +264,7 @@ class Results(models.Model):
     ref_range = models.CharField(max_length=100,verbose_name=_("Reference range"),null=True)
     mark = models.CharField(max_length=3,verbose_name=_("Result mark"),null=True)
     instrument =  models.ForeignKey(Instruments,on_delete=models.PROTECT,verbose_name=_("Instrument"),related_name='results_instrument',null=True)
+    flag = models.ForeignKey(InstrumentFlags,on_delete=models.PROTECT,verbose_name=_("Instrument flag"),related_name='results_instrumentflag',null=True,)
     lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
     lastmodifiedby = models.ForeignKey(
         settings.AUTH_USER_MODEL, limit_choices_to={'is_staff': True},
@@ -220,7 +377,7 @@ class Results(models.Model):
     
 class TestParameters(models.Model):
     test = models.OneToOneField(Tests,on_delete=models.CASCADE,primary_key=True,)
-    method = models.CharField(max_length=100,verbose_name=_("Method"),null=True)
+    method = models.CharField(max_length=100,verbose_name=_("Method"),null=True,blank=True)
     unit = models.CharField(max_length=100,verbose_name=_("Test unit"),null=True)
     decimal = models.IntegerField(verbose_name=_("Decimal place"),null=True)
     
@@ -242,8 +399,10 @@ class OrderResults(models.Model):
     ref_range = models.CharField(max_length=200,verbose_name=_("Reference range"),null=True)
     patologi_mark = models.CharField(max_length=2,verbose_name=_("Patologi mark"),null=True)
     validation_status = models.IntegerField(verbose_name=_("Validation status"),default=0)
-    validation_user = models.CharField(max_length=20,verbose_name=_("Validated by"),null=True)
-    validation_date = models.DateTimeField(verbose_name=_("Validated date"),null=True)
+    techval_user = models.CharField(max_length=20,verbose_name=_("Techical validated by"),null=True)
+    techval_date = models.DateTimeField(verbose_name=_("Technical Validated date"),null=True)
+    medval_user = models.CharField(max_length=20,verbose_name=_("Medical validated by"),null=True)
+    medval_date = models.DateTimeField(verbose_name=_("Medical validated date"),null=True)
     print_status = models.IntegerField(verbose_name=_("Print status"),default=0)
     print_user = models.CharField(max_length=20,verbose_name=_("Print by"),null=True)
     print_date = models.DateTimeField(verbose_name=_("Print date"),null=True)

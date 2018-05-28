@@ -42,6 +42,37 @@ def order_results_validate(request,pk):
         order_res = models.OrderResults.objects.filter(order_id=pk,validation_status=1).update(validation_status=2,validation_user=str(request.user),validation_date=datetime.now())
     return redirect('order_results', pk=pk)
 
+def order_results_techval(request,pk):
+    if request.user.is_authenticated():
+        order_res = models.OrderResults.objects.filter(order_id=pk,validation_status=1).update(validation_status=2,techval_user=str(request.user),techval_date=datetime.now())
+    return redirect('order_results', pk=pk)
+
+def order_results_medval(request,pk):
+    if request.user.is_authenticated():
+        order_res = models.OrderResults.objects.filter(order_id=pk,validation_status=2).update(validation_status=3,medval_user=str(request.user),medval_date=datetime.now())
+    return redirect('order_results', pk=pk)
+
+def order_results_repeat(request,pk):
+    if request.user.is_authenticated():
+        #test = Tests.objects.get(pk=)
+        #result = models.Results(order=)
+        order = Orders.objects.get(pk=pk)
+        test_id =  request.GET.get('test_id')
+        tes = Tests.objects.get(pk=test_id)
+        result = models.Results(order=order,test=tes)
+        result.save()
+        order_result = models.OrderResults.objects.get(order=order,test=tes)
+        order_result.validation_status=0
+        order_result.result = result
+        order_result.techval_user = None
+        order_result.techval_date = None
+        order_result.medval_user = None
+        order_result.medval_date = None
+        order_result.patologi_mark = None
+        order_result.save()
+        print tes
+        order_res = models.OrderResults.objects.filter(order_id=pk,validation_status=1).update(validation_status=3,medval_user=str(request.user),medval_date=datetime.now())
+    return redirect('order_results', pk=pk)
 
 def order_results_print(request,pk):
     order = Orders.objects.get(pk=pk)
@@ -104,7 +135,7 @@ def order_results_print(request,pk):
     
     # set validation printed
     if request.user.is_authenticated():
-        order_res = models.OrderResults.objects.filter(order_id=pk,validation_status=2).update(validation_status=3,print_user=str(request.user),print_date=datetime.now())
+        order_res = models.OrderResults.objects.filter(order_id=pk,validation_status=3).update(validation_status=4,print_user=str(request.user),print_date=datetime.now())
     
     return response
 
@@ -184,10 +215,12 @@ def order_results(request,pk):
                             s_unit = test_unit.unit
                         except models.TestParameters.DoesNotExist,e:
                             pass           
-                        m_child,c = models.OrderResults.objects.get_or_create(order_id=pk,test_id=child.id,unit=s_unit)
+                        m_child,c = models.OrderResults.objects.get_or_create(order_id=pk,test_id=child.id)
                         if not o_tes.result_id:
                             m_child_res,c = models.Results.objects.get_or_create(order_id=pk,test_id=ot.test_id)
                             m_child.result_id = m_child_res.id
+                            #m_child.unit = s_unit
+                            #print m_child.unit
                             m_child.save()
                         try:
                             m_child_child = Tests.objects.filter(parent_id=child.id)
@@ -219,11 +252,13 @@ def order_results(request,pk):
                                                                            'result__alfa_result',
                                                                            'is_header',
                                                                            'unit',
-                                                                           'result__ref_range',
-                                                                           'result__mark',
+                                                                           'ref_range',
+                                                                           'patologi_mark',
                                                                            'validation_status',
-                                                                           'validation_user').order_by('test__test_group__sort','test__sort')
-    #print ordertests
+                                                                           'result__instrument__name',
+                                                                           'techval_user',
+                                                                           'medval_user').order_by('test__test_group__sort','test__sort')
+    print ordertests.query
     tempate = 'middleware/order_results.html'
     context = {'orders':orders,'ordertests':ordertests}
     return render(request,tempate,context)

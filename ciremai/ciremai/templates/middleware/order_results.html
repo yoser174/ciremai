@@ -48,7 +48,10 @@
 			<th>Unit</th>
 			<th>Ref.Range</th>
 			<th>Mark</th>
-			<th>Val.user</th>
+			<th>Instrument</th>
+			<th>Tech.Val</th>
+			<th>Med.Val</th>
+			<th>&nbsp;&nbsp;</th>
 		</tr>
 	</thead>
 	
@@ -71,7 +74,7 @@
                 	<div class="progress-bar progress-bar-success" role="progressbar" style="width: 60%;">
                 {% endif %}
                 {% if o.validation_status == 3 %}
-                	<div class="progress-bar progress-bar-info" role="progressbar" style="width: 100%;">
+                	<div class="progress-bar progress-bar-info" role="progressbar" style="width: 80%;">
                 {% endif %}
                 {% if o.validation_status == 4 %}
                 	<div class="progress-bar progress-bar-info" role="progressbar" style="width: 100%;">
@@ -85,13 +88,21 @@
 	     	<td>
 	     	{% if not o.is_header %}
 	     	{% if  o.test__result_type  == 'ALF' %}<input type="text" name="test_{{ o.test_id }}" class="form-control form-control-ok"   value="{{ o.result__alfa_result|default:"" }}" />{% endif %}
-	     	{% if  o.test__result_type  == 'NUM' %}<input type="text" name="test_{{ o.test_id }}" class="form-control {% if o.result__mark and o.result__mark != '' %} form-control-ok {% endif %}" value="{{ o.result__alfa_result|default:"" }}" />{% endif %}
+	     	{% if  o.test__result_type  == 'NUM' %}<input type="text" name="test_{{ o.test_id }}" class="form-control {% if o.patologi_mark and o.patologi_mark != '' and o.patologi_mark != 'N' %} form-control-ok {% endif %}" value="{{ o.result__alfa_result|default:"" }}" />{% endif %}
 	     	{% if  o.test__result_type  == 'TXT' %}<textarea name="test_{{ o.test_id }}" class="form-control text-danger has-warning" id="" cols="45" rows="10"></textarea> {% endif %}
 	     	</td>
 	     	<td>{{ o.unit|default:"" }}</td>
-	     	<td>{{ o.result__ref_range|default:"" }}</td>
-	     	<td>{{ o.result__mark|default:"" }}</td>
-	     	<td>{{ o.validation_user|default:"" }}</td>
+	     	<td>{{ o.ref_range|default:"" }}</td>
+	     	<td>{{ o.patologi_mark|default:"" }}</td>
+	     	<td>{{ o.result__instrument__name|default:"" }}</td>
+	     	<td>{{ o.techval_user|default:"" }}</td>
+	     	<td>{{ o.medval_user|default:"" }}</td>
+	     	<td class="edit_order">
+	     		<div class="btn-group btn-group-sm" role="group">
+            			<a href="repeat?test_id={{ o.test_id }}" class="btn btn-info" role="button">
+    <span class="glyphicon glyphicon-repeat"></span></a>
+            	</div>	
+            </td>
 	     	{% endif %}
 	     	
 	     	
@@ -112,8 +123,11 @@
         {% trans "Cancel" %}
     </button>
     
-    <a href="validate?id={{ orders.id }}" class="btn btn-default" role="button">
-    <span class="fa fa-check"></span>&nbsp;{% trans "Validate" %}</a>
+    <a href="techval?id={{ orders.id }}" class="btn btn-default" role="button">
+    <span class="fa fa-check"></span>&nbsp;{% trans "Techical Validate" %}</a>
+    
+    <a href="medval?id={{ orders.id }}" class="btn btn-default" role="button">
+    <span class="fa fa-check"></span>&nbsp;{% trans "Medical Validate" %}</a>
     
     <a href="print" target="_blank" class="btn btn-default" role="button">
     <span class="fa fa-print"></span>&nbsp;{% trans "Print Result" %}</a>
