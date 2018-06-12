@@ -178,26 +178,9 @@ def order_results_print(request,pk):
                 parameters=parameters,
                 db_connection=con,
                 locale='en_US',  
-                resource='D:\\git\\ciremai\\report_jrxml'
+                resource= settings.RESULT_REPORT_DIR
             )
-    
-    """
-    order = Orders.objects.get(pk=pk)
-    input_file = settings.RESULT_REPORT_FILE
-    ts = datetime.today().strftime('%Y%m%d%H%M%S')
-    parameters ={'ORDER_ID': pk}
-    output = settings.MEDIA_ROOT+'\\report\\'+str(order.number)+'_'+ts
-    con = settings.JASPER_CONN
-    jasper = JasperPy()
-    jasper.process(
-        input_file,
-        output_file=output,
-        format_list=["pdf"],
-        parameters=parameters,
-        db_connection=con,
-        locale='en_US'
-    )
-    """
+
     base_url =  request.build_absolute_uri('/')[:-1].strip("/")
     url_pdf = base_url+'/media/report/'+str(order.number)+'_'+ts+'.pdf'
     
@@ -221,79 +204,6 @@ def order_result_report(request,pk):
     
     template = 'middleware/result_pdf_preview.html'
     context = {'order':order,'url_pdf' : url_pdf}
-    return render(request,template,context)
-
-def order_results_print2(request,pk):
-    order = Orders.objects.get(pk=pk)
-    response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'filename="somefilename.pdf"'
-    p = canvas.Canvas(response)
-    p.setLineWidth(.3)
-    p.setFont('Helvetica', 12)
-    
-    # judul
-    p.drawString(230,780,'HASIL PEMERIKSAAN')
-     
-    # sisi kiri
-    p.drawString(30,750,'Nama')
-    p.drawString(120,750,": "+str(order.patient.name))
-    p.drawString(30,735,'No. RM')
-    p.drawString(120,735,": "+str(order.patient.patient_id))
-    p.drawString(30,720,'Alamat')
-    p.drawString(120,720,": "+str(order.patient.address))
-    
-    # sisi kanan
-    p.drawString(350,750,"No Lab")
-    p.drawString(440,750,": "+str(order.number))
-    
-    
-    # Table header
-    p.line(30,700,580,700)
-    p.drawString(30,685,"Nama Pemeriksaan")
-    p.drawString(200,685,"Hasil")
-    p.drawString(340,685,"Nilai Rujukan")
-    p.drawString(480,685,"Informasi")
-    p.line(30,680,580,680)
-    
-    ordertests = models.OrderResults.objects.filter(order = order,validation_status__gte=2).values('test_id',
-                                                                           'test__test_group__name',
-                                                                           'test__name',
-                                                                           'test__result_type',
-                                                                           'result__alfa_result',
-                                                                           'is_header',
-                                                                           'unit',
-                                                                           'result__ref_range',
-                                                                           'result__mark',
-                                                                           'validation_status',
-                                                                           'validation_user').order_by('test__test_group__sort','test__sort')
-    # detail
-    row = 0
-    for res in ordertests:
-        row_pos = int(665 - (row*15)) 
-        p.drawString(30,row_pos,str(res['test__name']))
-        if res['result__mark']:
-            p.drawString(180,row_pos,'*')
-        p.drawString(210,row_pos,str(res['result__alfa_result']))
-        p.drawString(280,row_pos,str(res['unit']))
-        if res['result__ref_range']:
-            p.drawString(350,row_pos,str(res['result__ref_range']))
-        row += 1
-    
-    p.showPage()
-    p.save()
-    
-    # set validation printed
-    if request.user.is_authenticated():
-        order_res = models.OrderResults.objects.filter(order_id=pk,validation_status=3).update(validation_status=4,print_user=str(request.user),print_date=datetime.now())
-    
-    return response
-
-def order_results_print2(request,pk):
-    order = Orders.objects.get(pk=pk)
-    template = 'middleware/order_result_print.html'
-    context = {'order':order}
-    if request.user.is_authenticated():
-        order_res = models.OrderResults.objects.filter(order_id=pk,validation_status=2).update(validation_status=3,print_user=str(request.user),print_date=datetime.now())
     return render(request,template,context)
 
 def order_results(request,pk):

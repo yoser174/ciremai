@@ -96,6 +96,7 @@ LABEL_PRINTER_PORT = 'COM10'
 RESULT_REPORT_FILE_HEADER = 'D:\\git\\ciremai\\report_jrxml\\ciremaiHeader.jrxml'
 RESULT_REPORT_FILE_MAIN = 'D:\\git\\ciremai\\report_jrxml\\ciremaiReport.jrxml'
 RESULT_REPORT_FILE = 'D:\\git\\ciremai\\report_jrxml\\ciremaiReport.jasper'
+RESULT_REPORT_DIR = 'D:\\git\\ciremai\\report_jrxml'
 
 REPORT_DIR = 'D:\\git\\ciremai\\report_jrxml\\out'
 # Jasper Report Database
