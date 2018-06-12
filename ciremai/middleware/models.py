@@ -397,7 +397,7 @@ class OrderResults(models.Model):
     result = models.ForeignKey(Results,on_delete=models.PROTECT,verbose_name=_("Result"),related_name='orderresults_result',null=True)
     unit = models.CharField(max_length=100,verbose_name=_("Result unit"),null=True)
     ref_range = models.CharField(max_length=200,verbose_name=_("Reference range"),null=True)
-    patologi_mark = models.CharField(max_length=2,verbose_name=_("Patologi mark"),null=True)
+    patologi_mark = models.CharField(max_length=20,verbose_name=_("Patologi mark"),null=True)
     validation_status = models.IntegerField(verbose_name=_("Validation status"),default=0)
     techval_user = models.CharField(max_length=20,verbose_name=_("Techical validated by"),null=True)
     techval_date = models.DateTimeField(verbose_name=_("Technical Validated date"),null=True)
@@ -414,4 +414,52 @@ class OrderResults(models.Model):
     def __str__(self):
         return "%s %s %s" % (self.order,self.test,self.result)
     
+class HistoryOrders(models.Model):
+    order =  models.ForeignKey(Orders,on_delete=models.PROTECT,verbose_name=_("Order"),related_name='historyorder_order')
+    test = models.ForeignKey(Tests,on_delete=models.PROTECT,verbose_name=_("Test"),related_name='historyorder_test')
+    action_code = models.CharField(max_length=20,verbose_name=_("Action code"),null=True)
+    action_user = models.CharField(max_length=20,verbose_name=_("Action by"),null=True)
+    action_date = models.DateTimeField(verbose_name=_("Action date"),null=True)
+    action_text = models.CharField(max_length=1000,verbose_name=_("Action text"),null=True)
+    lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
+    lastmodifiedby = models.ForeignKey(
+        settings.AUTH_USER_MODEL, limit_choices_to={'is_staff': True},
+        blank=True, verbose_name=_("Last modified by"), null=True)
     
+    def __str__(self):
+        return "%s %s %s" % (self.order,self.test,self.action_text)
+    
+    
+class OrderExtended(models.Model):
+    order = models.OneToOneField(Orders,on_delete=models.CASCADE,primary_key=True,)
+    result_pdf_url = models.CharField(max_length=500,verbose_name=_("Result PDF url"),null=True)
+    
+    lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
+    lastmodifiedby = models.ForeignKey(
+        settings.AUTH_USER_MODEL, limit_choices_to={'is_staff': True},
+        blank=True, verbose_name=_("Last modified by"), null=True)
+    
+    def get_progress(self):
+        ores = OrderResults.objects.filter(order=self.order,validation_status=0,is_header=0)
+        if ores.count()>0:
+            return 0
+        ores = OrderResults.objects.filter(order=self.order,validation_status=1,is_header=0)
+        if ores.count()>0:
+            return 25
+        ores = OrderResults.objects.filter(order=self.order,validation_status=2,is_header=0)
+        if ores.count()>0:
+            return 50
+        ores = OrderResults.objects.filter(order=self.order,validation_status=3,is_header=0)
+        if ores.count()>0:
+            return 75
+        ores = OrderResults.objects.filter(order=self.order,validation_status=4,is_header=0)
+        if ores.count()>0:
+            return 100
+        
+    
+    def __str__(self):
+        return "%s" % (self.order)
+    
+    
+        
+        

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jdbcDataAdapter class="net.sf.jasperreports.data.jdbc.JdbcDataAdapterImpl"><name>ciremai</name><driver>com.mysql.jdbc.Driver</driver><username>root</username><password>P455word</password><savePassword>true</savePassword><url>jdbc:mysql://localhost/ciremai</url><database></database><serverAddress></serverAddress><classpath>D:\git\ciremai\lib\mysql-connector-java-5.1.46-bin.jar</classpath></jdbcDataAdapter>

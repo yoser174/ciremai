@@ -28,6 +28,11 @@ django-simple-history==1.9.0
 django-tables2==1.16.0
 django-widget-tweaks==1.4.1
 num2words
+pyserial
+django-mptt
+
+# mysql-db
+# https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysql-python
 
 5. run make migration
 

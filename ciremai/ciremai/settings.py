@@ -90,9 +90,19 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # HL7 Message
 HL7_ORDER_DIR = 'C:\\HL7'
-# label barcode pritner port
+# label barcode printer port
 LABEL_PRINTER_PORT = 'COM10'
-
+# report file
+RESULT_REPORT_FILE = 'D:\\git\\ciremai\\report_jrxml\\ResultReport.jrxml'
+REPORT_DIR = 'D:\\git\\ciremai\\report_jrxml\\out'
+# Jasper Report Database
+JASPER_CONN = {
+        'driver': 'mysql',
+        'username': 'root',
+        'password': 'P455word',
+        'host': '127.0.0.1',
+        'database': 'ciremai'
+    }
 
 #########################
 
@@ -203,7 +213,8 @@ STATICFILES_DIRS = [
     '/var/www/static/',
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = 'D://git//ciremai//ciremai//media'
 MEDIA_URL = '/media/'
 
 

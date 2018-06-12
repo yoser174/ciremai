@@ -12,7 +12,7 @@
 
 {% block breadcrumb_menu %}
     <li class="active"><a href="{% url 'orders' %}">{% trans "Orders" %}</a></li>
-    <li class="active">{% if orders %}{% trans "Edit order results" %}{% else %}{% trans "Create order results" %}{% endif%} </li>
+    <li class="active">{{ order }}</li>
 {% endblock %}
 
 {% block main_header %}
@@ -65,21 +65,21 @@
 	     	<td>	
 	     	<div class='progress progress-striped'>
 	     		{% if o.validation_status == 0 %}
-                	<div class="progress-bar progress-bar-danger" role="progressbar" style="width: 20%;">
+                	<div class="progress-bar progress-bar-danger" role="progressbar" style="width: 0%;">
                 {% endif %}
                 {% if o.validation_status == 1 %}
-                	<div class="progress-bar progress-bar-warning" role="progressbar" style="width: 40%;">
+                	<div class="progress-bar progress-bar-danger" role="progressbar" style="width: 25%;">
                 {% endif %}
                 {% if o.validation_status == 2 %}
-                	<div class="progress-bar progress-bar-success" role="progressbar" style="width: 60%;">
+                	<div class="progress-bar progress-bar-warning" role="progressbar" style="width: 50%;">
                 {% endif %}
                 {% if o.validation_status == 3 %}
-                	<div class="progress-bar progress-bar-info" role="progressbar" style="width: 80%;">
+                	<div class="progress-bar progress-bar-success" role="progressbar" style="width: 75%;">
                 {% endif %}
                 {% if o.validation_status == 4 %}
                 	<div class="progress-bar progress-bar-info" role="progressbar" style="width: 100%;">
                 {% endif %}
-                </div>
+                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</div>
             </div>
 			</td>
 	     	<td>{{ o.test__name }}</td>
@@ -131,6 +131,9 @@
     
     <a href="print" target="_blank" class="btn btn-default" role="button">
     <span class="fa fa-print"></span>&nbsp;{% trans "Print Result" %}</a>
+    
+    <a href="history" class="btn btn-default" role="button">
+    <span class="fa fa-clock-o"></span>&nbsp;{% trans "History" %}</a>
     
     </form>
 {% endblock %}

@@ -30,6 +30,9 @@ urlpatterns = [
     url(r'^orders/results/(?P<pk>\d+)/medval/$', views.order_results_medval, name='order_results_medval'),
     url(r'^orders/results/(?P<pk>\d+)/print/$', views.order_results_print, name='order_results_print'),
     url(r'^orders/results/(?P<pk>\d+)/repeat/$', views.order_results_repeat, name='order_results_repeat'),
+    url(r'^orders/results/(?P<pk>\d+)/history/$', views.order_results_history, name='order_results_history'),
+    url(r'^orders/resultreport/(?P<pk>\d+)/$', views.order_result_report, name='order_results_report'),
+    
     
     
     # #############

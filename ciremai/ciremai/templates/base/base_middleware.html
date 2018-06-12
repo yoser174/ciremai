@@ -106,6 +106,9 @@
                         </h5>
                     </p>
                     <li><a href="/admin/"><i class="fa fa-gears"></i>Administration</a></li>
+                    <li><a href="/billing/" ><i class="fa fa-gears"></i>Billing</a></li>
+                    
+                    <li class="active"><a href="/middleware/"><i class="fa fa-gears"></i>Middleware</a></li>
                     
 
                   {% else %}
@@ -128,9 +131,7 @@
                           <i class="fa fa-list"></i>
                           <span>Routine task</span>
                       </a>
-                      <ul class="sub">
-                          {% if perms.billing.view_orders %} <li {% if request.path == '/middleware/rcvsample/' %} class="active"{% endif %} ><a href="/middleware/rcvsample/">Receive sample</a></li>{% endif %}
-                      </ul>
+                    
                       <ul class="sub">
                           {% if perms.billing.view_orders %} <li {% if request.path == '/middleware/orders/'%} class="active"{% endif %} ><a href="/middleware/orders/">Orders</a></li>{% endif %}
                       </ul>

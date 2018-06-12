@@ -149,19 +149,14 @@ def AvatarAdd(request,extra_context=None,next_override=None,upload_form=UploadAv
 
 def report_jm(request):
     template = 'report/jm.html'
-    #orders = models.Orders.objects.all()
     data = models.Orders.objects.all()
-    
-        
-    
+      
     if request.GET.get('order_date'):
         d_range = request.GET.get('order_date')
         #04/01/2018 - 04/30/2018
         start_date = d_range[:10]
         end_date = d_range[13:23]
-        print start_date
-        print end_date
-        
+ 
         data = data.filter(order_date__range=[start_date,end_date] )
     
     filter = filters.JMFilter(request.GET,queryset=data)
