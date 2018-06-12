@@ -156,6 +156,33 @@ def order_results_repeat(request,pk):
 
 def order_results_print(request,pk):
     order = Orders.objects.get(pk=pk)
+    
+    input_file_header = settings.RESULT_REPORT_FILE_HEADER
+    input_file_main = settings.RESULT_REPORT_FILE_MAIN
+    input_file = settings.RESULT_REPORT_FILE
+    
+    ts = datetime.today().strftime('%Y%m%d%H%M%S')
+    parameters ={'ORDER_ID': pk}
+    output = settings.MEDIA_ROOT+'\\report\\'+str(order.number)+'_'+ts
+    con = settings.JASPER_CONN
+    
+    jasper = JasperPy()
+
+    jasper.compile(input_file_header)
+    jasper.compile(input_file_main)
+    
+    jasper.process(
+                input_file,
+                output_file=output,
+                format_list=["pdf"],
+                parameters=parameters,
+                db_connection=con,
+                locale='en_US',  
+                resource='D:\\git\\ciremai\\report_jrxml'
+            )
+    
+    """
+    order = Orders.objects.get(pk=pk)
     input_file = settings.RESULT_REPORT_FILE
     ts = datetime.today().strftime('%Y%m%d%H%M%S')
     parameters ={'ORDER_ID': pk}
@@ -170,7 +197,7 @@ def order_results_print(request,pk):
         db_connection=con,
         locale='en_US'
     )
-    
+    """
     base_url =  request.build_absolute_uri('/')[:-1].strip("/")
     url_pdf = base_url+'/media/report/'+str(order.number)+'_'+ts+'.pdf'
     

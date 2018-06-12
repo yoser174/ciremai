@@ -380,6 +380,7 @@ class TestParameters(models.Model):
     method = models.CharField(max_length=100,verbose_name=_("Method"),null=True,blank=True)
     unit = models.CharField(max_length=100,verbose_name=_("Test unit"),null=True)
     decimal = models.IntegerField(verbose_name=_("Decimal place"),null=True)
+    special_information = models.CharField(max_length=1000,verbose_name=_("Special information"),null=True,blank=True)
     
     lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
     lastmodifiedby = models.ForeignKey(

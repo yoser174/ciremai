@@ -93,7 +93,10 @@ HL7_ORDER_DIR = 'C:\\HL7'
 # label barcode printer port
 LABEL_PRINTER_PORT = 'COM10'
 # report file
-RESULT_REPORT_FILE = 'D:\\git\\ciremai\\report_jrxml\\ResultReport.jrxml'
+RESULT_REPORT_FILE_HEADER = 'D:\\git\\ciremai\\report_jrxml\\ciremaiHeader.jrxml'
+RESULT_REPORT_FILE_MAIN = 'D:\\git\\ciremai\\report_jrxml\\ciremaiReport.jrxml'
+RESULT_REPORT_FILE = 'D:\\git\\ciremai\\report_jrxml\\ciremaiReport.jasper'
+
 REPORT_DIR = 'D:\\git\\ciremai\\report_jrxml\\out'
 # Jasper Report Database
 JASPER_CONN = {

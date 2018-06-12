@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ciremaiHeader" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2ecbd8da-c5cb-4400-9e75-94a1fec04fb0">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="bin\DataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="ORDER_ID" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select billing_orders.number,billing_patients.name pat_name,billing_patients.patient_id,
+DATE_FORMAT(billing_patients.dob, '%d/%m/%Y') dob,
+ROUND(DATEDIFF(billing_orders.order_date, billing_patients.dob)/365) AS ageInYears,
+billing_genders.name gender,billing_doctors.name doctor,billing_insurance.name insurance,
+billing_origins.name origin,
+billing_diagnosis.name diagnosis,billing_orders.note,
+DATE_FORMAT(billing_orders.dateofcreation, '%d/%m/%Y %H:%i:%s') order_date
+from
+billing_orders
+left join billing_patients on billing_orders.patient_id = billing_patients.id
+left join billing_insurance on billing_orders.insurance_id = billing_insurance.id
+left join billing_genders on billing_patients.gender_id = billing_genders.id
+left join billing_doctors on billing_orders.doctor_id = billing_doctors.id
+left join billing_diagnosis on billing_orders.diagnosis_id = billing_diagnosis.id
+left join billing_origins on billing_orders.origin_id = billing_origins.id
+where
+billing_orders.id = $P{ORDER_ID}]]>
+	</queryString>
+	<field name="number" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="number"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="billing_orders"/>
+	</field>
+	<field name="pat_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="pat_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="billing_patients"/>
+	</field>
+	<field name="patient_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="patient_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="billing_patients"/>
+	</field>
+	<field name="dob" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dob"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="billing_patients"/>
+	</field>
+	<field name="ageInYears" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ageInYears"/>
+	</field>
+	<field name="gender" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="gender"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="billing_genders"/>
+	</field>
+	<field name="doctor" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="doctor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="billing_doctors"/>
+	</field>
+	<field name="insurance" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="insurance"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="billing_insurance"/>
+	</field>
+	<field name="origin" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="origin"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="billing_origins"/>
+	</field>
+	<field name="diagnosis" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="diagnosis"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="billing_diagnosis"/>
+	</field>
+	<field name="note" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="note"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="billing_orders"/>
+	</field>
+	<field name="order_date" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="order_date"/>
+	</field>
+	<variable name="Age_Str" class="java.lang.String">
+		<variableExpression><![CDATA[$F{ageInYears}.toPlainString()]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="121" splitType="Stretch">
+			<textField>
+				<reportElement x="70" y="0" width="100" height="17" uuid="33127a92-de47-4efc-9310-d249edc51af0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4012ce83-b5f0-4f70-b1db-4d9b1cd44cc1"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pat_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="60" height="17" uuid="4f5c9e44-79fd-4503-866c-65eae0b7ce63">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4012ce83-b5f0-4f70-b1db-4d9b1cd44cc1"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Patient]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="17" width="100" height="17" uuid="ebe06645-7fe6-4659-b2ce-9bd559e6d9c1"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{patient_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="17" width="60" height="17" uuid="7c39cede-6a57-4037-aecc-53268d4ffa19"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Patient ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="34" width="100" height="17" uuid="2dd8d206-c8e5-4b66-8c77-6a13834f90f7"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{dob}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="34" width="60" height="17" uuid="453d0fb0-4c00-40a9-b366-21e823eed1ba"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[DOB]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="52" width="60" height="17" uuid="c0a68f58-da09-4131-bb4e-e2707623251c"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Age]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="69" width="100" height="17" uuid="a1304fbb-2e2e-49b4-91bf-eda9f20160eb"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{gender}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="69" width="60" height="17" uuid="1bfa569c-7c98-4ef5-9e57-b18774c7f027"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Gender]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="70" y="86" width="100" height="17" uuid="eeeafe4c-8b67-4d4e-ae8a-4c998c52be64"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{doctor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="86" width="60" height="17" uuid="0c8f72a3-4858-4d86-a498-211ab6e884dd"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Doctor]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="70" y="103" width="100" height="17" uuid="92a0b347-207d-4f15-963f-dc7e87003174"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{diagnosis}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="104" width="60" height="17" uuid="a0752245-57f8-4b57-b872-96da539fae3c"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Diagnosis]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="370" y="0" width="100" height="17" uuid="7e6c9956-783e-40bd-9b53-5c98095a336f"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{number}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="300" y="0" width="60" height="17" uuid="c3bbd358-aa08-4eb5-a0e3-895d8150caf4"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Order ID]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="370" y="17" width="100" height="17" uuid="b69a3bdd-6613-4254-86d8-6abb49a25731"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{insurance}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="300" y="18" width="60" height="17" uuid="3873f745-7922-4fa3-814e-4a95d7dec1ca"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Insurance]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="370" y="35" width="100" height="17" uuid="3c94b660-7a5f-4cd2-b37f-1b03b3e32feb"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{origin}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="300" y="35" width="60" height="17" uuid="0ce1ab4a-52a1-492f-8579-b5449770bf72"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Origin]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="370" y="69" width="100" height="17" uuid="4ef99bcc-21cd-4b8d-ba91-7c31d7694d28"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{note}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="300" y="69" width="60" height="17" uuid="c6220078-ee29-4076-9064-6034e3f205e4"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Note]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="370" y="52" width="130" height="17" uuid="185c19cf-f104-4f31-8c15-71b0b3c96628"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{order_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="300" y="52" width="60" height="17" uuid="16f185cf-29fe-4ff9-8b1b-9d4dfb8e29e9"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Order date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="52" width="100" height="17" uuid="1990829c-2666-4b05-b380-e4dc474b6eb6"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[CONCATENATE($V{Age_Str}," Year")
+]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="60" y="0" width="10" height="17" uuid="2861ffea-eac1-46dd-bd21-c269904e448c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="17" width="10" height="17" uuid="02d668af-94ff-43e6-8f08-5fc5d7056cd4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="34" width="10" height="17" uuid="1892ce01-9f68-4c14-9ce9-a48b7556d212"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="52" width="10" height="17" uuid="5b7f04ce-7266-4296-9344-e8b2c0cdea7a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="69" width="10" height="17" uuid="5616ca27-c661-4d41-9c22-395c82cb1d49"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="86" width="10" height="17" uuid="133f7e18-b67b-44de-a214-9e8fa584118f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="103" width="10" height="17" uuid="25205521-890a-4504-be9b-8b6d67543f4d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="0" width="10" height="17" uuid="e3f83a96-c406-4c59-8cbd-a9cb02ae7b26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="18" width="10" height="17" uuid="4e27a810-ce7b-4387-9bb6-0486f191d9b6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="35" width="10" height="17" uuid="0583b19a-4a0c-4f04-9770-74e03c8aa75e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="52" width="10" height="17" uuid="68cec7d8-c7b2-482e-b703-a4b0b23f87b1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="69" width="10" height="17" uuid="f2ed439a-aa57-4faa-9a1b-8adc644ef1f3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>
