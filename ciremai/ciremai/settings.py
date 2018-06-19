@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'simple_history',
     'widget_tweaks',
     'mptt',
+    'django_select2',
     #'dal',
     #'dal_select2',
     #

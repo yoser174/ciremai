@@ -7,7 +7,7 @@
                 data-toggle="tooltip" data-placement="top">
             <span class="glyphicon glyphicon-search"></span></button>
     {% endif %}
-    {% if perms.billing.edit_patients %}
+    {% if perms.billing.change_patients %}
         <button class="btn btn-info" onclick="location.href=
         	'{% url 'patient_edit' record.pk %}'" title="{% trans 'Edit patient' %}"
                 data-toggle="tooltip" data-placement="top">

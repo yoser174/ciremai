@@ -462,5 +462,21 @@ class OrderExtended(models.Model):
         return "%s" % (self.order)
     
     
+class Hosts(models.Model):
+    code = models.CharField(max_length=10,verbose_name=_("Code"),unique=True)
+    name = models.CharField(max_length=100,verbose_name=_("Name"))
+    active = models.BooleanField(verbose_name=_("Active?"), default=True,blank=True)
+    input_path = models.CharField(max_length=100,verbose_name=_("input path"))
+    
+    lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
+    lastmodifiedby = models.ForeignKey(
+        settings.AUTH_USER_MODEL, limit_choices_to={'is_staff': True},
+        blank=True, verbose_name=_("Last modified by"), null=True)
+    
+    def __str__(self):
+        return "%s - %s" % (self.code,self.name)
+
+    
+    
         
         

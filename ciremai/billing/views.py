@@ -7,7 +7,8 @@ from braces.views import PermissionRequiredMixin, LoginRequiredMixin
 from django_tables2 import SingleTableView, RequestConfig
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
-from .tables import TestGroupsTable,PatientsTable,SelectPatientsTable,JMTable
+from django.db.models import Count
+from .tables import TestGroupsTable,PatientsTable,SelectPatientsTable,JMTable,InsuranceTable,TestsTable,OriginTable
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
@@ -48,7 +49,8 @@ def direct_to_template(request,template,extra_context=None, **kwargs):
 class UpdateUserProfile(LoginRequiredMixin,NamedFormsetsMixin,UpdateWithInlinesView):
     model = User
     fields = ['first_name', 'last_name', 'email']
-    success_url = reverse_lazy('home')
+    template_name = 'auth/user_form_middleware.html'
+    success_url = reverse_lazy('home_billing')
 
 def login_user(request):
     logout(request)
@@ -140,12 +142,105 @@ def AvatarAdd(request,extra_context=None,next_override=None,upload_form=UploadAv
     context.update(extra_context)
     template_name = 'auth/avatar_add.html'
     return render(request, template_name, context)    
-            
+
+
 
 # #################################
-# ##   Billing Function Views  ##
+# ##         Report Views        ##
 # #################################
+def report_tests(request):
+    template = 'report/insurance.html'
+    data = models.Orders.objects.values('order_items__test__name').annotate(Count('number')).order_by()
+      
+    if request.GET.get('order_date'):
+        d_range = request.GET.get('order_date')
+        #04/01/2018 - 04/30/2018
+        start_date = d_range[:10]
+        end_date = d_range[13:23]
+ 
+        data = data.filter(order_date__range=[start_date,end_date] )
+        
+        
+    print data.query
+    
+    filter = filters.TestsFilter(request.GET,queryset=data)
+    orderstable = TestsTable(data)
+    orderstable.paginate(page=request.GET.get('page', 1), per_page=10)
+    
+    
+    RequestConfig(request).configure(orderstable)
 
+    export_format = request.GET.get('_export', None)
+    if TableExport.is_valid_format(export_format):
+        exporter = TableExport(export_format, orderstable)
+        return exporter.response('table.{}'.format(export_format))
+
+        
+    context = {'orderstable':orderstable,'filter':filter}
+    return render(request,template,context)  
+
+def report_insurance(request):
+    template = 'report/insurance.html'
+    data = models.Orders.objects.values('insurance__name').annotate(Count('number')).order_by()
+      
+    if request.GET.get('order_date'):
+        d_range = request.GET.get('order_date')
+        #04/01/2018 - 04/30/2018
+        start_date = d_range[:10]
+        end_date = d_range[13:23]
+ 
+        data = data.filter(order_date__range=[start_date,end_date] )
+        
+        
+    print data.query
+    
+    filter = filters.InsuranceFilter(request.GET,queryset=data)
+    orderstable = InsuranceTable(data)
+    orderstable.paginate(page=request.GET.get('page', 1), per_page=10)
+    
+    
+    RequestConfig(request).configure(orderstable)
+
+    export_format = request.GET.get('_export', None)
+    if TableExport.is_valid_format(export_format):
+        exporter = TableExport(export_format, orderstable)
+        return exporter.response('table.{}'.format(export_format))
+
+        
+    context = {'orderstable':orderstable,'filter':filter}
+    return render(request,template,context)  
+    
+def report_origin(request):
+    template = 'report/origin.html'
+    data = models.Orders.objects.values('origin__name').annotate(Count('number')).order_by()
+      
+    if request.GET.get('order_date'):
+        d_range = request.GET.get('order_date')
+        #04/01/2018 - 04/30/2018
+        start_date = d_range[:10]
+        end_date = d_range[13:23]
+ 
+        data = data.filter(order_date__range=[start_date,end_date] )
+        
+        
+    print data.query
+    
+    filter = filters.OriginFilter(request.GET,queryset=data)
+    orderstable = OriginTable(data)
+    orderstable.paginate(page=request.GET.get('page', 1), per_page=10)
+    
+    
+    RequestConfig(request).configure(orderstable)
+
+    export_format = request.GET.get('_export', None)
+    if TableExport.is_valid_format(export_format):
+        exporter = TableExport(export_format, orderstable)
+        return exporter.response('table.{}'.format(export_format))
+
+        
+    context = {'orderstable':orderstable,'filter':filter}
+    return render(request,template,context)  
+    
 
 def report_jm(request):
     template = 'report/jm.html'
@@ -175,6 +270,14 @@ def report_jm(request):
     context = {'orderstable':orderstable,'filter':filter}
     return render(request,template,context)  
     
+
+            
+
+# #################################
+# ##   Billing Function Views  ##
+# #################################
+
+
 
 def order_patient(request):
     if request.method == 'POST':  

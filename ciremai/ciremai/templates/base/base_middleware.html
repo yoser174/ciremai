@@ -94,23 +94,27 @@
 
               	    <p class="centered">
                     
-                        <a href="{% url 'avatar_change' %}">{% if avatar %}
+                        <a href="{% url 'avatar_change_middleware' %}">{% if avatar %}
                         {% avatar user 60 class="img-thumbnail" width="60" height="60" %}
                         {% else %}
                         <img src="/media/avatars/avatar.jpg" width="60" height="60" alt="no avatar" class="img-thumbnail">
                         {% endif %}</a>
                         <h5 class="centered">
-                            <a href="{% url 'profile_update' user.pk %}">
+                            <a href="{% url 'profile_update_middleware' user.pk %}">
                                 {{ user }}
                             </a>
                         </h5>
                     </p>
+                    {% if perms.admin %}
                     <li><a href="/admin/"><i class="fa fa-gears"></i>Administration</a></li>
-                    <li><a href="/billing/" ><i class="fa fa-gears"></i>Billing</a></li>
+                    {% endif %}
+                    {% if perms.billing %}
+                    <li><a href="/billing/"><i class="fa fa-gears"></i>Billing</a></li>
+                    {% endif %}
+                    {% if perms.middleware %}
+                    <li class="active"><a href="/middleware/" ><i class="fa fa-gears"></i>Middleware</a></li>
+                    {% endif %}
                     
-                    <li class="active"><a href="/middleware/"><i class="fa fa-gears"></i>Middleware</a></li>
-                    
-
                   {% else %}
 
                       <li><a href="/middleware/login/"><i class="fa fa-sign-in"></i>Login</a></li>

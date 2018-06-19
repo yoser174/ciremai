@@ -1,0 +1,1437 @@
+2018-06-19 14:48:12,252 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 14:48:12,252 - host_hl7 - INFO - hl7 dir: D:\HL7\result
+2018-06-19 14:49:49,769 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 14:49:49,801 - host_hl7 - INFO - hl7 dir: D:\HL7\result
+2018-06-19 14:49:59,812 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 14:49:59,862 - host_hl7 - INFO - hl7 dir: D:\HL7\result
+2018-06-19 14:50:11,171 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 14:50:11,233 - host_hl7 - INFO - hl7 dir: D:\HL7\result
+2018-06-19 14:51:15,805 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 14:51:15,822 - host_hl7 - INFO - hl7 dir: D:\HL7\result
+2018-06-19 14:51:28,190 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 14:51:28,236 - host_hl7 - INFO - hl7 dir: D:\HL7\result
+2018-06-19 14:51:48,901 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 14:51:48,947 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 14:52:21,875 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 14:52:21,905 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 14:52:33,828 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 14:52:33,858 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 14:53:09,375 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 14:53:09,438 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 14:53:20,526 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 14:53:20,526 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 14:53:28,740 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 14:53:28,756 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 14:57:09,753 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 14:57:09,769 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:09:13,066 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:09:13,114 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:09:34,453 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:09:34,483 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:09:49,480 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:09:49,513 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:09:56,033 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:09:56,065 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:10:02,006 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:10:02,039 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:10:16,198 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:10:16,230 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:10:33,760 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:10:33,792 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:10:49,904 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:10:49,934 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:10:54,279 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:10:54,325 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:10:58,305 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:10:58,338 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:11:22,846 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:11:22,908 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:14:25,052 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:14:25,052 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:15:00,950 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:15:00,982 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:15:10,311 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:15:10,325 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:15:10,342 - host_hl7 - INFO -  SELECT order_id FROM billing_ordersamples WHERE sample_no = '1806190041' 
+2018-06-19 15:15:10,342 - host_hl7 - INFO - ()
+2018-06-19 15:16:18,213 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:16:18,232 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:16:18,246 - host_hl7 - INFO -  SELECT order_id FROM billing_ordersamples WHERE sample_no = '1806190002 ' 
+2018-06-19 15:16:18,253 - host_hl7 - INFO - ()
+2018-06-19 15:16:40,561 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:16:40,589 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:16:40,601 - host_hl7 - INFO -  SELECT order_id FROM billing_ordersamples WHERE sample_no = '1806190002' 
+2018-06-19 15:16:40,608 - host_hl7 - INFO - ()
+2018-06-19 15:17:21,940 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:17:21,948 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:17:21,964 - host_hl7 - INFO -  SELECT order_id FROM billing_orders WHERE sample_no = '1806190002' 
+2018-06-19 15:17:21,973 - host_hl7 - ERROR - (1054, "Unknown column 'order_id' in 'field list'")
+2018-06-19 15:17:21,982 - host_hl7 - INFO - None
+2018-06-19 15:17:31,849 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:17:31,871 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:17:31,884 - host_hl7 - INFO -  SELECT order_id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:17:31,891 - host_hl7 - ERROR - (1054, "Unknown column 'order_id' in 'field list'")
+2018-06-19 15:17:31,897 - host_hl7 - INFO - None
+2018-06-19 15:17:37,562 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:17:37,578 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:17:37,591 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:17:37,596 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:18:50,653 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:18:50,653 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:18:50,668 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:18:50,668 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:19:48,756 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:19:48,788 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:19:48,802 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:19:48,802 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:20:02,476 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:20:02,476 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:20:02,493 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:20:02,493 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:20:11,921 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:20:11,938 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:20:11,953 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:20:11,953 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:20:15,842 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:20:15,842 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:20:15,858 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:20:15,874 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:20:22,299 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:20:22,315 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:20:22,331 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:20:22,331 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:20:30,890 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:20:30,890 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:20:30,905 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:20:30,905 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:20:38,308 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:20:38,308 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:20:38,323 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:20:38,323 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:21:08,857 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:21:08,871 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:21:08,888 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:21:08,888 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:21:12,816 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:21:12,848 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:21:12,862 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:21:12,862 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:21:32,990 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:21:33,006 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:21:33,022 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:21:33,022 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:22:11,698 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:22:11,714 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:22:11,730 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:22:11,730 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:22:20,131 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:22:20,131 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:22:20,147 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:22:20,147 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:22:23,986 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:22:24,019 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:22:24,033 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:22:24,033 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:23:43,576 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:23:43,608 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:23:43,624 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:23:43,624 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:24:00,078 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:24:00,109 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:24:00,125 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:24:00,125 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:24:08,012 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:24:08,012 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:24:08,026 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:24:08,026 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:24:08,042 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:24:16,885 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:24:16,901 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:24:16,917 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:24:16,917 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:24:16,917 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:24:57,558 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:24:57,588 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:24:57,605 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:24:57,605 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:24:57,605 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:24:57,619 - host_hl7 - INFO -  SELECT test_id FROM middleware_instrumenttests WHERE test_code ='PPT'  
+2018-06-19 15:24:57,619 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:24:57,635 - host_hl7 - INFO -  SELECT test_id FROM middleware_instrumenttests WHERE test_code ='APTT'  
+2018-06-19 15:24:57,635 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:24:57,635 - host_hl7 - INFO -  SELECT test_id FROM middleware_instrumenttests WHERE test_code ='INR'  
+2018-06-19 15:24:57,651 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:24:57,651 - host_hl7 - INFO -  SELECT test_id FROM middleware_instrumenttests WHERE test_code ='GDA'  
+2018-06-19 15:26:24,181 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:26:24,181 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:26:24,197 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:26:24,197 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:26:24,213 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:26:24,213 - host_hl7 - INFO -  SELECT test_id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:26:24,213 - host_hl7 - ERROR - (1054, "Unknown column 'test_id' in 'field list'")
+2018-06-19 15:26:32,555 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:26:32,569 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:26:32,585 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:26:32,601 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:26:32,601 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:26:32,617 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:26:32,648 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:26:32,664 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:26:32,694 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:26:32,710 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:26:32,726 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:26:32,742 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:27:46,187 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:27:46,217 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:27:46,233 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:27:46,233 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:27:46,233 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:27:46,249 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:27:46,249 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:27:46,249 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:27:56,355 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:27:56,369 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:27:56,385 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:27:56,385 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:27:56,385 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:27:56,401 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:27:56,401 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:27:56,401 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:27:56,417 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:27:56,417 - host_hl7 - INFO - Create new row for insert value.
+2018-06-19 15:27:56,433 - host_hl7 - INFO -  INSERT INTO middleware_orderresults (order_id,test_id,is_header,lastmodification,validation_status,print_status) VALUES ('5935','35','0','2018-06-19 15:27:56','1','0') 
+2018-06-19 15:27:56,447 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:27:56,447 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:27:56,447 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:27:56,447 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:27:56,463 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:27:56,463 - host_hl7 - INFO - Create new row for insert value.
+2018-06-19 15:27:56,463 - host_hl7 - INFO -  INSERT INTO middleware_orderresults (order_id,test_id,is_header,lastmodification,validation_status,print_status) VALUES ('5935','40','0','2018-06-19 15:27:56','1','0') 
+2018-06-19 15:27:56,479 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:27:56,479 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:27:56,494 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:27:56,494 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:27:56,494 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:27:56,510 - host_hl7 - INFO - Create new row for insert value.
+2018-06-19 15:27:56,510 - host_hl7 - INFO -  INSERT INTO middleware_orderresults (order_id,test_id,is_header,lastmodification,validation_status,print_status) VALUES ('5935','45','0','2018-06-19 15:27:56','1','0') 
+2018-06-19 15:27:56,526 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:27:56,526 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:27:56,526 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:27:56,542 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:27:56,542 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:27:56,542 - host_hl7 - INFO - Create new row for insert value.
+2018-06-19 15:27:56,556 - host_hl7 - INFO -  INSERT INTO middleware_orderresults (order_id,test_id,is_header,lastmodification,validation_status,print_status) VALUES ('5935','160','0','2018-06-19 15:27:56','1','0') 
+2018-06-19 15:34:57,691 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:34:57,753 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:34:57,769 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:34:57,769 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:34:57,769 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:34:57,786 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:34:57,786 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:34:57,786 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:34:57,801 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:34:57,801 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:34:57,816 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:34:57,816 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:34:57,816 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:34:57,832 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:34:57,832 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:34:57,832 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:34:57,848 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:34:57,848 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:34:57,848 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:34:57,864 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:34:57,864 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:34:57,864 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:34:57,878 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:34:57,878 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:35:34,065 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:35:34,081 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:35:34,095 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:35:34,095 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:35:34,095 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:35:34,111 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:35:34,111 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:35:34,111 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:35:34,128 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:37:15,025 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:37:15,025 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:37:15,040 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:37:15,055 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:37:15,055 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:37:15,072 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:37:15,072 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:37:15,086 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:37:15,086 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:37:56,520 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:37:56,536 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:37:56,552 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:37:56,552 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:37:56,566 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:37:56,566 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:37:56,566 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:37:56,582 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:37:56,582 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:37:56,598 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('12.8','5935','35','2018-06-19 15:37:56','HOST','','HOST','') 
+2018-06-19 15:37:56,598 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:37:56,614 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:37:56,614 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:37:56,614 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:37:56,630 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:37:56,630 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('30.5','5935','40','2018-06-19 15:37:56','HOST','','HOST','') 
+2018-06-19 15:37:56,644 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:37:56,661 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:37:56,661 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:37:56,677 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:37:56,677 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:37:56,691 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('1.02','5935','45','2018-06-19 15:37:56','HOST','','HOST','') 
+2018-06-19 15:37:56,707 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:37:56,723 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:37:56,723 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:37:56,739 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:37:56,755 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:37:56,755 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('80','5935','160','2018-06-19 15:37:56','HOST','','HOST','') 
+2018-06-19 15:38:54,482 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:38:54,482 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:38:54,497 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:38:54,497 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:38:54,513 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:38:54,513 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:38:54,529 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:38:54,529 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:38:54,529 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:38:54,545 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('12.8','5935','35','2018-06-19 15:38:54','HOST','[u'20180619142201']','HOST','[u'20180619142201']') 
+2018-06-19 15:38:54,559 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:38:54,559 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:38:54,575 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:38:54,575 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:38:54,592 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:38:54,592 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('30.5','5935','40','2018-06-19 15:38:54','HOST','[u'20180619142201']','HOST','[u'20180619142201']') 
+2018-06-19 15:38:54,607 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:38:54,622 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:38:54,638 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:38:54,638 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:38:54,654 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:38:54,654 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('1.02','5935','45','2018-06-19 15:38:54','HOST','[u'20180619142201']','HOST','[u'20180619142201']') 
+2018-06-19 15:38:54,670 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:38:54,684 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:38:54,684 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:38:54,700 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:38:54,700 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:38:54,716 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('80','5935','160','2018-06-19 15:38:54','HOST','[u'20180619142854']','HOST','[u'20180619142854']') 
+2018-06-19 15:39:20,313 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:39:20,313 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:39:20,329 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:39:20,329 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:39:20,345 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:39:20,361 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:39:20,361 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:39:20,361 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:39:20,378 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:39:20,378 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('12.8','5935','35','2018-06-19 15:39:20','HOST','20180619142201','HOST','20180619142201') 
+2018-06-19 15:39:20,408 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:39:20,408 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:39:20,424 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:39:20,456 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:39:20,456 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:39:20,470 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('30.5','5935','40','2018-06-19 15:39:20','HOST','20180619142201','HOST','20180619142201') 
+2018-06-19 15:39:20,502 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:39:20,502 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:39:20,517 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:39:20,533 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:39:20,533 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:39:20,549 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('1.02','5935','45','2018-06-19 15:39:20','HOST','20180619142201','HOST','20180619142201') 
+2018-06-19 15:39:20,565 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:39:20,579 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:39:20,579 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:39:20,579 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:39:20,595 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:39:20,595 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('80','5935','160','2018-06-19 15:39:20','HOST','20180619142854','HOST','20180619142854') 
+2018-06-19 15:39:35,407 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:39:35,421 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:39:35,437 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:39:35,437 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:39:35,453 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:39:35,453 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:39:35,453 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:39:35,469 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:39:35,469 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:39:35,469 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('12.8','5935','35','2018-06-19 15:39:35','HOST','2018','HOST','2018') 
+2018-06-19 15:39:35,484 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:39:35,500 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:39:35,500 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:39:35,500 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:39:35,516 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:39:35,516 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('30.5','5935','40','2018-06-19 15:39:35','HOST','2018','HOST','2018') 
+2018-06-19 15:39:35,532 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:39:35,532 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:39:35,546 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:39:35,546 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:39:35,562 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:39:35,562 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('1.02','5935','45','2018-06-19 15:39:35','HOST','2018','HOST','2018') 
+2018-06-19 15:39:35,578 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:39:35,578 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:39:35,578 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:39:35,594 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:39:35,594 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:39:35,609 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('80','5935','160','2018-06-19 15:39:35','HOST','2018','HOST','2018') 
+2018-06-19 15:40:06,263 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:40:06,263 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:40:06,278 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:40:06,278 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:40:06,293 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:40:06,293 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:40:06,293 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:40:06,309 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:40:06,309 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:40:06,309 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('12.8','5935','35','2018-06-19 15:40:06','HOST','20180','HOST','20180') 
+2018-06-19 15:40:06,325 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:40:06,341 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:40:06,341 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:40:06,341 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:40:06,357 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:40:06,357 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('30.5','5935','40','2018-06-19 15:40:06','HOST','20180','HOST','20180') 
+2018-06-19 15:40:06,372 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:40:06,372 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:40:06,388 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:40:06,388 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:40:06,388 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:40:06,404 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('1.02','5935','45','2018-06-19 15:40:06','HOST','20180','HOST','20180') 
+2018-06-19 15:40:06,404 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:40:06,420 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:40:06,420 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:40:06,420 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:40:06,434 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:40:06,434 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('80','5935','160','2018-06-19 15:40:06','HOST','20180','HOST','20180') 
+2018-06-19 15:40:26,048 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:40:26,048 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:40:26,062 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:40:26,078 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:40:26,094 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:40:26,094 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:40:26,109 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:40:26,109 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:40:26,109 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:40:26,125 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('12.8','5935','35','2018-06-19 15:40:26','HOST','2018-6','HOST','2018-6') 
+2018-06-19 15:40:26,125 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:40:26,141 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:40:26,141 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:40:26,141 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:40:26,157 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:40:26,157 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('30.5','5935','40','2018-06-19 15:40:26','HOST','2018-6','HOST','2018-6') 
+2018-06-19 15:40:26,171 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:40:26,171 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:40:26,187 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:40:26,187 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:40:26,203 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:40:26,203 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('1.02','5935','45','2018-06-19 15:40:26','HOST','2018-6','HOST','2018-6') 
+2018-06-19 15:40:26,219 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:40:26,219 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:40:26,234 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:40:26,234 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:40:26,234 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:40:26,250 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('80','5935','160','2018-06-19 15:40:26','HOST','2018-6','HOST','2018-6') 
+2018-06-19 15:40:36,704 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:40:36,720 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:40:36,736 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:40:36,736 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:40:36,752 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:40:36,752 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:40:36,767 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:40:36,767 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:40:36,767 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:40:36,782 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('12.8','5935','35','2018-06-19 15:40:36','HOST','2018-06','HOST','2018-06') 
+2018-06-19 15:40:36,799 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:40:36,799 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:40:36,799 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:40:36,813 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:40:36,813 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:40:36,829 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('30.5','5935','40','2018-06-19 15:40:36','HOST','2018-06','HOST','2018-06') 
+2018-06-19 15:40:36,829 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:40:36,845 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:40:36,845 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:40:36,845 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:40:36,861 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:40:36,861 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('1.02','5935','45','2018-06-19 15:40:36','HOST','2018-06','HOST','2018-06') 
+2018-06-19 15:40:36,877 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:40:36,877 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:40:36,891 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:40:36,891 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:40:36,907 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:40:36,907 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('80','5935','160','2018-06-19 15:40:36','HOST','2018-06','HOST','2018-06') 
+2018-06-19 15:40:49,688 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:40:49,720 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:40:49,736 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:40:49,750 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:40:49,766 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:40:49,766 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:40:49,766 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:40:49,782 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:40:49,782 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:40:49,782 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('12.8','5935','35','2018-06-19 15:40:49','HOST','2018-06-1','HOST','2018-06-1') 
+2018-06-19 15:40:49,798 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:40:49,798 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:40:49,813 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:40:49,813 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:40:49,813 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:40:49,828 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('30.5','5935','40','2018-06-19 15:40:49','HOST','2018-06-1','HOST','2018-06-1') 
+2018-06-19 15:40:49,845 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:40:49,845 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:40:49,845 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:40:49,859 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:40:49,859 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:40:49,859 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('1.02','5935','45','2018-06-19 15:40:49','HOST','2018-06-1','HOST','2018-06-1') 
+2018-06-19 15:40:49,875 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:40:49,875 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:40:49,891 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:40:49,891 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:40:49,891 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:40:49,907 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('80','5935','160','2018-06-19 15:40:49','HOST','2018-06-1','HOST','2018-06-1') 
+2018-06-19 15:40:59,484 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:40:59,500 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:40:59,516 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:40:59,516 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:40:59,532 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:40:59,546 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:40:59,546 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:40:59,562 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:40:59,562 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:40:59,578 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('12.8','5935','35','2018-06-19 15:40:59','HOST','2018-06-19','HOST','2018-06-19') 
+2018-06-19 15:40:59,594 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:40:59,609 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:40:59,609 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:40:59,625 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:40:59,641 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:40:59,641 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('30.5','5935','40','2018-06-19 15:40:59','HOST','2018-06-19','HOST','2018-06-19') 
+2018-06-19 15:40:59,671 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:40:59,671 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:40:59,671 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:40:59,687 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:40:59,687 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:40:59,687 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('1.02','5935','45','2018-06-19 15:40:59','HOST','2018-06-19','HOST','2018-06-19') 
+2018-06-19 15:40:59,703 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:40:59,719 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:40:59,719 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:40:59,719 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:40:59,734 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:40:59,734 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('80','5935','160','2018-06-19 15:40:59','HOST','2018-06-19','HOST','2018-06-19') 
+2018-06-19 15:41:23,000 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:41:23,016 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:41:23,030 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:41:23,030 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:41:23,046 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:41:23,046 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:41:23,062 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:41:23,062 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:41:23,062 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:41:23,078 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('12.8','5935','35','2018-06-19 15:41:23','HOST','2018-06-19 14','HOST','2018-06-19 14') 
+2018-06-19 15:41:23,078 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:41:23,094 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:41:23,094 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:41:23,108 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:41:23,108 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:41:23,108 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('30.5','5935','40','2018-06-19 15:41:23','HOST','2018-06-19 14','HOST','2018-06-19 14') 
+2018-06-19 15:41:23,125 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:41:23,140 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:41:23,140 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:41:23,155 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:41:23,155 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:41:23,155 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('1.02','5935','45','2018-06-19 15:41:23','HOST','2018-06-19 14','HOST','2018-06-19 14') 
+2018-06-19 15:41:23,187 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:41:23,187 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:41:23,187 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:41:23,203 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:41:23,203 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:41:23,217 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('80','5935','160','2018-06-19 15:41:23','HOST','2018-06-19 14','HOST','2018-06-19 14') 
+2018-06-19 15:41:41,357 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:41:41,357 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:41:41,372 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:41:41,372 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:41:41,388 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:41:41,388 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:41:41,404 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:41:41,404 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:41:41,404 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:41:41,420 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('12.8','5935','35','2018-06-19 15:41:41','HOST','2018-06-19 14:22','HOST','2018-06-19 14:22') 
+2018-06-19 15:41:41,434 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:41:41,434 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:41:41,434 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:41:41,450 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:41:41,450 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:41:41,466 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('30.5','5935','40','2018-06-19 15:41:41','HOST','2018-06-19 14:22','HOST','2018-06-19 14:22') 
+2018-06-19 15:41:41,466 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:41:41,482 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:41:41,482 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:41:41,497 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:41:41,497 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:41:41,497 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('1.02','5935','45','2018-06-19 15:41:41','HOST','2018-06-19 14:22','HOST','2018-06-19 14:22') 
+2018-06-19 15:41:41,513 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:41:41,513 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:41:41,529 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:41:41,529 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:41:41,543 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:41:41,543 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('80','5935','160','2018-06-19 15:41:41','HOST','2018-06-19 14:28','HOST','2018-06-19 14:28') 
+2018-06-19 15:41:55,914 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:41:55,914 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:41:55,930 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:41:55,947 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:41:55,961 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:41:55,961 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:41:55,961 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:41:55,977 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:41:55,977 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:41:55,977 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('12.8','5935','35','2018-06-19 15:41:55','HOST','2018-06-19 14:22:20','HOST','2018-06-19 14:22:20') 
+2018-06-19 15:41:55,993 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:41:56,009 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:41:56,009 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:41:56,025 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:41:56,025 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:41:56,025 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('30.5','5935','40','2018-06-19 15:41:55','HOST','2018-06-19 14:22:20','HOST','2018-06-19 14:22:20') 
+2018-06-19 15:41:56,039 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:41:56,055 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:41:56,055 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:41:56,071 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:41:56,071 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:41:56,086 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('1.02','5935','45','2018-06-19 15:41:56','HOST','2018-06-19 14:22:20','HOST','2018-06-19 14:22:20') 
+2018-06-19 15:41:56,086 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:41:56,102 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:41:56,118 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:41:56,118 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:41:56,134 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:41:56,148 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('80','5935','160','2018-06-19 15:41:56','HOST','2018-06-19 14:28:85','HOST','2018-06-19 14:28:85') 
+2018-06-19 15:42:36,963 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:42:36,963 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:42:36,980 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:42:36,996 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:42:37,010 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:42:37,010 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:42:37,026 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:42:37,026 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:42:37,026 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:42:37,042 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('12.8','5935','35','2018-06-19 15:42:37','HOST','2018-06-19 14:22:20','HOST','2018-06-19 14:22:20') 
+2018-06-19 15:42:37,058 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('12.8','5935','35','2018-06-19 15:42:37','HOST','2018-06-19 14:22:20','HOST','2018-06-19 14:22:20') 
+2018-06-19 15:42:37,058 - host_hl7 - ERROR - (1146, "Table 'ciremai.result' doesn't exist")
+2018-06-19 15:42:37,073 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:42:37,073 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:42:37,088 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:42:37,088 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:42:37,088 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:42:37,105 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('30.5','5935','40','2018-06-19 15:42:37','HOST','2018-06-19 14:22:20','HOST','2018-06-19 14:22:20') 
+2018-06-19 15:42:37,105 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('30.5','5935','40','2018-06-19 15:42:37','HOST','2018-06-19 14:22:20','HOST','2018-06-19 14:22:20') 
+2018-06-19 15:42:37,105 - host_hl7 - ERROR - (1146, "Table 'ciremai.result' doesn't exist")
+2018-06-19 15:42:37,119 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:42:37,119 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:42:37,135 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:42:37,135 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:42:37,151 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:42:37,151 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('1.02','5935','45','2018-06-19 15:42:37','HOST','2018-06-19 14:22:20','HOST','2018-06-19 14:22:20') 
+2018-06-19 15:42:37,151 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('1.02','5935','45','2018-06-19 15:42:37','HOST','2018-06-19 14:22:20','HOST','2018-06-19 14:22:20') 
+2018-06-19 15:42:37,167 - host_hl7 - ERROR - (1146, "Table 'ciremai.result' doesn't exist")
+2018-06-19 15:42:37,167 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:42:37,183 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:42:37,183 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:42:37,197 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:42:37,197 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:42:37,197 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('80','5935','160','2018-06-19 15:42:37','HOST','2018-06-19 14:28:85','HOST','2018-06-19 14:28:85') 
+2018-06-19 15:42:37,213 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('80','5935','160','2018-06-19 15:42:37','HOST','2018-06-19 14:28:85','HOST','2018-06-19 14:28:85') 
+2018-06-19 15:42:37,213 - host_hl7 - ERROR - (1146, "Table 'ciremai.result' doesn't exist")
+2018-06-19 15:43:06,516 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:43:06,548 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:43:06,562 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:43:06,562 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:43:06,578 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:43:06,578 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:43:06,595 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:43:06,595 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:43:06,595 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:43:06,609 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('12.8','5935','35','2018-06-19 15:43:06','HOST','2018-06-19 14:22:20','HOST','2018-06-19 14:22:20') 
+2018-06-19 15:43:06,609 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('12.8','5935','35','2018-06-19 15:43:06','HOST','2018-06-19 14:22:20','HOST','2018-06-19 14:22:20') 
+2018-06-19 15:43:06,625 - host_hl7 - ERROR - (1054, "Unknown column 'techval_user' in 'field list'")
+2018-06-19 15:43:06,625 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:43:06,641 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:43:06,641 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:43:06,641 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:43:06,657 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:43:06,657 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('30.5','5935','40','2018-06-19 15:43:06','HOST','2018-06-19 14:22:20','HOST','2018-06-19 14:22:20') 
+2018-06-19 15:43:06,673 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('30.5','5935','40','2018-06-19 15:43:06','HOST','2018-06-19 14:22:20','HOST','2018-06-19 14:22:20') 
+2018-06-19 15:43:06,673 - host_hl7 - ERROR - (1054, "Unknown column 'techval_user' in 'field list'")
+2018-06-19 15:43:06,687 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:43:06,687 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:43:06,703 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:43:06,703 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:43:06,703 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:43:06,719 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('1.02','5935','45','2018-06-19 15:43:06','HOST','2018-06-19 14:22:20','HOST','2018-06-19 14:22:20') 
+2018-06-19 15:43:06,719 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('1.02','5935','45','2018-06-19 15:43:06','HOST','2018-06-19 14:22:20','HOST','2018-06-19 14:22:20') 
+2018-06-19 15:43:06,734 - host_hl7 - ERROR - (1054, "Unknown column 'techval_user' in 'field list'")
+2018-06-19 15:43:06,734 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:43:06,750 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:43:06,750 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:43:06,750 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:43:06,766 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:43:06,766 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('80','5935','160','2018-06-19 15:43:06','HOST','2018-06-19 14:28:85','HOST','2018-06-19 14:28:85') 
+2018-06-19 15:43:06,782 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification,techval_user,techval_date,medval_user,medval_date) values ('80','5935','160','2018-06-19 15:43:06','HOST','2018-06-19 14:28:85','HOST','2018-06-19 14:28:85') 
+2018-06-19 15:43:06,782 - host_hl7 - ERROR - (1054, "Unknown column 'techval_user' in 'field list'")
+2018-06-19 15:45:23,470 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:45:23,486 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:45:23,502 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:45:23,502 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:45:23,517 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:45:23,533 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:45:23,533 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:45:23,549 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:45:23,549 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:45:23,549 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 15:45:23') 
+2018-06-19 15:45:23,565 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 15:45:23') 
+2018-06-19 15:45:23,579 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:45:23,595 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:45:23,595 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:45:23,595 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:45:23,611 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:45:23,611 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 15:45:23') 
+2018-06-19 15:45:23,627 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 15:45:23') 
+2018-06-19 15:45:23,642 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:45:23,642 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:45:23,642 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:45:23,657 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:45:23,657 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:45:23,674 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 15:45:23') 
+2018-06-19 15:45:23,674 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 15:45:23') 
+2018-06-19 15:45:23,690 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:45:23,704 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:45:23,704 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:45:23,704 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:45:23,720 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:45:23,720 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 15:45:23') 
+2018-06-19 15:45:23,720 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 15:45:23') 
+2018-06-19 15:47:44,213 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:47:44,229 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:47:44,244 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:47:44,244 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:47:44,244 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:47:44,260 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:47:44,260 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:47:44,260 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:47:44,276 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:47:44,276 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 15:47:44') 
+2018-06-19 15:47:44,276 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 15:47:44') 
+2018-06-19 15:47:44,292 - host_hl7 - INFO - last inserted id [841]
+2018-06-19 15:47:49,701 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:47:49,733 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:47:49,749 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:47:49,749 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:47:49,749 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:47:49,765 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:47:49,765 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:47:49,765 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:47:49,779 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:47:49,779 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 15:47:49') 
+2018-06-19 15:47:49,779 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 15:47:49') 
+2018-06-19 15:47:49,796 - host_hl7 - INFO - last inserted id [842]
+2018-06-19 15:47:49,812 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '842',ref_range = '10-15', unit = 'detik',patologi_mark = '' WHERE order_id = '5935' AND test_id = '35' AND techval_user = 'HOST' medval_user = 'HOST' AND techval_date = '2018-06-19 14:22:20' AND medval_date = '2018-06-19 14:22:20' 
+2018-06-19 15:47:49,812 - host_hl7 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'medval_user = 'HOST' AND techval_date = '2018-06-19 14:22:20' AND medval_date = ' at line 1")
+2018-06-19 15:47:49,812 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:47:49,826 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:47:49,826 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:47:49,826 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:47:49,842 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:47:49,842 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 15:47:49') 
+2018-06-19 15:47:49,842 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 15:47:49') 
+2018-06-19 15:47:49,858 - host_hl7 - INFO - last inserted id [843]
+2018-06-19 15:47:49,858 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '843',ref_range = '21-45', unit = 'detik',patologi_mark = '' WHERE order_id = '5935' AND test_id = '40' AND techval_user = 'HOST' medval_user = 'HOST' AND techval_date = '2018-06-19 14:22:20' AND medval_date = '2018-06-19 14:22:20' 
+2018-06-19 15:47:49,874 - host_hl7 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'medval_user = 'HOST' AND techval_date = '2018-06-19 14:22:20' AND medval_date = ' at line 1")
+2018-06-19 15:47:49,874 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:47:49,890 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:47:49,890 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:47:49,890 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:47:49,904 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:47:49,904 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 15:47:49') 
+2018-06-19 15:47:49,921 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 15:47:49') 
+2018-06-19 15:47:49,921 - host_hl7 - INFO - last inserted id [844]
+2018-06-19 15:47:49,936 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '844',ref_range = '', unit = '',patologi_mark = '' WHERE order_id = '5935' AND test_id = '45' AND techval_user = 'HOST' medval_user = 'HOST' AND techval_date = '2018-06-19 14:22:20' AND medval_date = '2018-06-19 14:22:20' 
+2018-06-19 15:47:49,936 - host_hl7 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'medval_user = 'HOST' AND techval_date = '2018-06-19 14:22:20' AND medval_date = ' at line 1")
+2018-06-19 15:47:49,951 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:47:49,951 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:47:49,951 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:47:49,967 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:47:49,967 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:47:49,983 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 15:47:49') 
+2018-06-19 15:47:49,983 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 15:47:49') 
+2018-06-19 15:47:49,999 - host_hl7 - INFO - last inserted id [845]
+2018-06-19 15:47:49,999 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '845',ref_range = '60-140', unit = 'mg / dl',patologi_mark = '' WHERE order_id = '5935' AND test_id = '160' AND techval_user = 'HOST' medval_user = 'HOST' AND techval_date = '2018-06-19 14:28:85' AND medval_date = '2018-06-19 14:28:85' 
+2018-06-19 15:47:49,999 - host_hl7 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'medval_user = 'HOST' AND techval_date = '2018-06-19 14:28:85' AND medval_date = ' at line 1")
+2018-06-19 15:49:18,901 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:49:18,915 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:49:18,931 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:49:18,931 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:49:18,931 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:49:18,947 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:49:18,947 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:49:18,947 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:49:18,963 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:49:18,963 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 15:49:18') 
+2018-06-19 15:49:18,963 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 15:49:18') 
+2018-06-19 15:49:18,979 - host_hl7 - INFO - last inserted id [846]
+2018-06-19 15:49:18,993 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '846',ref_range = '10-15', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '5935' , medval_date = '35'  WHERE order_id = '2018-06-19 14:22:20' AND test_id = '2018-06-19 14:22:20' 
+2018-06-19 15:49:18,993 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:49:19,009 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:49:19,009 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:49:19,009 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:49:19,009 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:49:19,026 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 15:49:18') 
+2018-06-19 15:49:19,026 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 15:49:18') 
+2018-06-19 15:49:19,040 - host_hl7 - INFO - last inserted id [847]
+2018-06-19 15:49:19,040 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '847',ref_range = '21-45', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '5935' , medval_date = '40'  WHERE order_id = '2018-06-19 14:22:20' AND test_id = '2018-06-19 14:22:20' 
+2018-06-19 15:49:19,056 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:49:19,056 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:49:19,056 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:49:19,072 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:49:19,072 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:49:19,072 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 15:49:19') 
+2018-06-19 15:49:19,088 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 15:49:19') 
+2018-06-19 15:49:19,088 - host_hl7 - INFO - last inserted id [848]
+2018-06-19 15:49:19,104 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '848',ref_range = '', unit = '',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '5935' , medval_date = '45'  WHERE order_id = '2018-06-19 14:22:20' AND test_id = '2018-06-19 14:22:20' 
+2018-06-19 15:49:19,104 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:49:19,104 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:49:19,118 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:49:19,118 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:49:19,118 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:49:19,134 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 15:49:19') 
+2018-06-19 15:49:19,134 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 15:49:19') 
+2018-06-19 15:49:19,150 - host_hl7 - INFO - last inserted id [849]
+2018-06-19 15:49:19,150 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '849',ref_range = '60-140', unit = 'mg / dl',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '5935' , medval_date = '160'  WHERE order_id = '2018-06-19 14:28:85' AND test_id = '2018-06-19 14:28:85' 
+2018-06-19 15:53:32,973 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:53:33,005 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:53:33,019 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:53:33,036 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:53:33,036 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:53:33,051 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:53:33,051 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:53:33,066 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:53:33,066 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:53:33,066 - host_hl7 - INFO - Create new row for insert value.
+2018-06-19 15:53:33,082 - host_hl7 - INFO -  INSERT INTO middleware_orderresults (order_id,test_id,is_header,lastmodification,validation_status,print_status) VALUES ('5935','35','0','2018-06-19 15:53:33','1','0') 
+2018-06-19 15:53:33,082 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 15:53:33') 
+2018-06-19 15:53:33,098 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 15:53:33') 
+2018-06-19 15:53:33,098 - host_hl7 - INFO - last inserted id [850]
+2018-06-19 15:53:33,114 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '850',ref_range = '10-15', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '5935' , medval_date = '35' , validation_status = '3' WHERE order_id = '2018-06-19 14:22:20' AND test_id = '2018-06-19 14:22:20' 
+2018-06-19 15:53:33,114 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:53:33,114 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:53:33,128 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:53:33,128 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:53:33,128 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:53:33,144 - host_hl7 - INFO - Create new row for insert value.
+2018-06-19 15:53:33,144 - host_hl7 - INFO -  INSERT INTO middleware_orderresults (order_id,test_id,is_header,lastmodification,validation_status,print_status) VALUES ('5935','40','0','2018-06-19 15:53:33','1','0') 
+2018-06-19 15:53:33,161 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 15:53:33') 
+2018-06-19 15:53:33,161 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 15:53:33') 
+2018-06-19 15:53:33,161 - host_hl7 - INFO - last inserted id [851]
+2018-06-19 15:53:33,176 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '851',ref_range = '21-45', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '5935' , medval_date = '40' , validation_status = '3' WHERE order_id = '2018-06-19 14:22:20' AND test_id = '2018-06-19 14:22:20' 
+2018-06-19 15:53:33,176 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:53:33,176 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:53:33,191 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:53:33,191 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:53:33,191 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:53:33,207 - host_hl7 - INFO - Create new row for insert value.
+2018-06-19 15:53:33,207 - host_hl7 - INFO -  INSERT INTO middleware_orderresults (order_id,test_id,is_header,lastmodification,validation_status,print_status) VALUES ('5935','45','0','2018-06-19 15:53:33','1','0') 
+2018-06-19 15:53:33,223 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 15:53:33') 
+2018-06-19 15:53:33,223 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 15:53:33') 
+2018-06-19 15:53:33,223 - host_hl7 - INFO - last inserted id [852]
+2018-06-19 15:53:33,239 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '852',ref_range = '', unit = '',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '5935' , medval_date = '45' , validation_status = '3' WHERE order_id = '2018-06-19 14:22:20' AND test_id = '2018-06-19 14:22:20' 
+2018-06-19 15:53:33,239 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:53:33,239 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:53:33,253 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:53:33,253 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:53:33,253 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:53:33,269 - host_hl7 - INFO - Create new row for insert value.
+2018-06-19 15:53:33,269 - host_hl7 - INFO -  INSERT INTO middleware_orderresults (order_id,test_id,is_header,lastmodification,validation_status,print_status) VALUES ('5935','160','0','2018-06-19 15:53:33','1','0') 
+2018-06-19 15:53:33,285 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 15:53:33') 
+2018-06-19 15:53:33,285 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 15:53:33') 
+2018-06-19 15:53:33,301 - host_hl7 - INFO - last inserted id [853]
+2018-06-19 15:53:33,301 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '853',ref_range = '60-140', unit = 'mg / dl',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '5935' , medval_date = '160' , validation_status = '3' WHERE order_id = '2018-06-19 14:28:85' AND test_id = '2018-06-19 14:28:85' 
+2018-06-19 15:55:22,405 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:55:22,421 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:55:22,421 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:55:22,421 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:55:22,437 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:55:22,437 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:55:22,437 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:55:22,437 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:55:22,437 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:55:22,437 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 15:55:22') 
+2018-06-19 15:55:22,453 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 15:55:22') 
+2018-06-19 15:55:22,453 - host_hl7 - INFO - last inserted id [854]
+2018-06-19 15:55:22,467 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '854',ref_range = '10-15', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '5935' , medval_date = '35' , validation_status = '3' WHERE order_id = '2018-06-19 14:22:20' AND test_id = '2018-06-19 14:22:20' 
+2018-06-19 15:55:22,467 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:55:22,467 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:55:22,467 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:55:22,467 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:55:22,483 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:55:22,483 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 15:55:22') 
+2018-06-19 15:55:22,500 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 15:55:22') 
+2018-06-19 15:55:22,500 - host_hl7 - INFO - last inserted id [855]
+2018-06-19 15:55:22,515 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '855',ref_range = '21-45', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '5935' , medval_date = '40' , validation_status = '3' WHERE order_id = '2018-06-19 14:22:20' AND test_id = '2018-06-19 14:22:20' 
+2018-06-19 15:55:22,515 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:55:22,530 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:55:22,530 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:55:22,530 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:55:22,546 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:55:22,546 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 15:55:22') 
+2018-06-19 15:55:22,546 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 15:55:22') 
+2018-06-19 15:55:22,562 - host_hl7 - INFO - last inserted id [856]
+2018-06-19 15:55:22,562 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '856',ref_range = '', unit = '',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '5935' , medval_date = '45' , validation_status = '3' WHERE order_id = '2018-06-19 14:22:20' AND test_id = '2018-06-19 14:22:20' 
+2018-06-19 15:55:22,578 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:55:22,592 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:55:22,592 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:55:22,608 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:55:22,608 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:55:22,608 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 15:55:22') 
+2018-06-19 15:55:22,624 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 15:55:22') 
+2018-06-19 15:55:22,624 - host_hl7 - INFO - last inserted id [857]
+2018-06-19 15:55:22,640 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '857',ref_range = '60-140', unit = 'mg / dl',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '5935' , medval_date = '160' , validation_status = '3' WHERE order_id = '2018-06-19 14:28:85' AND test_id = '2018-06-19 14:28:85' 
+2018-06-19 15:56:32,763 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:56:32,763 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:56:32,779 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:56:32,779 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:56:32,779 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:56:32,795 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:56:32,795 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:56:32,811 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:56:32,811 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:56:32,811 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 15:56:32') 
+2018-06-19 15:56:32,825 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 15:56:32') 
+2018-06-19 15:56:32,825 - host_hl7 - INFO - last inserted id [858]
+2018-06-19 15:56:32,825 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '858',ref_range = '10-15', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '5935' , medval_date = '35' , validation_status = '3' WHERE order_id = '2018-06-19 14:22:20' AND test_id = '2018-06-19 14:22:20' 
+2018-06-19 15:56:32,842 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:56:32,858 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:56:32,858 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:56:32,858 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:56:32,872 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:56:32,872 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 15:56:32') 
+2018-06-19 15:56:32,872 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 15:56:32') 
+2018-06-19 15:56:32,888 - host_hl7 - INFO - last inserted id [859]
+2018-06-19 15:56:32,888 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '859',ref_range = '21-45', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '5935' , medval_date = '40' , validation_status = '3' WHERE order_id = '2018-06-19 14:22:20' AND test_id = '2018-06-19 14:22:20' 
+2018-06-19 15:56:32,904 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:56:32,904 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:56:32,920 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:56:32,920 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:56:32,920 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:56:32,936 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 15:56:32') 
+2018-06-19 15:56:32,936 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 15:56:32') 
+2018-06-19 15:56:32,950 - host_hl7 - INFO - last inserted id [860]
+2018-06-19 15:56:32,950 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '860',ref_range = '', unit = '',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '5935' , medval_date = '45' , validation_status = '3' WHERE order_id = '2018-06-19 14:22:20' AND test_id = '2018-06-19 14:22:20' 
+2018-06-19 15:56:32,967 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:56:32,967 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:56:32,982 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:56:32,982 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:56:32,982 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:56:32,997 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 15:56:32') 
+2018-06-19 15:56:32,997 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 15:56:32') 
+2018-06-19 15:56:33,013 - host_hl7 - INFO - last inserted id [861]
+2018-06-19 15:56:33,013 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '861',ref_range = '60-140', unit = 'mg / dl',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '5935' , medval_date = '160' , validation_status = '3' WHERE order_id = '2018-06-19 14:28:85' AND test_id = '2018-06-19 14:28:85' 
+2018-06-19 15:57:51,961 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:57:51,961 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:57:51,977 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:57:51,993 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:57:51,993 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:57:51,993 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:57:52,009 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:57:52,009 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:57:52,025 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:57:52,025 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 15:57:51') 
+2018-06-19 15:57:52,025 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 15:57:51') 
+2018-06-19 15:57:52,039 - host_hl7 - INFO - last inserted id [862]
+2018-06-19 15:57:52,055 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '862',ref_range = '10-15', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:20' , medval_date = '2018-06-19 14:22:20' , validation_status = '3' WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:57:52,071 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:57:52,071 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:57:52,086 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:57:52,086 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:57:52,102 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:57:52,102 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 15:57:52') 
+2018-06-19 15:57:52,118 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 15:57:52') 
+2018-06-19 15:57:52,118 - host_hl7 - INFO - last inserted id [863]
+2018-06-19 15:57:52,134 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '863',ref_range = '21-45', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:20' , medval_date = '2018-06-19 14:22:20' , validation_status = '3' WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:57:52,148 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:57:52,148 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:57:52,148 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:57:52,164 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:57:52,164 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:57:52,164 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 15:57:52') 
+2018-06-19 15:57:52,180 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 15:57:52') 
+2018-06-19 15:57:52,180 - host_hl7 - INFO - last inserted id [864]
+2018-06-19 15:57:52,180 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '864',ref_range = '', unit = '',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:20' , medval_date = '2018-06-19 14:22:20' , validation_status = '3' WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:57:52,211 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:57:52,211 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:57:52,226 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:57:52,243 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:57:52,243 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:57:52,259 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 15:57:52') 
+2018-06-19 15:57:52,259 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 15:57:52') 
+2018-06-19 15:57:52,273 - host_hl7 - INFO - last inserted id [865]
+2018-06-19 15:57:52,289 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '865',ref_range = '60-140', unit = 'mg / dl',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:28:85' , medval_date = '2018-06-19 14:28:85' , validation_status = '3' WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:57:52,305 - host_hl7 - ERROR - (1292, "Incorrect datetime value: '2018-06-19 14:28:85' for column 'techval_date' at row 1")
+2018-06-19 15:59:45,799 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 15:59:45,832 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 15:59:45,832 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 15:59:45,832 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 15:59:45,832 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 15:59:45,846 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 15:59:45,846 - host_hl7 - INFO - ((35L,),)
+2018-06-19 15:59:45,846 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 15:59:45,846 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:59:45,846 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 15:59:45') 
+2018-06-19 15:59:45,846 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 15:59:45') 
+2018-06-19 15:59:45,862 - host_hl7 - INFO - last inserted id [866]
+2018-06-19 15:59:45,862 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '866',ref_range = '10-15', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:20' , medval_date = '2018-06-19 14:22:20' , validation_status = '3' WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 15:59:45,878 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 15:59:45,878 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 15:59:45,878 - host_hl7 - INFO - ((40L,),)
+2018-06-19 15:59:45,878 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 15:59:45,878 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:59:45,894 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 15:59:45') 
+2018-06-19 15:59:45,894 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 15:59:45') 
+2018-06-19 15:59:45,910 - host_hl7 - INFO - last inserted id [867]
+2018-06-19 15:59:45,910 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '867',ref_range = '21-45', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:20' , medval_date = '2018-06-19 14:22:20' , validation_status = '3' WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 15:59:45,924 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 15:59:45,924 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 15:59:45,940 - host_hl7 - INFO - ((45L,),)
+2018-06-19 15:59:45,940 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 15:59:45,940 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:59:45,956 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 15:59:45') 
+2018-06-19 15:59:45,956 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 15:59:45') 
+2018-06-19 15:59:45,956 - host_hl7 - INFO - last inserted id [868]
+2018-06-19 15:59:45,971 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '868',ref_range = '', unit = '',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:20' , medval_date = '2018-06-19 14:22:20' , validation_status = '3' WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 15:59:45,987 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 15:59:45,987 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 15:59:46,003 - host_hl7 - INFO - ((160L,),)
+2018-06-19 15:59:46,003 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 15:59:46,003 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:59:46,019 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 15:59:45') 
+2018-06-19 15:59:46,019 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 15:59:45') 
+2018-06-19 15:59:46,033 - host_hl7 - INFO - last inserted id [869]
+2018-06-19 15:59:46,049 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '869',ref_range = '60-140', unit = 'mg / dl',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:28:85' , medval_date = '2018-06-19 14:28:85' , validation_status = '3' WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 15:59:46,065 - host_hl7 - ERROR - (1292, "Incorrect datetime value: '2018-06-19 14:28:85' for column 'techval_date' at row 1")
+2018-06-19 16:00:40,595 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 16:00:40,625 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 16:00:40,641 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 16:00:40,641 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 16:00:40,641 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 16:00:40,657 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 16:00:40,657 - host_hl7 - INFO - ((35L,),)
+2018-06-19 16:00:40,657 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 16:00:40,673 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 16:00:40,673 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 16:00:40') 
+2018-06-19 16:00:40,673 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 16:00:40') 
+2018-06-19 16:00:40,687 - host_hl7 - INFO - last inserted id [870]
+2018-06-19 16:00:40,687 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '870',ref_range = '10-15', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 16:00:40,703 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 16:00:40,720 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 16:00:40,720 - host_hl7 - INFO - ((40L,),)
+2018-06-19 16:00:40,720 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 16:00:40,734 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 16:00:40,734 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 16:00:40') 
+2018-06-19 16:00:40,734 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 16:00:40') 
+2018-06-19 16:00:40,750 - host_hl7 - INFO - last inserted id [871]
+2018-06-19 16:00:40,750 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '871',ref_range = '21-45', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 16:00:40,766 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 16:00:40,782 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 16:00:40,782 - host_hl7 - INFO - ((45L,),)
+2018-06-19 16:00:40,782 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 16:00:40,798 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 16:00:40,798 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 16:00:40') 
+2018-06-19 16:00:40,798 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 16:00:40') 
+2018-06-19 16:00:40,812 - host_hl7 - INFO - last inserted id [872]
+2018-06-19 16:00:40,812 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '872',ref_range = '', unit = '',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 16:00:40,828 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 16:00:40,844 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 16:00:40,844 - host_hl7 - INFO - ((160L,),)
+2018-06-19 16:00:40,844 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 16:00:40,859 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 16:00:40,859 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 16:00:40') 
+2018-06-19 16:00:40,875 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 16:00:40') 
+2018-06-19 16:00:40,875 - host_hl7 - INFO - last inserted id [873]
+2018-06-19 16:00:40,875 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '873',ref_range = '60-140', unit = 'mg / dl',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:28:54' , medval_date = '2018-06-19 14:28:54' , validation_status = '3' WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 16:01:39,329 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 16:01:39,329 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 16:01:39,345 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 16:01:39,345 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 16:01:39,361 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 16:01:39,361 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 16:01:39,377 - host_hl7 - INFO - ((35L,),)
+2018-06-19 16:01:39,377 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 16:01:39,392 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 16:01:39,392 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 16:01:39') 
+2018-06-19 16:01:39,392 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 16:01:39') 
+2018-06-19 16:01:39,408 - host_hl7 - INFO - last inserted id [874]
+2018-06-19 16:01:39,408 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '874',ref_range = '10-15', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 16:01:39,440 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 16:01:39,454 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 16:01:39,454 - host_hl7 - INFO - ((40L,),)
+2018-06-19 16:01:39,470 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 16:01:39,470 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 16:01:39,486 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 16:01:39') 
+2018-06-19 16:01:39,486 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 16:01:39') 
+2018-06-19 16:01:39,502 - host_hl7 - INFO - last inserted id [875]
+2018-06-19 16:01:39,517 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '875',ref_range = '21-45', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 16:01:39,565 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 16:01:39,565 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 16:01:39,579 - host_hl7 - INFO - ((45L,),)
+2018-06-19 16:01:39,579 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 16:01:39,579 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 16:01:39,595 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 16:01:39') 
+2018-06-19 16:01:39,595 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 16:01:39') 
+2018-06-19 16:01:39,611 - host_hl7 - INFO - last inserted id [876]
+2018-06-19 16:01:39,611 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '876',ref_range = '', unit = '',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 16:01:39,627 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 16:01:39,627 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 16:01:39,642 - host_hl7 - INFO - ((160L,),)
+2018-06-19 16:01:39,642 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 16:01:39,642 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 16:01:39,657 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 16:01:39') 
+2018-06-19 16:01:39,657 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 16:01:39') 
+2018-06-19 16:01:39,674 - host_hl7 - INFO - last inserted id [877]
+2018-06-19 16:01:39,674 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '877',ref_range = '60-140', unit = 'mg / dl',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:28:54' , medval_date = '2018-06-19 14:28:54' , validation_status = '3' WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 16:02:05,694 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 16:02:05,694 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 16:02:05,694 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 16:02:05,710 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 16:02:05,710 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 16:02:05,710 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 16:02:05,710 - host_hl7 - INFO - ((35L,),)
+2018-06-19 16:02:05,710 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 16:02:05,710 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 16:02:05,710 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 16:02:05') 
+2018-06-19 16:02:05,726 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 16:02:05') 
+2018-06-19 16:02:05,726 - host_hl7 - INFO - last inserted id [878]
+2018-06-19 16:02:05,740 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '878',ref_range = '10-15', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 16:02:05,740 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 16:02:05,740 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 16:02:05,740 - host_hl7 - INFO - ((40L,),)
+2018-06-19 16:02:05,740 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 16:02:05,756 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 16:02:05,756 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 16:02:05') 
+2018-06-19 16:02:05,772 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 16:02:05') 
+2018-06-19 16:02:05,772 - host_hl7 - INFO - last inserted id [879]
+2018-06-19 16:02:05,788 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '879',ref_range = '21-45', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 16:02:05,803 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 16:02:05,803 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 16:02:05,803 - host_hl7 - INFO - ((45L,),)
+2018-06-19 16:02:05,819 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 16:02:05,819 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 16:02:05,835 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 16:02:05') 
+2018-06-19 16:02:05,835 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 16:02:05') 
+2018-06-19 16:02:05,835 - host_hl7 - INFO - last inserted id [880]
+2018-06-19 16:02:05,849 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '880',ref_range = '', unit = '',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 16:02:05,865 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 16:02:05,865 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 16:02:05,881 - host_hl7 - INFO - ((160L,),)
+2018-06-19 16:02:05,881 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 16:02:05,881 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 16:02:05,897 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 16:02:05') 
+2018-06-19 16:02:05,897 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 16:02:05') 
+2018-06-19 16:02:05,913 - host_hl7 - INFO - last inserted id [881]
+2018-06-19 16:02:05,913 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '881',ref_range = '60-140', unit = 'mg / dl',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:28:54' , medval_date = '2018-06-19 14:28:54' , validation_status = '3' WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 16:06:53,220 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 16:06:53,220 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 16:06:53,236 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 16:06:53,236 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 16:06:53,236 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 16:06:53,236 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 16:06:53,252 - host_hl7 - INFO - ((35L,),)
+2018-06-19 16:06:53,252 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 16:06:53,252 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 16:06:53,252 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 16:06:53') 
+2018-06-19 16:06:53,252 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 16:06:53') 
+2018-06-19 16:06:53,267 - host_hl7 - INFO - last inserted id [882]
+2018-06-19 16:06:53,267 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '882',ref_range = '10-15', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 16:06:53,283 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 16:06:53,283 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 16:06:53,299 - host_hl7 - INFO - ((40L,),)
+2018-06-19 16:06:53,299 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 16:06:53,299 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 16:06:53,315 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 16:06:53') 
+2018-06-19 16:06:53,329 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 16:06:53') 
+2018-06-19 16:06:53,329 - host_hl7 - INFO - last inserted id [883]
+2018-06-19 16:06:53,345 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '883',ref_range = '21-45', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 16:06:53,362 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 16:06:53,362 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 16:06:53,378 - host_hl7 - INFO - ((45L,),)
+2018-06-19 16:06:53,378 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 16:06:53,378 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 16:06:53,394 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 16:06:53') 
+2018-06-19 16:06:53,394 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 16:06:53') 
+2018-06-19 16:06:53,394 - host_hl7 - INFO - last inserted id [884]
+2018-06-19 16:06:53,408 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '884',ref_range = '', unit = '',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 16:06:53,424 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 16:06:53,440 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 16:06:53,440 - host_hl7 - INFO - ((160L,),)
+2018-06-19 16:06:53,440 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 16:06:53,456 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 16:06:53,456 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 16:06:53') 
+2018-06-19 16:06:53,471 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 16:06:53') 
+2018-06-19 16:06:53,471 - host_hl7 - INFO - last inserted id [885]
+2018-06-19 16:06:53,486 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '885',ref_range = '60-140', unit = 'mg / dl',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:28:54' , medval_date = '2018-06-19 14:28:54' , validation_status = '3' WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 16:09:34,023 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 16:09:34,023 - host_hl7 - INFO - hl7 dir: D:\HL7\result\*.hl7
+2018-06-19 16:09:34,038 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 16:09:34,053 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 16:09:34,053 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 16:09:34,053 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 16:09:34,069 - host_hl7 - INFO - ((35L,),)
+2018-06-19 16:09:34,069 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 16:09:34,069 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 16:09:34,085 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 16:09:34') 
+2018-06-19 16:09:34,085 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 16:09:34') 
+2018-06-19 16:09:34,101 - host_hl7 - INFO - last inserted id [886]
+2018-06-19 16:09:34,115 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '886',ref_range = '10-15', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 16:09:34,131 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 16:09:34,131 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 16:09:34,131 - host_hl7 - INFO - ((40L,),)
+2018-06-19 16:09:34,147 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 16:09:34,147 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 16:09:34,147 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 16:09:34') 
+2018-06-19 16:09:34,163 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 16:09:34') 
+2018-06-19 16:09:34,163 - host_hl7 - INFO - last inserted id [887]
+2018-06-19 16:09:34,178 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '887',ref_range = '21-45', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 16:09:34,194 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 16:09:34,194 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 16:09:34,210 - host_hl7 - INFO - ((45L,),)
+2018-06-19 16:09:34,210 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 16:09:34,224 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 16:09:34,224 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 16:09:34') 
+2018-06-19 16:09:34,224 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 16:09:34') 
+2018-06-19 16:09:34,240 - host_hl7 - INFO - last inserted id [888]
+2018-06-19 16:09:34,256 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '888',ref_range = '', unit = '',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 16:09:34,272 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 16:09:34,272 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 16:09:34,272 - host_hl7 - INFO - ((160L,),)
+2018-06-19 16:09:34,288 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 16:09:34,288 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 16:09:34,302 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 16:09:34') 
+2018-06-19 16:09:34,302 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 16:09:34') 
+2018-06-19 16:09:34,319 - host_hl7 - INFO - last inserted id [889]
+2018-06-19 16:09:34,335 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '889',ref_range = '60-140', unit = 'mg / dl',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:28:54' , medval_date = '2018-06-19 14:28:54' , validation_status = '3' WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 16:14:26,612 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 16:14:26,612 - host_hl7 - INFO - DIR_IN D:\HL7\result\*.hl7
+2018-06-19 16:14:26,612 - host_hl7 - INFO - MY_SERVER: localhost
+2018-06-19 16:14:26,628 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 16:14:26,644 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 16:14:26,644 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 16:14:26,644 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 16:14:26,660 - host_hl7 - INFO - ((35L,),)
+2018-06-19 16:14:26,660 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 16:14:26,660 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 16:14:26,674 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 16:14:26') 
+2018-06-19 16:14:26,674 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 16:14:26') 
+2018-06-19 16:14:26,690 - host_hl7 - INFO - last inserted id [890]
+2018-06-19 16:14:26,690 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '890',ref_range = '10-15', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 16:14:26,706 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 16:14:26,721 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 16:14:26,721 - host_hl7 - INFO - ((40L,),)
+2018-06-19 16:14:26,721 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 16:14:26,737 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 16:14:26,737 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 16:14:26') 
+2018-06-19 16:14:26,753 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 16:14:26') 
+2018-06-19 16:14:26,753 - host_hl7 - INFO - last inserted id [891]
+2018-06-19 16:14:26,769 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '891',ref_range = '21-45', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 16:14:26,783 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 16:14:26,783 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 16:14:26,799 - host_hl7 - INFO - ((45L,),)
+2018-06-19 16:14:26,799 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 16:14:26,815 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 16:14:26,815 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 16:14:26') 
+2018-06-19 16:14:26,815 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 16:14:26') 
+2018-06-19 16:14:26,831 - host_hl7 - INFO - last inserted id [892]
+2018-06-19 16:14:26,846 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '892',ref_range = '', unit = '',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 16:14:26,861 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 16:14:26,861 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 16:14:26,878 - host_hl7 - INFO - ((160L,),)
+2018-06-19 16:14:26,878 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 16:14:26,878 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 16:14:26,894 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 16:14:26') 
+2018-06-19 16:14:26,894 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 16:14:26') 
+2018-06-19 16:14:26,908 - host_hl7 - INFO - last inserted id [893]
+2018-06-19 16:14:26,908 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '893',ref_range = '60-140', unit = 'mg / dl',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:28:54' , medval_date = '2018-06-19 14:28:54' , validation_status = '3' WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 16:14:54,049 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 16:14:54,049 - host_hl7 - INFO - DIR_IN D:\HL7\result\*.hl7
+2018-06-19 16:14:54,049 - host_hl7 - INFO - MY_SERVER: localhost
+2018-06-19 16:14:54,063 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 16:14:54,079 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 16:14:54,079 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 16:14:54,079 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 16:14:54,095 - host_hl7 - INFO - ((35L,),)
+2018-06-19 16:14:54,095 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 16:14:54,111 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 16:14:54,111 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 16:14:54') 
+2018-06-19 16:14:54,111 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 16:14:54') 
+2018-06-19 16:14:54,127 - host_hl7 - INFO - last inserted id [894]
+2018-06-19 16:14:54,141 - host_hl7 - INFO -  1UPDATE middleware_orderresults SET result_id = '894',ref_range = '10-15', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 16:14:54,141 - host_hl7 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1UPDATE middleware_orderresults SET result_id = '894',ref_range = '10-15', unit ' at line 1")
+2018-06-19 16:14:54,157 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 16:14:54,157 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 16:14:54,174 - host_hl7 - INFO - ((40L,),)
+2018-06-19 16:14:54,174 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 16:14:54,174 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 16:14:54,188 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 16:14:54') 
+2018-06-19 16:14:54,188 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 16:14:54') 
+2018-06-19 16:14:54,204 - host_hl7 - INFO - last inserted id [895]
+2018-06-19 16:14:54,204 - host_hl7 - INFO -  1UPDATE middleware_orderresults SET result_id = '895',ref_range = '21-45', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 16:14:54,220 - host_hl7 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1UPDATE middleware_orderresults SET result_id = '895',ref_range = '21-45', unit ' at line 1")
+2018-06-19 16:14:54,236 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 16:14:54,236 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 16:14:54,252 - host_hl7 - INFO - ((45L,),)
+2018-06-19 16:14:54,252 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 16:14:54,252 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 16:14:54,266 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 16:14:54') 
+2018-06-19 16:14:54,266 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 16:14:54') 
+2018-06-19 16:14:54,266 - host_hl7 - INFO - last inserted id [896]
+2018-06-19 16:14:54,282 - host_hl7 - INFO -  1UPDATE middleware_orderresults SET result_id = '896',ref_range = '', unit = '',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 16:14:54,298 - host_hl7 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1UPDATE middleware_orderresults SET result_id = '896',ref_range = '', unit = '',' at line 1")
+2018-06-19 16:14:54,298 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 16:14:54,313 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 16:14:54,313 - host_hl7 - INFO - ((160L,),)
+2018-06-19 16:14:54,329 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 16:14:54,329 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 16:14:54,345 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 16:14:54') 
+2018-06-19 16:14:54,345 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 16:14:54') 
+2018-06-19 16:14:54,361 - host_hl7 - INFO - last inserted id [897]
+2018-06-19 16:14:54,361 - host_hl7 - INFO -  1UPDATE middleware_orderresults SET result_id = '897',ref_range = '60-140', unit = 'mg / dl',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:28:54' , medval_date = '2018-06-19 14:28:54' , validation_status = '3' WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 16:14:54,375 - host_hl7 - ERROR - (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1UPDATE middleware_orderresults SET result_id = '897',ref_range = '60-140', unit' at line 1")
+2018-06-19 16:15:37,918 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 16:15:37,934 - host_hl7 - INFO - DIR_IN D:\HL7\result\*.hl7
+2018-06-19 16:15:37,934 - host_hl7 - INFO - MY_SERVER: localhost
+2018-06-19 16:15:37,950 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 16:15:37,950 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 16:15:37,964 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 16:15:37,964 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 16:15:37,964 - host_hl7 - INFO - ((35L,),)
+2018-06-19 16:15:37,980 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 16:15:37,980 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 16:15:37,980 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 16:15:37') 
+2018-06-19 16:15:37,996 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 16:15:37') 
+2018-06-19 16:15:37,996 - host_hl7 - INFO - last inserted id [898]
+2018-06-19 16:15:38,012 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '898',ref_range = '10-15', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 16:15:38,028 - host_hl7 - INFO - update OK
+2018-06-19 16:15:38,028 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 16:15:38,028 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 16:15:38,042 - host_hl7 - INFO - ((40L,),)
+2018-06-19 16:15:38,042 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 16:15:38,042 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 16:15:38,059 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 16:15:38') 
+2018-06-19 16:15:38,059 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 16:15:38') 
+2018-06-19 16:15:38,075 - host_hl7 - INFO - last inserted id [899]
+2018-06-19 16:15:38,075 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '899',ref_range = '21-45', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 16:15:38,089 - host_hl7 - INFO - update OK
+2018-06-19 16:15:38,089 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 16:15:38,089 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 16:15:38,105 - host_hl7 - INFO - ((45L,),)
+2018-06-19 16:15:38,105 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 16:15:38,121 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 16:15:38,121 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 16:15:38') 
+2018-06-19 16:15:38,121 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 16:15:38') 
+2018-06-19 16:15:38,137 - host_hl7 - INFO - last inserted id [900]
+2018-06-19 16:15:38,137 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '900',ref_range = '', unit = '',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 16:15:38,153 - host_hl7 - INFO - update OK
+2018-06-19 16:15:38,153 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 16:15:38,167 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 16:15:38,167 - host_hl7 - INFO - ((160L,),)
+2018-06-19 16:15:38,167 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 16:15:38,184 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 16:15:38,184 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 16:15:38') 
+2018-06-19 16:15:38,198 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 16:15:38') 
+2018-06-19 16:15:38,198 - host_hl7 - INFO - last inserted id [901]
+2018-06-19 16:15:38,214 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '901',ref_range = '60-140', unit = 'mg / dl',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:28:54' , medval_date = '2018-06-19 14:28:54' , validation_status = '3' WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 16:15:38,230 - host_hl7 - INFO - update OK
+2018-06-19 16:16:41,105 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 16:16:41,105 - host_hl7 - INFO - DIR_IN D:\HL7\result\*.hl7
+2018-06-19 16:16:41,121 - host_hl7 - INFO - MY_SERVER: localhost
+2018-06-19 16:16:41,138 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 16:16:41,138 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 16:16:41,138 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 16:16:41,153 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 16:16:41,153 - host_hl7 - INFO - ((35L,),)
+2018-06-19 16:16:41,168 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 16:16:41,168 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 16:16:41,168 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 16:16:41') 
+2018-06-19 16:16:41,184 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 16:16:41') 
+2018-06-19 16:16:41,184 - host_hl7 - INFO - last inserted id [902]
+2018-06-19 16:16:41,201 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '902',ref_range = '10-15', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 16:16:41,217 - host_hl7 - INFO - update OK
+2018-06-19 16:16:41,217 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 16:16:41,217 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 16:16:41,233 - host_hl7 - INFO - ((40L,),)
+2018-06-19 16:16:41,233 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 16:16:41,249 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 16:16:41,249 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 16:16:41') 
+2018-06-19 16:16:41,263 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 16:16:41') 
+2018-06-19 16:16:41,263 - host_hl7 - INFO - last inserted id [903]
+2018-06-19 16:16:41,279 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '903',ref_range = '21-45', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 16:16:41,296 - host_hl7 - INFO - update OK
+2018-06-19 16:16:41,296 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 16:16:41,311 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 16:16:41,311 - host_hl7 - INFO - ((45L,),)
+2018-06-19 16:16:41,311 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 16:16:41,326 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 16:16:41,326 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 16:16:41') 
+2018-06-19 16:16:41,342 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 16:16:41') 
+2018-06-19 16:16:41,342 - host_hl7 - INFO - last inserted id [904]
+2018-06-19 16:16:41,358 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '904',ref_range = '', unit = '',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 16:16:41,374 - host_hl7 - INFO - update OK
+2018-06-19 16:16:41,374 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 16:16:41,388 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 16:16:41,404 - host_hl7 - INFO - ((160L,),)
+2018-06-19 16:16:41,404 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 16:16:41,404 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 16:16:41,436 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 16:16:41') 
+2018-06-19 16:16:41,436 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 16:16:41') 
+2018-06-19 16:16:41,483 - host_hl7 - INFO - last inserted id [905]
+2018-06-19 16:16:41,497 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '905',ref_range = '60-140', unit = 'mg / dl',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:28:54' , medval_date = '2018-06-19 14:28:54' , validation_status = '3' WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 16:16:41,513 - host_hl7 - INFO - update OK
+2018-06-19 16:16:41,513 - host_hl7 - INFO - remove file: D:\HL7\result\201806191509110000301.hl7 
+2018-06-19 16:17:03,433 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 16:17:03,433 - host_hl7 - INFO - DIR_IN D:\HL7\result\*.hl7
+2018-06-19 16:17:03,433 - host_hl7 - INFO - MY_SERVER: localhost
+2018-06-19 16:17:03,448 - host_hl7 - INFO -  SELECT id FROM billing_orders WHERE number = '1806190002' 
+2018-06-19 16:17:03,463 - host_hl7 - INFO - ((5935L,),)
+2018-06-19 16:17:03,463 - host_hl7 - INFO -  Got test_code [PPT], result [12.8], ref [10-15] , unit [detik], flag [] 
+2018-06-19 16:17:03,463 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='PPT'  
+2018-06-19 16:17:03,480 - host_hl7 - INFO - ((35L,),)
+2018-06-19 16:17:03,480 - host_hl7 - INFO -  Got mapped test_id [35] for test_code [PPT] 
+2018-06-19 16:17:03,494 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 16:17:03,494 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 16:17:03') 
+2018-06-19 16:17:03,510 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('12.8','5935','35','2018-06-19 16:17:03') 
+2018-06-19 16:17:03,526 - host_hl7 - INFO - last inserted id [906]
+2018-06-19 16:17:03,526 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '906',ref_range = '10-15', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '35' 
+2018-06-19 16:17:03,542 - host_hl7 - INFO - update OK
+2018-06-19 16:17:03,558 - host_hl7 - INFO -  Got test_code [APTT], result [30.5], ref [21-45] , unit [detik], flag [] 
+2018-06-19 16:17:03,558 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='APTT'  
+2018-06-19 16:17:03,572 - host_hl7 - INFO - ((40L,),)
+2018-06-19 16:17:03,572 - host_hl7 - INFO -  Got mapped test_id [40] for test_code [APTT] 
+2018-06-19 16:17:03,572 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 16:17:03,588 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 16:17:03') 
+2018-06-19 16:17:03,588 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('30.5','5935','40','2018-06-19 16:17:03') 
+2018-06-19 16:17:03,605 - host_hl7 - INFO - last inserted id [907]
+2018-06-19 16:17:03,619 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '907',ref_range = '21-45', unit = 'detik',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '40' 
+2018-06-19 16:17:03,635 - host_hl7 - INFO - update OK
+2018-06-19 16:17:03,635 - host_hl7 - INFO -  Got test_code [INR], result [1.02], ref [] , unit [], flag [] 
+2018-06-19 16:17:03,651 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='INR'  
+2018-06-19 16:17:03,651 - host_hl7 - INFO - ((45L,),)
+2018-06-19 16:17:03,667 - host_hl7 - INFO -  Got mapped test_id [45] for test_code [INR] 
+2018-06-19 16:17:03,667 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 16:17:03,683 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 16:17:03') 
+2018-06-19 16:17:03,683 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('1.02','5935','45','2018-06-19 16:17:03') 
+2018-06-19 16:17:03,683 - host_hl7 - INFO - last inserted id [908]
+2018-06-19 16:17:03,697 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '908',ref_range = '', unit = '',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:22:01' , medval_date = '2018-06-19 14:22:01' , validation_status = '3' WHERE order_id = '5935' AND test_id = '45' 
+2018-06-19 16:17:03,713 - host_hl7 - INFO - update OK
+2018-06-19 16:17:03,713 - host_hl7 - INFO -  Got test_code [GDA], result [80], ref [60-140] , unit [mg / dl], flag [] 
+2018-06-19 16:17:03,713 - host_hl7 - INFO -  SELECT id FROM billing_tests WHERE ext_code ='GDA'  
+2018-06-19 16:17:03,729 - host_hl7 - INFO - ((160L,),)
+2018-06-19 16:17:03,729 - host_hl7 - INFO -  Got mapped test_id [160] for test_code [GDA] 
+2018-06-19 16:17:03,729 - host_hl7 - INFO -  SELECT id FROM middleware_orderresults WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 16:17:03,744 - host_hl7 - INFO -  insert result (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 16:17:03') 
+2018-06-19 16:17:03,744 - host_hl7 - INFO -  INSERT INTO middleware_results (alfa_result,order_id,test_id,lastmodification) values ('80','5935','160','2018-06-19 16:17:03') 
+2018-06-19 16:17:03,760 - host_hl7 - INFO - last inserted id [909]
+2018-06-19 16:17:03,760 - host_hl7 - INFO -  UPDATE middleware_orderresults SET result_id = '909',ref_range = '60-140', unit = 'mg / dl',patologi_mark = '' , techval_user = 'HOST', medval_user = 'HOST' , techval_date = '2018-06-19 14:28:54' , medval_date = '2018-06-19 14:28:54' , validation_status = '3' WHERE order_id = '5935' AND test_id = '160' 
+2018-06-19 16:17:03,776 - host_hl7 - INFO - update OK
+2018-06-19 16:17:03,776 - host_hl7 - INFO - remove file: D:\HL7\result\201806191509110000301.hl7 
+2018-06-19 16:17:08,056 - host_hl7 - INFO - starting host hl7 version: 0.0.0.1
+2018-06-19 16:17:08,072 - host_hl7 - INFO - DIR_IN D:\HL7\result\*.hl7
+2018-06-19 16:17:08,072 - host_hl7 - INFO - MY_SERVER: localhost

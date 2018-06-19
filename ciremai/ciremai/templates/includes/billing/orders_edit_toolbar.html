@@ -1,12 +1,12 @@
 {% load i18n %}
 
-    {% if perms.crm_core.add_orders %}
+    {% if perms.billing.add_orders %}
         <button class="btn btn-default" onclick="location.href=
                 '{% url 'order_add_patient' %}'" title="{% trans 'Add new patient order' %}"
                 data-toggle="tooltip" data-placement="top">
             <span class="glyphicon glyphicon-plus"></span></button>
     {% endif %}
-    {% if perms.crm_core.edit_orders %}
+    {% if perms.billing.change_orders %}
         <button class="btn btn-info" onclick="location.href=
                 '{% url 'order_edit' orders.pk %}'" title="{% trans 'Edit order' %}"
                 data-toggle="tooltip" data-placement="top">

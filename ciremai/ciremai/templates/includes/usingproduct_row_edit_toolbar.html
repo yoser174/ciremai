@@ -1,7 +1,7 @@
 {% load i18n %}
 
 <div class="btn-group btn-group-sm" role="group">
-    {% if perms.inventory.edit_stockin %}
+    {% if perms.inventory.change_stockin %}
         <button class="btn btn-info" onclick="location.href=
                 '{% url 'usingproduct_edit' record.pk %}'" title="{% trans 'Edit Using product' %}"
                 data-toggle="tooltip" data-placement="top">

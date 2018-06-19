@@ -4,17 +4,133 @@ from __future__ import unicode_literals
 from django.shortcuts import render, redirect
 
 from braces.views import PermissionRequiredMixin, LoginRequiredMixin
+from extra_views.advanced import UpdateWithInlinesView,NamedFormsetsMixin, CreateWithInlinesView,InlineFormSet,ModelFormMixin
 from django_tables2 import SingleTableView, RequestConfig
 from django.conf import settings
 from datetime import datetime
 from reportlab.pdfgen import canvas
+from django.utils.translation import ugettext_lazy as _
 from django.http import HttpResponse
+from django.contrib import messages
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
+from django.core.urlresolvers import reverse_lazy
+from avatar.forms import PrimaryAvatarForm,UploadAvatarForm 
+from avatar.views import _get_avatars
+from avatar.models import Avatar
+from avatar.signals import avatar_updated
+from avatar.utils import invalidate_cache
 
 from . import models,tables,filters,forms
 from billing.models import Orders,OrderTests,Tests
 
 import os
 from pyreportjasper import JasperPy
+
+
+
+# ######################
+# ##   Helper Views   ##
+# ######################
+class UpdateUserProfileMW(LoginRequiredMixin,NamedFormsetsMixin,UpdateWithInlinesView):
+    model = User
+    fields = ['first_name', 'last_name', 'email']
+    template_name = 'auth/user_form_middleware.html'
+    success_url = reverse_lazy('home_middleware')
+
+def login_user(request):
+    logout(request)
+    if request.POST:
+        username = request.POST.get('username', '')
+        password = request.POST.get('password', '')
+
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return redirect(reverse_lazy('dashboard_middleware'), permanent=True)
+        else:
+            messages.error(request, _("Wrong username and/or password."))
+
+    return render(request,'registration/login_middleware.html')
+
+def show_dashboard(request):
+    #suppliercount = models.Supplier.objects.all().count()
+    #productcount = models.Product.objects.all().count()
+    #context = {'suppliercount': suppliercount,'productcount':productcount}
+    context = {}
+    return render(request,'dashboard_middleware.html',context)
+
+
+def AvatarChange(request,extra_context=None,next_override=None,upload_form=UploadAvatarForm,primary_form=PrimaryAvatarForm,
+                 *args,**kwargs):
+    if extra_context is None:
+        extra_context = {}
+        
+    avatar, avatars = _get_avatars(request.user)
+    if avatar:
+        kwargs = {'initial':{'choice':avatar.id}}
+    else:
+        kwargs = {}
+    upload_avatar_form = upload_form(user=request.user, **kwargs)
+    primary_avatar_form = primary_form(request.POST or None,
+                                       user=request.user,
+                                       avatars=avatars, **kwargs)
+    
+    if request.method == 'POST':
+        updated = False
+        if 'choice' in request.POST and primary_avatar_form.is_valid():
+            avatar = Avatar.objects.get(id=primary_avatar_form.cleaned_data['choice'])
+            avatar.primary = True
+            avatar.save()
+            updated = True
+            invalidate_cache(request.user)
+            messages.success(request, _("Successfully updated your avatar."))
+        if updated:
+            avatar_updated.send(sender=Avatar, user=request.user, avatar=avatar)
+        return render(request,'auth/avatar_change_middldeware.html')
+    
+    context = {
+        'avatar':avatar,
+        'avatars':avatars,
+        'upload_avatar_form':upload_avatar_form,
+        'primary_avatar_form':primary_avatar_form,
+        'next':next_override
+        }
+    context.update(extra_context)
+    template_name = 'auth/avatar_change_middldeware.html'
+    return render(request, template_name, context)
+    
+            
+def AvatarAdd(request,extra_context=None,next_override=None,upload_form=UploadAvatarForm,*args,**kwargs):
+    if extra_context is None:
+        extra_context = {}
+    avatar,avatars = _get_avatars(request.user)
+    upload_avatar_form = upload_form(request.POST or None,
+                                     request.FILES or None,
+                                     user = request.user)
+    if request.method == 'POST' and 'avatar' in request.FILES:
+        if upload_avatar_form.is_valid():
+            avatar = Avatar(user=request.user, primary=True)
+            image_file = request.FILES['avatar']
+            avatar.avatar.save(image_file.name,image_file)
+            avatar.save()
+            invalidate_cache(request.user)
+            messages.success(request, _("Successfully uploaded a new avatar."))
+            avatar_updated.send(sender=Avatar, user=request.user, avatar=avatar)
+            return render(request,'auth/avatar_change.html')
+    context = {
+        'avatar': avatar,
+        'avatars': avatars,
+        'upload_avatar_form': upload_avatar_form,
+        'next': next_override,
+    }
+    context.update(extra_context)
+    template_name = 'auth/avatar_add_middldeware.html'
+    return render(request, template_name, context)    
+
+
+
 
 
 class FilteredSingleTableView(SingleTableView):
@@ -265,8 +381,9 @@ def order_results(request,pk):
                 pass
                 
             o_tes = models.OrderResults.objects.get(order_id=pk,test_id=ot.test_id)
-            o_tes.unit = s_unit
-            o_tes.save()
+            #if o_tes.unit == '':
+            #    o_tes.unit = s_unit
+            #    o_tes.save()
             # try get child
             try:
                 m_tes = Tests.objects.filter(parent_id=ot.test_id)

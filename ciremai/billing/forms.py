@@ -2,11 +2,17 @@
 from datetimewidget.widgets import DateWidget
 from django import forms
 from crispy_forms.helper import FormHelper
-from .models import TestGroups,Tests,Patients,Orders,OrderTests
+from .models import TestGroups,Tests,Patients,Orders,OrderTests,Origins,Insurance,Doctors,Diagnosis
 
 from itertools import groupby
 from django.forms.models import (
     ModelChoiceIterator, ModelChoiceField, ModelMultipleChoiceField
+)
+
+from django_select2.forms import (
+    HeavySelect2MultipleWidget, HeavySelect2Widget, ModelSelect2MultipleWidget,
+    ModelSelect2TagWidget, ModelSelect2Widget, Select2MultipleWidget,
+    Select2Widget
 )
 
 
@@ -74,8 +80,31 @@ class PatientForm(forms.ModelForm):
     #    self.fields['dob'] = forms.DateField(widget=DateWidget(bootstrap_version=3, usel10n=True))
     #    self.helper = FormHelper()
     #    self.helper.form_tag = False
-        
+
+
 class OrderForm(forms.ModelForm):
+    origin = forms.ModelChoiceField(queryset=Origins.objects.all(), widget=Select2Widget,empty_label=None)
+    insurance = forms.ModelChoiceField(queryset=Insurance.objects.all(), widget=Select2Widget,empty_label=None)
+    doctor = forms.ModelChoiceField(queryset=Doctors.objects.all(), widget=Select2Widget,empty_label=None)
+    diagnosis = forms.ModelChoiceField(queryset=Diagnosis.objects.all(),
+                                       widget=Select2Widget,
+                                       empty_label=None,
+                                       required=False)
+    test_selections = forms.ModelMultipleChoiceField(queryset=Tests.objects.filter(can_request=True),
+                                          widget=Select2MultipleWidget,
+                                          #empty_label=None,
+                                          required=False)
+    def __init__(self, *args, **kwargs):
+        super(OrderForm, self).__init__(*args, **kwargs)
+        instance = getattr(self, 'instance', None)
+        if instance and instance.pk:
+            self.fields['test_selections'].initial = list(Orders.objects.get(id=instance.pk).order_items.all().filter(test__can_request=True).values_list('test_id',flat=True).order_by('id'))
+        
+    class Meta:
+        model = Orders
+        fields = ('id','number','priority','origin','insurance','doctor','diagnosis','note')
+
+class OrderForm2(forms.ModelForm):
     test_selections =  GroupedModelMultiChoiceField(queryset = Tests.objects.all(), # not optional, use .all() if unsure
         group_by_field='test_group',
         widget  = forms.CheckboxSelectMultiple,

@@ -93,3 +93,29 @@ class JMTable(tables.Table):
         fields = ('order_date','number','priority','patient','insurance','origin','get_test_str','doctor','get_sub_total_price_tariff','get_sub_total_price_service',)
         exclude = ('id')
         template = 'django_tables2/bootstrap.html'
+ 
+class OriginTable(tables.Table):
+    export_formats = ['csv', 'xls']
+    class Meta:
+        model = Orders
+        fields = ('origin__name','number__count',)
+        exclude = ('id')
+        template = 'django_tables2/bootstrap.html'
+               
+class InsuranceTable(tables.Table):
+    export_formats = ['csv', 'xls']
+    class Meta:
+        model = Orders
+        fields = ('insurance__name','number__count',)
+        exclude = ('id')
+        template = 'django_tables2/bootstrap.html'
+        
+class TestsTable(tables.Table):
+    export_formats = ['csv', 'xls']
+    class Meta:
+        model = Orders
+        fields = ('order_items__test__name','number__count',)
+        exclude = ('id')
+        template = 'django_tables2/bootstrap.html'
+        
+        

@@ -1,7 +1,7 @@
 {% load i18n %}
 
 <div class="btn-group btn-group-sm" role="group">
-    {% if perms.billing.edit_tests %}
+    {% if perms.billing.change_tests %}
         <button class="btn btn-info" onclick="location.href=
         	'{% url 'tests_edit' record.pk %}'" title="{% trans 'Edit test' %}"
                 data-toggle="tooltip" data-placement="top">

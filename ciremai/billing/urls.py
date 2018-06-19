@@ -6,7 +6,7 @@ from . import views
 
 urlpatterns = [
     
-    url("^$", direct_to_template, {"template": "index_billing.html"}, name="home"),
+    url("^$", direct_to_template, {"template": "index_billing.html"}, name="home_billing"),
     url(r'^dashboard/$', views.show_dashboard, name='dashboard_billing'),
     url(r'^login/$', views.login_user, name='login'),
     url(r'^logout/$', views.login_user, name='logout'),
@@ -62,4 +62,7 @@ urlpatterns = [
     # Report urls
     # #############
     url(r'^reports/jm/$', views.report_jm, name='jm_list'),
+    url(r'^reports/origin/$', views.report_origin, name='origin_list'),
+    url(r'^reports/insurance/$', views.report_insurance, name='insurance_list'),
+    url(r'^reports/tests/$', views.report_tests, name='tests_list'),
     ]

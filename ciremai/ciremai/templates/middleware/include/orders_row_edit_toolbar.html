@@ -3,7 +3,7 @@
 <div class="btn-group btn-group-sm" role="group">
 
 {{ order }}
-    {% if perms.billing.edit_orders %}
+    {% if perms.billing.change_orders %}
         <button class="btn btn-info" onclick="location.href=
         	'{% url 'order_results' record.pk %}'" title="{% trans 'View/Edit Result' %}"
                 data-toggle="tooltip" data-placement="top">

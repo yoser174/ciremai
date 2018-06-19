@@ -31,6 +31,15 @@
     </button>
 {% endblock %}
 
+{% block extra_css %}
+{{ form.media.css }}
+{% endblock %}
+    
+{% block extra_js %}
+{{ form.media.js }}
+{% endblock %}
+    
+
 {% block main_inner %}
     {% bootstrap_form form layout='horizontal' %}
 {% endblock %}

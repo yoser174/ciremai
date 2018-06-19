@@ -6,7 +6,7 @@
                 data-toggle="tooltip" data-placement="top">
             <span class="glyphicon glyphicon-plus"></span></button>
     {% endif %}
-    {% if perms.crm_core.edit_supplier %}
+    {% if perms.crm_core.change_supplier %}
         <button class="btn btn-info" onclick="location.href=
                 '{% url 'supplier_edit' supplier.pk %}'" title="{% trans 'Edit Supplier' %}"
                 data-toggle="tooltip" data-placement="top">

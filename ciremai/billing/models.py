@@ -214,6 +214,7 @@ class Tests(models.Model):
         default=NUMERIC,
     )
     specimen = models.ForeignKey(Specimens,on_delete=models.PROTECT,verbose_name=_("Specimen"),related_name='test_specimen',null=True)
+    can_request = models.BooleanField(verbose_name=_("Can request?"), default=True,blank=True)
     sort = models.IntegerField(verbose_name=_("Sort"),help_text=_("Sorted priority"))
     ext_code = models.CharField(max_length=30,verbose_name=_("External code"))
     dateofcreation = CreationDateTimeField(verbose_name=_("Created at"))

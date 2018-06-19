@@ -6,7 +6,7 @@
                 data-toggle="tooltip" data-placement="top">
             <span class="glyphicon glyphicon-plus"></span></button>
     {% endif %}
-    {% if perms.crm_core.edit_product %}
+    {% if perms.crm_core.change_product %}
         <button class="btn btn-info" onclick="location.href=
                 '{% url 'product_edit' product.pk %}'" title="{% trans 'Edit Product' %}"
                 data-toggle="tooltip" data-placement="top">

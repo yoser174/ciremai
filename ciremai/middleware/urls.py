@@ -6,14 +6,14 @@ from . import views
 
 urlpatterns = [
     
-    url("^$", direct_to_template, {"template": "index_middleware.html"}, name="home"),
-    #url(r'^dashboard/$', views.show_dashboard, name='dashboard_billing'),
-    #url(r'^login/$', views.login_user, name='login'),
-    #url(r'^logout/$', views.login_user, name='logout'),
-    #url(r'^avatarchange/$', views.AvatarChange, name='avatar_change'),
-    #url(r'^avataradd/$', views.AvatarAdd, name='avatar_add'),
+    url("^$", direct_to_template, {"template": "index_middleware.html"}, name="home_middleware"),
+    url(r'^dashboard/$', views.show_dashboard, name='dashboard_middleware'),
+    url(r'^login/$', views.login_user, name='login_middleware'),
+    url(r'^logout/$', views.login_user, name='logout_middleware'),
+    url(r'^avatarchange/$', views.AvatarChange, name='avatar_change_middleware'),
+    url(r'^avataradd/$', views.AvatarAdd, name='avatar_add_middleware'),
     #url(r'^avatar/', include('avatar.urls')),
-    #url(r'^profileupdate/(?P<pk>\d+)/$', views.UpdateUserProfile.as_view(), name='profile_update'),
+    url(r'^profileupdate/(?P<pk>\d+)/$', views.UpdateUserProfileMW.as_view(), name='profile_update_middleware'),
     
     #################
     # Receive sample
