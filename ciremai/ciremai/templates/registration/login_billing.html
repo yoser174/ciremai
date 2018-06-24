@@ -46,7 +46,7 @@
 	  	
 		     
 
-            <form class="form-login" action="{% url 'login' %}" method="post" id="login-form">
+            <form class="form-login" action="{% url 'login_billing' %}" method="post" id="login-form">
                 {% csrf_token %}
 		        <h2 class="form-login-heading">{% trans "sign in now" %}</h2>
 

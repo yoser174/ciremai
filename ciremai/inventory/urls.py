@@ -48,6 +48,7 @@ urlpatterns = [
      # ############
      url(r'^stockin/$', views.ListStockin.as_view(), name='stockin_list'),
      url(r'^stockin/create/$', views.CreateStockin.as_view(), name='stockin_create'),
+     url(r'^stockin/create-qrcode/$', views.stockin_qrcode, name='stockin_create-qrcode'),
      url(r'^stockin/detail/(?P<pk>\d+)/$', views.ViewStockin.as_view(), name='stockin_detail'),
      url(r'^stockin/edit/(?P<pk>\d+)/$', views.EditStockin.as_view(), name='stockin_edit'),
      url(r'^stockin/delete/(?P<pk>\d+)/$', views.DeleteStockin.as_view(), name='stockin_delete'),

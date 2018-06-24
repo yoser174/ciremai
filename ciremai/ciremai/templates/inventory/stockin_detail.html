@@ -50,11 +50,7 @@
         <table>
          <tr>
         <td>{% trans 'Received Quantity' %}:&nbsp;</td>
-        <td><h2><b>{{ stockin.quantity }}</b></h2></td>
-        </tr>
-        <tr>
-        <td>{% trans 'Unit' %}:&nbsp;</td>
-        <td><b>{{ stockin.product.base_unit }}</b></td>
+        <td><h2><b>{{ stockin.quantity }}&nbsp;{{ stockin.unit }}</b></h2></td>
         </tr>
         <tr>
         <td>{% trans 'Created / Modified by' %}:&nbsp;</td>

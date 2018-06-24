@@ -1,5 +1,5 @@
 from django.shortcuts import render,HttpResponseRedirect
-
+from django.contrib.auth.decorators import login_required
 from django.template.response import TemplateResponse
 
 from . import models,tables,forms,filters
@@ -29,53 +29,62 @@ from django_tables2.config import RequestConfig
 from django_tables2.export.export import TableExport
 import serial,time
 
+from datetime import datetime, timedelta, time
 
-def direct_to_template(request,template,extra_context=None, **kwargs):
-    if not request.user.is_authenticated():
-        return HttpResponseRedirect('login')
-    context=extra_context or {}
-    context["params"]=kwargs
-    for (key,value) in context.items():
-        if callable(value):
-            context[key]=value()
-    return TemplateResponse(request, template, context)
-
-
+from labels import Label
 
 
 # ######################
 # ##   Helper Views   ##
 # ######################
+@login_required
 class UpdateUserProfile(LoginRequiredMixin,NamedFormsetsMixin,UpdateWithInlinesView):
     model = User
     fields = ['first_name', 'last_name', 'email']
-    template_name = 'auth/user_form_middleware.html'
+    template_name = 'auth/user_form_billing.html'
     success_url = reverse_lazy('home_billing')
 
 def login_user(request):
     logout(request)
+    next_url = request.GET.get('next','')
+    
+    
     if request.POST:
         username = request.POST.get('username', '')
         password = request.POST.get('password', '')
+        
+        next_url = request.POST.get('next','')
+        
 
         user = authenticate(username=username, password=password)
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return redirect(reverse_lazy('dashboard_billing'), permanent=True)
+                if next_url<>'':
+                    return HttpResponseRedirect(next_url)
+                else:
+                    return redirect(reverse_lazy('dashboard_billing'), permanent=True)
         else:
             messages.error(request, _("Wrong username and/or password."))
+            
+            
+    context = {'next':next_url}
+    return render(request,'registration/login_billing.html',context)
 
-    return render(request,'registration/login_billing.html')
-
+@login_required
 def show_dashboard(request):
-    #suppliercount = models.Supplier.objects.all().count()
-    #productcount = models.Product.objects.all().count()
-    #context = {'suppliercount': suppliercount,'productcount':productcount}
-    context = {}
-    return render(request,'dashboard_billing.html',context)
+    today = datetime.now().date()
+    ordercount_today = models.Orders.objects.filter(order_date__gte=today).count()
+    patientcount_today = models.Patients.objects.filter(dateofcreation__gte=today).count()
+    context = {'ordercount_today': ordercount_today,'patientcount_today':patientcount_today}
+    print request.GET
+    next_url = request.GET.get('next')
+    if next_url:
+        return HttpResponseRedirect(next_url)
+    else:
+        return render(request,'dashboard_billing.html',context)
 
-
+@login_required
 def AvatarChange(request,extra_context=None,next_override=None,upload_form=UploadAvatarForm,primary_form=PrimaryAvatarForm,
                  *args,**kwargs):
     if extra_context is None:
@@ -102,7 +111,7 @@ def AvatarChange(request,extra_context=None,next_override=None,upload_form=Uploa
             messages.success(request, _("Successfully updated your avatar."))
         if updated:
             avatar_updated.send(sender=Avatar, user=request.user, avatar=avatar)
-        return render(request,'auth/avatar_change.html')
+        return render(request,'auth/avatar_change_billing.html')
     
     context = {
         'avatar':avatar,
@@ -112,10 +121,10 @@ def AvatarChange(request,extra_context=None,next_override=None,upload_form=Uploa
         'next':next_override
         }
     context.update(extra_context)
-    template_name = 'auth/avatar_change.html'
+    template_name = 'auth/avatar_change_billing.html'
     return render(request, template_name, context)
     
-            
+@login_required(login_url='login_billing')           
 def AvatarAdd(request,extra_context=None,next_override=None,upload_form=UploadAvatarForm,*args,**kwargs):
     if extra_context is None:
         extra_context = {}
@@ -132,7 +141,7 @@ def AvatarAdd(request,extra_context=None,next_override=None,upload_form=UploadAv
             invalidate_cache(request.user)
             messages.success(request, _("Successfully uploaded a new avatar."))
             avatar_updated.send(sender=Avatar, user=request.user, avatar=avatar)
-            return render(request,'auth/avatar_change.html')
+            return render(request,'auth/avatar_change_billing.html')
     context = {
         'avatar': avatar,
         'avatars': avatars,
@@ -140,7 +149,7 @@ def AvatarAdd(request,extra_context=None,next_override=None,upload_form=UploadAv
         'next': next_override,
     }
     context.update(extra_context)
-    template_name = 'auth/avatar_add.html'
+    template_name = 'auth/avatar_add_billing.html'
     return render(request, template_name, context)    
 
 
@@ -148,6 +157,7 @@ def AvatarAdd(request,extra_context=None,next_override=None,upload_form=UploadAv
 # #################################
 # ##         Report Views        ##
 # #################################
+@login_required
 def report_tests(request):
     template = 'report/insurance.html'
     data = models.Orders.objects.values('order_items__test__name').annotate(Count('number')).order_by()
@@ -179,6 +189,7 @@ def report_tests(request):
     context = {'orderstable':orderstable,'filter':filter}
     return render(request,template,context)  
 
+@login_required
 def report_insurance(request):
     template = 'report/insurance.html'
     data = models.Orders.objects.values('insurance__name').annotate(Count('number')).order_by()
@@ -209,7 +220,8 @@ def report_insurance(request):
         
     context = {'orderstable':orderstable,'filter':filter}
     return render(request,template,context)  
-    
+
+@login_required
 def report_origin(request):
     template = 'report/origin.html'
     data = models.Orders.objects.values('origin__name').annotate(Count('number')).order_by()
@@ -241,18 +253,21 @@ def report_origin(request):
     context = {'orderstable':orderstable,'filter':filter}
     return render(request,template,context)  
     
-
+@login_required
 def report_jm(request):
     template = 'report/jm.html'
     data = models.Orders.objects.all()
+    today = datetime.now().date()
       
     if request.GET.get('order_date'):
         d_range = request.GET.get('order_date')
-        #04/01/2018 - 04/30/2018
         start_date = d_range[:10]
         end_date = d_range[13:23]
- 
-        data = data.filter(order_date__range=[start_date,end_date] )
+    else:
+        start_date = today
+        end_date = today
+        
+    data = data.filter(order_date__range=[start_date,end_date] )
     
     filter = filters.JMFilter(request.GET,queryset=data)
     orderstable = JMTable(data)
@@ -276,9 +291,15 @@ def report_jm(request):
 # #################################
 # ##   Billing Function Views  ##
 # #################################
+@login_required
+def home(request):
+    template = 'index_billing.html'
+    org_lab_name = models.Parameters.objects.filter(name = 'ORG_LAB_NAME')
+    org_lab_address = models.Parameters.objects.filter(name = 'ORG_LAB_ADDRESS')
+    context = {'org_lab_name':org_lab_name,'org_lab_address':org_lab_address}
+    return render(request,template,context) 
 
-
-
+@login_required
 def order_patient(request):
     if request.method == 'POST':  
         patient_pk = request.POST.get('patient','')  
@@ -298,7 +319,8 @@ def order_patient(request):
         
         context = {'patienttable':patienttable,'filter':filter}
         return render(request,template,context)  
-
+    
+@login_required
 def order_add_patient(request):
     if request.method == 'POST':
         form = forms.PatientForm(request.POST)
@@ -314,89 +336,70 @@ def order_add_patient(request):
         context = {'form':forms.PatientForm}
         return render(request,template,context)
     
+@login_required(login_url='login_billing')   
 def create_order_from_patient(request,patient_pk):
     patient = models.Patients.objects.get(pk=patient_pk)
     order = patient.create_order()
     return redirect('order_edit', pk=order.pk)
 
+@login_required(login_url='login_billing') 
 def order_print_receipt(request,order_pk):
     order = models.Orders.objects.get(pk=order_pk)
+    org_lab_name = models.Parameters.objects.filter(name = 'ORG_LAB_NAME')
+    org_lab_address = models.Parameters.objects.filter(name = 'ORG_LAB_ADDRESS')
+    org_lab_city = models.Parameters.objects.filter(name = 'ORG_LAB_CITY')
     template = 'billing/order_print_receipt.html'
-    context = {'order':order}
+    context = {'order':order,'org_lab_name':org_lab_name,'org_lab_address':org_lab_address,'org_lab_city':org_lab_city}
     return render(request,template,context) 
 
+@login_required(login_url='login_billing') 
 def order_print_bill(request,order_pk):
     order = models.Orders.objects.get(pk=order_pk)
+    org_lab_name = models.Parameters.objects.filter(name = 'ORG_LAB_NAME')
+    org_lab_address = models.Parameters.objects.filter(name = 'ORG_LAB_ADDRESS')
+    org_lab_city = models.Parameters.objects.filter(name = 'ORG_LAB_CITY')
     template = 'billing/order_print_bill.html'
-    context = {'order':order}
+    context = {'order':order,'org_lab_name':org_lab_name,'org_lab_address':org_lab_address,'org_lab_city':org_lab_city}
     return render(request,template,context) 
 
+@login_required(login_url='login_billing') 
 def order_print_worklist(request,order_pk):
     order = models.Orders.objects.get(pk=order_pk)
+    org_lab_name = models.Parameters.objects.filter(name = 'ORG_LAB_NAME')
+    org_lab_address = models.Parameters.objects.filter(name = 'ORG_LAB_ADDRESS')
+    org_lab_city = models.Parameters.objects.filter(name = 'ORG_LAB_CITY')
     template = 'billing/order_print_worklist.html'
-    context = {'order':order}
+    context = {'order':order,'org_lab_name':org_lab_name,'org_lab_address':org_lab_address,'org_lab_city':org_lab_city}
     return render(request,template,context) 
 
+@login_required(login_url='login_billing') 
 def order_print_barcode(request,order_pk):
     order = models.Orders.objects.get(pk=order_pk)
-    samples = models.OrderTests.objects.filter(order = order).values('test__specimen__id','test__specimen__suffix_code').distinct()
-    print samples.query
-    for sample in samples:
-        #print sample
-        #print order.number+sample['test__specimen__suffix_code']
-        #print sample['test__specimen__id']
-        models.OrderSamples.objects.get_or_create(order=order,specimen_id=sample['test__specimen__id'],sample_no=str(order.number+sample['test__specimen__suffix_code']))
-    #print sample
-    # Print label barcode disini
-    labels = models.OrderSamples.objects.filter(order=order).values('sample_no','specimen__name')
-    LF  = b'\x0A'
-    """
-    Form:
-    [LF]N[LF]A128,16,0,0,1,1,N,"5953762"[LF]A16,104
-                    ,0,0,1,1,N,""[LF]A8,48,0,0,1,1,N,"SUGENG SANTOS
-                    O"[LF]A64,80,0,0,1,1,N,"1865342"[LF]A8,16,0,0,1
-                    ,1,N,"Order Id :"[LF]A8,80,0,0,1,1,N,"RM :"[LF]
-                    A352,80,3,0,1,1,N,"3091"[LF]A200,80,0,0,1,1,N,"
-                    19/04/1969"[LF]B16,104,0,1,2,4,120,B,"5953762"[
-                    LF]P2[LF][LF]
-    Label:
-    [LF]N[LF]A32,80,0,0,1,1,N,""[LF]A136,8,0,0,1,1,
-                    N,"5953762"[LF]A368,120,3,0,1,1,N,"SERUM"[LF]A1
-                    6,32,0,0,1,1,N,"SUGENG SANTOSO"[LF]A16,8,0,0,1,
-                    1,N,"Order Id :"[LF]A16,56,0,0,1,1,N,"RM :"[LF]
-                    A336,64,3,0,1,1,N,"3091"[LF]A208,48,0,0,1,1,N,"
-                    19/04/1969"[LF]A72,48,0,0,1,1,N,"1865342"[LF]B3
-                    2,80,0,1,2,4,136,B,"5953762SE"[LF]P1[LF][LF]
-    """
     
-    label_com = serial.Serial(port= settings.LABEL_PRINTER_PORT,baudrate=9600,
-                                    timeout=10, writeTimeout=10,stopbits=serial.STOPBITS_ONE,
-                                    bytesize=serial.EIGHTBITS,parity=serial.PARITY_NONE)
-    for label in labels:
-        #print label
-        zpl_str = ''
-        zpl_str = LF+'N'+LF
-        zpl_str += 'A32,80,0,0,1,1,N,""'+LF
-        zpl_str += 'A136,8,0,0,1,1,N,"'+order.number+'"'+LF
-        zpl_str += 'A368,120,3,0,1,1,N,"'+label['specimen__name']+'"'+LF
-        zpl_str += 'A16,32,0,0,1,1,N,"'+order.patient.name+'"'+LF
-        zpl_str += 'A16,8,0,0,1,1,N,"Order Id :"'+LF
-        zpl_str += 'A16,56,0,0,1,1,N,"RM :"'+LF
-        zpl_str += 'A336,64,3,0,1,1,N,""'+LF # nomor urut
-        zpl_str += 'A208,48,0,0,1,1,N,"'+order.patient.dob.strftime("%Y-%m-%d")+'"'+LF
-        zpl_str += 'A72,48,0,0,1,1,N,"'+order.patient.patient_id+'"'+LF
-        zpl_str += 'B32,80,0,1,2,4,136,B,"'+label['sample_no']+'"'+LF
-        zpl_str += 'P1'+LF+LF
+    MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+    }
+    
+    printer_id = request.GET.get('printer')
+    
+    p_label = Label()
+    p_label.set_order_id(order_pk)
+    p_label.set_labelprinter_id(printer_id)
+    
+    not_err,msg = p_label.print_label()
+    
+    if not_err:
+        messages.info(request,msg)
+    else:
+        messages.error(request, 'Error when printer label [%s]' % msg,extra_tags='danger')
         
-        #print zpl_str
-        # print to COM
-        
-        label_com.write(zpl_str.encode())
-        time.sleep(1)
+    
+    
         
         
     return redirect('order_detail', pk=order.pk)
 
+@login_required(login_url='login_billing') 
 def order_send_lis(request,order_pk):
     order = models.Orders.objects.get(pk=order_pk)
     # seding to LIS here
@@ -406,8 +409,9 @@ def order_send_lis(request,order_pk):
     content_hl7 = ''
     content_hl7 += 'MSH|^~\&|BIL|BIL-DREAM|CIT-INFINITY|LabPK|||ORM^O01|'+ts+'||||||ER|\r'
     content_hl7 += 'PID|||'+order.patient.patient_id+'||'+order.patient.name+'||'+order.patient.gender.ext_code+'|'+DateFormat(order.patient.dob).format('Ymd')+'|||'+order.patient.address+'^^^||\r'
-    content_hl7 += 'PV1|||||||||||'+order.doctor.ext_code+'^'+order.doctor.name+'^'+order.diagnosis.ext_code+'^'+order.diagnosis.name+'^^||\r'
-    content_hl7 += 'ORC|NW|'+order.number+'|||'+order.origin.ext_code+'|'+order.origin.name+'|'+order.priority.ext_code+'|'+order.insurence.ext_code+'^'+order.insurence.name+'|'+ts+'||||||01||\r'
+    #content_hl7 += 'PV1|||||||||||'+order.doctor.ext_code+'^'+order.doctor.name+'^'+order.diagnosis.ext_code+'^'+order.diagnosis.name+'^^||\r'
+    content_hl7 += 'PV1|||||||||||'+order.doctor.ext_code+'^'+order.doctor.name+'^^^^||\r'
+    content_hl7 += 'ORC|NW|'+order.number+'|||'+order.origin.ext_code+'|'+order.origin.name+'|'+order.priority.ext_code+'|'+order.insurance.ext_code+'^'+order.insurance.name+'|'+ts+'||||||01||\r'
     i = 1
     for tes in order.order_items.all():
         content_hl7 += 'OBR|'+str(i)+'|||'+tes.test.ext_code+'|'+tes.test.name+'||'+ts+'||||A\r'
@@ -536,10 +540,11 @@ class ListOrders(LoginRequiredMixin, PermissionRequiredMixin, FilteredSingleTabl
     permission_required = 'billing.view_orders'
     login_url = settings.LOGIN_URL_BILLING
     table_class = tables.OrdersTable
-    table_data = models.Orders.objects.all()
+    table_data = models.Orders.objects.filter()
     context_table_name = 'orderstable'
     filter_class = filters.OrderFilter
     table_pagination = 10
+    
     
 class EditOrder(LoginRequiredMixin, PermissionRequiredMixin, NamedFormsetsMixin, UpdateWithInlinesAndModifiedByMixin):
     model = models.Orders
@@ -547,11 +552,11 @@ class EditOrder(LoginRequiredMixin, PermissionRequiredMixin, NamedFormsetsMixin,
     permission_required = 'billing.change_orders'
     login_url = settings.LOGIN_URL_BILLING
     success_url = reverse_lazy('orders_list')
-    form_class = forms.OrderForm
+    form_class = forms.OrderForm2
     
     def post(self,request,*args,**kwargs):
         order = models.Orders.objects.get(number=request.POST['number'])
-        form = forms.OrderForm(request.POST,instance=order)
+        form = forms.OrderForm2(request.POST,instance=order)
         if form.is_valid():
             form.save()
             tes = models.OrderTests.objects.filter(order=order)
@@ -573,6 +578,10 @@ class ViewOrder(LoginRequiredMixin, PermissionRequiredMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super(ViewOrder, self).get_context_data(**kwargs)
         context['samples'] = models.OrderSamples.objects.filter(order_id=self.kwargs['pk'])
+        context['labelprinters'] = models.LabelPrinters.objects.filter(active=True)
+        context['MENU_BTN_PRINT_RECEIPT'] = models.Parameters.objects.filter(name='MENU_BTN_PRINT_RECEIPT')[0]
+        context['MENU_BTN_PRINT_BILL'] = models.Parameters.objects.filter(name='MENU_BTN_PRINT_BILL')[0]
+        context['MENU_BTN_PRINT_BARCODE'] = models.Parameters.objects.filter(name='MENU_BTN_PRINT_BARCODE')[0]
         return context
 
 

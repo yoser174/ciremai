@@ -2,6 +2,7 @@
 <html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
 {% load i18n staticfiles avatar_tags  %}
 {% load bootstrap3 %}
+{% load avatar_tags %}
 
 
 <head>
@@ -23,10 +24,15 @@
     {% block extra_css %}
     {% endblock %}
 
+    <script src="{% static "assets/js/common-scripts.js" %}"></script>
     <script src="{% static "assets/js/chart-master/Chart.js" %}"></script>
-    <script src="{% static "assets/js/jquery.js" %}"></script>
+    <script src="{% static "assets/js/jquery-3.3.1.js" %}"></script>
+    <script src="{% static "assets/js/jquery-1.8.3.min.js" %}"></script>
     <script src="{% static "assets/js/bootstrap.min.js" %}"></script>
     <script src="{% static "assets/js/jquery.formset.js" %}"></script>
+    <script src="{% static "assets/js/jquery.nicescroll.js" %}" type="text/javascript"></script>
+    <script src="{% static "assets/js/jquery.scrollTo.min.js" %}"></script>
+    <script class="include" type="text/javascript" src="{% static "assets/js/jquery.dcjqaccordion.2.7.js" %}"></script>
 
     {% block extra_js %}
     {% endblock %}
@@ -93,13 +99,13 @@
 
               	    <p class="centered">
                     
-                        <a href="{% url 'avatar_change' %}">{% if avatar %}
+                        <a href="{% url 'avatar_change_billing' %}">
+                        
                         {% avatar user 60 class="img-thumbnail" width="60" height="60" %}
-                        {% else %}
-                        <img src="/media/avatars/avatar.jpg" width="60" height="60" alt="no avatar" class="img-thumbnail">
-                        {% endif %}</a>
+                
+                        </a>
                         <h5 class="centered">
-                            <a href="{% url 'profile_update' user.pk %}">
+                            <a href="{% url 'profile_update_billing' user.pk %}">
                                 {{ user }}
                             </a>
                         </h5>
@@ -107,12 +113,10 @@
                     {% if perms.admin %}
                     <li><a href="/admin/"><i class="fa fa-gears"></i>Administration</a></li>
                     {% endif %}
-                    {% if perms.billing %}
-                    <li  class="active"><a href="/billing/"><i class="fa fa-gears"></i>Billing</a></li>
-                    {% endif %}
                     {% if perms.middleware %}
-                    <li><a href="/middleware/" ><i class="fa fa-gears"></i>Middleware</a></li>
+                    <li><a href="/middleware/" ><i class="fa fa-arrows-alt"></i>Middleware</a></li>
                     {% endif %}
+
 
                   {% else %}
 
@@ -148,7 +152,7 @@
                           <span>Report</span>
                       </a>
                       <ul class="sub">
-                          {% if perms.billing.view_orders %} <li {% if request.path == '/billing/reports/jm/'%} class="active"{% endif %} ><a href="/billing/reports/jm/">Jasa Medis</a></li>{% endif %}
+                          {% if perms.billing.view_orders %} <li {% if request.path == '/billing/reports/jm/'%} class="active"{% endif %} ><a href="/billing/reports/jm/">Order list</a></li>{% endif %}
                       </ul>
                       <ul class="sub">
                           {% if perms.billing.view_orders %} <li {% if request.path == '/billing/reports/origin/'%} class="active"{% endif %} ><a href="/billing/reports/origin/">Origin</a></li>{% endif %}

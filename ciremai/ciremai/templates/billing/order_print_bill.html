@@ -19,8 +19,9 @@ window.onfocus=function(){ window.close(); }
 		<tbody>
 			<tr>
 				<td align="center"><big><span style="font-weight: bold;">
-							LABORATORIUM - RSUD KOTA MADIUN <br>Jl. Campursari No. 12B
-							Telp (0351)481314 <br>BON
+							{% for lab_name in org_lab_name %}{{ lab_name.char_value }}{% endfor %}
+							<br>{% for lab_addr in org_lab_address %}{{ lab_addr.char_value }}{% endfor %}
+							<br>BON
 					</span></big></td>
 			</tr>
 		</tbody>
@@ -70,7 +71,7 @@ window.onfocus=function(){ window.close(); }
 			<tr>
 				<td style="vertical-align: top;" width="20%" align="left">Cara Bayar</td>
 				<td style="vertical-align: top;" width="3%" align="left">:</td>
-				<td style="vertical-align: top;" colspan="2" align="left">{{ order.insurence.name }} </td>
+				<td style="vertical-align: top;" colspan="2" align="left">{{ order.insurance.name }} </td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top;" align="left">Dokter Pengirim</td>
@@ -118,7 +119,7 @@ window.onfocus=function(){ window.close(); }
 						align="right" cellspacing="2" cellpadding="2" border="0">
 						<tbody>
 							<tr>
-								<td align="center">MADIUN, {{ order.order_date }}</td>
+								<td align="center">{% for lab_name in org_lab_name %}{{ lab_name.char_value }}{% endfor %}, {{ order.order_date }}</td>
 							</tr>
 							<tr>
 								<td align="center">Petugas <br>

@@ -144,6 +144,17 @@ def AvatarAdd(request,extra_context=None,next_override=None,upload_form=UploadAv
 # #################################
 # ##   Inventory Function Views  ##
 # #################################
+
+def stockin_qrcode(request):
+    if request.method == 'POST':  
+        storage_pk = request.POST.get('storage','')  
+        return redirect('select_stockin',storage_pk=storage_pk)
+    else:
+        tempate = 'inventory/stockin-qrcode.html'
+        storage = models.Storage.objects.all()
+        context = {'storage':storage}
+        return render(request,tempate,context)   
+
 def using_product_storage(request):
     if request.method == 'POST':  
         storage_pk = request.POST.get('storage','')  
@@ -443,12 +454,17 @@ class ListStockin(LoginRequiredMixin, PermissionRequiredMixin, FilteredSingleTab
     context_table_name = 'stockintable'
     table_pagination = 10
 
-class CreateStockin(LoginRequiredMixin,PermissionRequiredMixin,NamedFormsetsMixin,CreateWithInlinesView):
+class CreateStockin(CreateView):
     model = models.StockIn
     permission_required = 'inventory.add_stockin'
     login_url = settings.LOGIN_URL
     success_url = reverse_lazy('stockin_list')
     form_class = forms.StockinForm
+    
+    def form_valid(self, form):
+        form.instance.lastmodifiedby = self.request.user
+        return super(CreateStockin, self).form_valid(form)
+
 
 class ViewStockin(LoginRequiredMixin, PermissionRequiredMixin, DetailView):
     model = models.StockIn

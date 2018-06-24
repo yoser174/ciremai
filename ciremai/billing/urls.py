@@ -1,19 +1,18 @@
 from __future__ import unicode_literals
 
-from django.conf.urls import  url
-from billing.views import direct_to_template
+from django.conf.urls import  url,include
 from . import views
 
 urlpatterns = [
     
-    url("^$", direct_to_template, {"template": "index_billing.html"}, name="home_billing"),
+    url("^$", views.home, name="home_billing"),
     url(r'^dashboard/$', views.show_dashboard, name='dashboard_billing'),
-    url(r'^login/$', views.login_user, name='login'),
-    url(r'^logout/$', views.login_user, name='logout'),
-    url(r'^avatarchange/$', views.AvatarChange, name='avatar_change'),
-    url(r'^avataradd/$', views.AvatarAdd, name='avatar_add'),
-    #url(r'^avatar/', include('avatar.urls')),
-    url(r'^profileupdate/(?P<pk>\d+)/$', views.UpdateUserProfile.as_view(), name='profile_update'),
+    url(r'^login/$', views.login_user, name='login_billing'),
+    url(r'^logout/$', views.login_user, name='logout_biling'),
+    url(r'^avatarchange/$', views.AvatarChange, name='avatar_change_billing'),
+    url(r'^avataradd/$', views.AvatarAdd, name='avatar_add_billing'),
+    
+    url(r'^profileupdate/(?P<pk>\d+)/$', views.UpdateUserProfile, name='profile_update_billing'),
     
     # #############
     # Test Groups urls
@@ -46,7 +45,7 @@ urlpatterns = [
     url(r'^orders/detail/(?P<order_pk>\d+)/print/receipt$', views.order_print_receipt, name='order_print_receipt'),
     url(r'^orders/detail/(?P<order_pk>\d+)/print/bill$', views.order_print_bill, name='order_print_bill'),
     url(r'^orders/detail/(?P<order_pk>\d+)/print/worklist$', views.order_print_worklist, name='order_print_worklist'),
-    url(r'^orders/detail/(?P<order_pk>\d+)/print/barcode', views.order_print_barcode, name='order_barcode'),
+    url(r'^orders/detail/(?P<order_pk>\d+)/label', views.order_print_barcode, name='order_barcode'),
     url(r'^orders/detail/(?P<order_pk>\d+)/send/lis$', views.order_send_lis, name='order_send_lis'),
     
     # #############
@@ -65,4 +64,6 @@ urlpatterns = [
     url(r'^reports/origin/$', views.report_origin, name='origin_list'),
     url(r'^reports/insurance/$', views.report_insurance, name='insurance_list'),
     url(r'^reports/tests/$', views.report_tests, name='tests_list'),
+    
+    url(r'^avatar/', include('avatar.urls')),
     ]

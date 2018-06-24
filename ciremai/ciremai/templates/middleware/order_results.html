@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block breadcrumb_menu %}
-    <li class="active"><a href="{% url 'orders' %}">{% trans "Orders" %}</a></li>
+    <li class="active"><a href="{% url 'workarea' %}">{% trans "Workarea" %}</a></li>
     <li class="active">{{ order }}</li>
 {% endblock %}
 
@@ -28,7 +28,7 @@
     </button>
 
     <button type="button" class="btn btn-default"
-            onclick="window.location.assign('{% url 'orders' %}')">
+            onclick="window.location.assign('{% url 'workarea' %}')">
         {% trans "Cancel" %}
     </button>
 {% endblock %}
@@ -97,12 +97,12 @@
 	     	<td>{{ o.result__instrument__name|default:"" }}</td>
 	     	<td>{{ o.techval_user|default:"" }}</td>
 	     	<td>{{ o.medval_user|default:"" }}</td>
-	     	<td class="edit_order">
+	     <!--	<td class="edit_order">
 	     		<div class="btn-group btn-group-sm" role="group">
             			<a href="repeat?test_id={{ o.test_id }}" class="btn btn-info" role="button">
     <span class="glyphicon glyphicon-repeat"></span></a>
             	</div>	
-            </td>
+            </td> -->
 	     	{% endif %}
 	     	
 	     	
@@ -119,7 +119,7 @@
     </button>
 
     <button type="button" class="btn btn-default"
-            onclick="window.location.assign('{% url 'orders' %}')">
+            onclick="window.location.assign('{% url 'workarea' %}')">
         {% trans "Cancel" %}
     </button>
     

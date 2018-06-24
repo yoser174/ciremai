@@ -2,7 +2,7 @@
 from datetimewidget.widgets import DateWidget
 from django import forms
 from crispy_forms.helper import FormHelper
-from .models import TestGroups,Tests,Patients,Orders,OrderTests,Origins,Insurance,Doctors,Diagnosis
+from .models import TestGroups,Tests,Patients,Orders,OrderTests,Origins,Insurance,Doctors,Diagnosis,Priority
 
 from itertools import groupby
 from django.forms.models import (
@@ -74,18 +74,15 @@ class TestForm(forms.ModelForm):
 class PatientForm(forms.ModelForm):
     class Meta:
         model = Patients
-        fields = ('patient_id','name','gender','dob','address')
-    #def __init__(self, *args, **kwargs):
-    #    super(PatientForm, self).__init__(*args, **kwargs)
-    #    self.fields['dob'] = forms.DateField(widget=DateWidget(bootstrap_version=3, usel10n=True))
-    #    self.helper = FormHelper()
-    #    self.helper.form_tag = False
+        fields = ('patient_id','name','gender','dob','address','data0','data1','data2')
+
 
 
 class OrderForm(forms.ModelForm):
     origin = forms.ModelChoiceField(queryset=Origins.objects.all(), widget=Select2Widget,empty_label=None)
-    insurance = forms.ModelChoiceField(queryset=Insurance.objects.all(), widget=Select2Widget,empty_label=None)
-    doctor = forms.ModelChoiceField(queryset=Doctors.objects.all(), widget=Select2Widget,empty_label=None)
+    priority = forms.ModelChoiceField(queryset=Priority.objects.all(), widget=Select2Widget,empty_label=None)
+    insurance = forms.ModelChoiceField(queryset=Insurance.objects.all(), widget=Select2Widget,empty_label=None,required=False)
+    doctor = forms.ModelChoiceField(queryset=Doctors.objects.all(), widget=Select2Widget,empty_label=None,required=False)
     diagnosis = forms.ModelChoiceField(queryset=Diagnosis.objects.all(),
                                        widget=Select2Widget,
                                        empty_label=None,
@@ -105,16 +102,21 @@ class OrderForm(forms.ModelForm):
         fields = ('id','number','priority','origin','insurance','doctor','diagnosis','note')
 
 class OrderForm2(forms.ModelForm):
-    test_selections =  GroupedModelMultiChoiceField(queryset = Tests.objects.all(), # not optional, use .all() if unsure
+    origin = forms.ModelChoiceField(queryset=Origins.objects.all(), widget=Select2Widget,empty_label=None)
+    priority = forms.ModelChoiceField(queryset=Priority.objects.all(), widget=Select2Widget,empty_label=None)
+    insurance = forms.ModelChoiceField(queryset=Insurance.objects.all(), widget=Select2Widget,empty_label=None,required=False)
+    doctor = forms.ModelChoiceField(queryset=Doctors.objects.all(), widget=Select2Widget,empty_label=None,required=False)
+    diagnosis = forms.ModelChoiceField(queryset=Diagnosis.objects.all(),widget=Select2Widget,empty_label=None,required=False)
+    test_selections =  GroupedModelMultiChoiceField(queryset = Tests.objects.filter(can_request=True), 
         group_by_field='test_group',
         widget  = forms.CheckboxSelectMultiple,
         )
     def __init__(self, *args, **kwargs):
-        super(OrderForm, self).__init__(*args, **kwargs)
+        super(OrderForm2, self).__init__(*args, **kwargs)
         instance = getattr(self, 'instance', None)
         if instance and instance.pk:
             self.fields['number'].widget.attrs['readonly'] = True
-            self.fields['test_selections'] = GroupedModelMultiChoiceField(queryset = Tests.objects.all(), # not optional, use .all() if unsure
+            self.fields['test_selections'] = GroupedModelMultiChoiceField(queryset = Tests.objects.filter(can_request=True).order_by('sort'),
         group_by_field='test_group',
         widget  = forms.CheckboxSelectMultiple,
         initial = list(Orders.objects.get(id=instance.pk).order_items.all().values_list('test_id',flat=True).order_by('id')),

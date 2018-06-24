@@ -40,11 +40,13 @@ class UserExtension(models.Model):
     
 
 class Vendor(models.Model):
-    name = models.CharField(max_length=64)
+    name = models.CharField(max_length=100,verbose_name=_("Vendor name"))
+    address = models.CharField(max_length=200,verbose_name=_("Address"),blank=True, null=True)
+    country = models.CharField(max_length=200,verbose_name=_("Country"),blank=True, null=True)
     rep = models.CharField(max_length=45, blank=True, null=True)
     rep_phone = models.CharField(max_length=16, blank=True, null=True)
-    dateofcreation = CreationDateTimeField(verbose_name=_("Created at"))
-    lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
+    dateofcreation = CreationDateTimeField(verbose_name=_("Created at"),blank=True, null=True)
+    lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"),blank=True, null=True)
     lastmodifiedby = models.ForeignKey(
         settings.AUTH_USER_MODEL, limit_choices_to={'is_staff': True},
         blank=True, verbose_name=_("Last modified by"), null=True)
@@ -94,7 +96,7 @@ class TemperatureCondition(models.Model):
             
 class Unit(models.Model):
     name = models.CharField(max_length=30)
-    description = models.CharField(max_length=200)
+    description = models.CharField(max_length=200,blank=True, null=True)
     
     def __unicode__(self):
         return self.name
@@ -104,17 +106,24 @@ class Unit(models.Model):
         
         
 class Product(models.Model):
-    number = models.CharField(max_length=30,help_text="Product number (eq: SKU or GTIN)")
+    number = models.CharField(max_length=30,help_text="Product number",blank=True, null=True)
     name = models.CharField(max_length=200,help_text="Product name")
-    active = models.BooleanField()
-    supplier = models.ForeignKey(Supplier, on_delete=models.PROTECT)
-    base_unit = models.ForeignKey(Unit, on_delete=models.PROTECT)
-    lot_controlled = models.BooleanField()
-    temperature_condition = models.ForeignKey(TemperatureCondition, on_delete=models.PROTECT)
-    vendor = models.ForeignKey(Vendor, on_delete=models.PROTECT)
-    lead_time = models.IntegerField(verbose_name=_("Lead time"),help_text=_("Lead time in day(s)"))
-    dateofcreation = CreationDateTimeField(verbose_name=_("Created at"))
-    lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
+    item_number = models.CharField(max_length=200,help_text="Product item name",blank=True, null=True)
+    ean_upc = models.CharField(max_length=200,help_text="EAN (European Article Number) / UPC (Universal Product Code)",blank=True, null=True)
+    package_size = models.CharField(max_length=200,help_text="Package size",blank=True, null=True)
+    stawa = models.CharField(max_length=200,help_text="Customs tariff number / STAWA",blank=True, null=True)
+    eclass = models.CharField(max_length=200,help_text="eClass",blank=True, null=True)
+    catalog_url = models.URLField(help_text="catalog URL",blank=True, null=True)
+    supplier = models.ForeignKey(Supplier, on_delete=models.PROTECT,blank=True, null=True)
+    unit = models.ForeignKey(Unit, on_delete=models.PROTECT,blank=True, null=True,related_name='product_unit')
+    base_multiplier = models.IntegerField(blank=True,null=True)
+    base_unit = models.ForeignKey(Unit, on_delete=models.PROTECT,blank=True, null=True,related_name='product_base_unit')
+    lot_controlled = models.BooleanField(default=False,blank=True)
+    temperature_condition = models.ForeignKey(TemperatureCondition, on_delete=models.PROTECT, blank=True, null=True)
+    vendor = models.ForeignKey(Vendor, on_delete=models.PROTECT, blank=True, null=True)
+    lead_time = models.IntegerField(verbose_name=_("Lead time"),help_text=_("Lead time in day(s)"), blank=True, null=True)
+    dateofcreation = CreationDateTimeField(verbose_name=_("Created at"), blank=True, null=True)
+    lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"), blank=True, null=True)
     lastmodifiedby = models.ForeignKey(
         settings.AUTH_USER_MODEL, limit_choices_to={'is_staff': True},
         blank=True, verbose_name=_("Last modified by"), null=True)
@@ -123,7 +132,7 @@ class Product(models.Model):
         return reverse('product_detail', args=[str(self.id)])
     
     def __str__(self):
-        return "%s %s %s" % (self.number,self.vendor,self.name)
+        return "%s %s %s" % (self.vendor,self.supplier.name,self.name)
 
     class Meta:
         verbose_name = _("Product")
@@ -173,13 +182,12 @@ class Storage(models.Model):
 
 class StockIn(models.Model):
     date_in = models.DateField(verbose_name=_("Date in"),auto_now_add=True)
-    supplier = models.ForeignKey(Supplier, on_delete=models.PROTECT)
     storage = models.ForeignKey(Storage, on_delete=models.PROTECT)
     product = models.ForeignKey(Product, on_delete=models.PROTECT)
     quantity = models.IntegerField()
+    unit = models.ForeignKey(Unit, on_delete=models.PROTECT)
     dateofcreation = CreationDateTimeField(verbose_name=_("Created at"))
     lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
-    lastmodifiedby = CurrentUserField()
     history = HistoricalRecords()
     
     @property
@@ -265,7 +273,6 @@ class UsingProduct(models.Model):
     used_at = models.ForeignKey(Instrument, on_delete=models.PROTECT, null=True)
     dateofcreation = CreationDateTimeField(verbose_name=_("Created at"))
     lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
-    lastmodifiedby =  CurrentUserField()
     history = HistoricalRecords()
     
     
@@ -290,7 +297,6 @@ class ReturningProduct(models.Model):
     unit_return = models.IntegerField(default=1)
     dateofcreation = CreationDateTimeField(verbose_name=_("Created at"))
     lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
-    lastmodifiedby =  CurrentUserField()
     history = HistoricalRecords()
     
     def get_absolute_url(self):

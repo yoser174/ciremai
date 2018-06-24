@@ -19,8 +19,9 @@ window.onfocus=function(){ window.close(); }
 		<tbody>
 			<tr>
 				<td align="center"><big><span style="font-weight: bold;">
-							LABORATORIUM - RSUD KOTA MADIUN <br>Jl. Campursari No. 12B
-							Telp (0351)481314 <br>LEMBAR KERJA</span></big></td>
+							{% for lab_name in org_lab_name %}{{ lab_name.char_value }}{% endfor %}
+							<br>{% for lab_addr in org_lab_address %}{{ lab_addr.char_value }}{% endfor %}
+							<br>LEMBAR KERJA</span></big></td>
 			</tr>
 		</tbody>
 	</table>

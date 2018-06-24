@@ -49,10 +49,7 @@
         <h2> {{ product.name }}</h2>
         <table>
         <tr>
-        <td>{% trans 'Unit' %}:&nbsp;</td>
-        <td>{{ product.base_unit }}</td>
-        </tr>
-        <tr>
+        
         <td>{% trans 'Lot controlled' %}:&nbsp;</td>
         <td>{{ product.lot_controlled }}</td>
         </tr>
@@ -77,6 +74,20 @@
         {% for phonenumber in supplier.phonenumbers.all %}
             <h5><i class="fa fa-phone"></i>&nbsp;&nbsp;{{ phonenumber.phone }}</h5>
         {% endfor %}
+        <table>
+        <td>{% trans 'Unit' %}:&nbsp;</td>
+        <td>{{ product.unit }}</td>
+        </tr>
+        <tr>
+        <td>{% trans 'Base Multiplier' %}:&nbsp;</td>
+        <td>{{ product.base_multiplier }}</td>
+        </tr>
+        <tr>
+        <td>{% trans 'Base Unit' %}:&nbsp;</td>
+        <td>{{ product.base_unit }}</td>
+        </tr>
+        </table>
+        <tr>
         </fieldset>
     </div>
     

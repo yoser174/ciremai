@@ -1,4 +1,5 @@
 import django_filters
+import datetime
 from .models import TestGroups,Tests,Orders,Patients
 
 class TestGroupFilter(django_filters.FilterSet):
@@ -14,12 +15,14 @@ class TestFilter(django_filters.FilterSet):
         fields = ['test_group','name']
         
 class OrderFilter(django_filters.FilterSet):
+    order_date = django_filters.DateRangeFilter()
     number = django_filters.CharFilter(lookup_expr='icontains')
     patient__patient_id = django_filters.CharFilter(lookup_expr='icontains')
     patient__name = django_filters.CharFilter(lookup_expr='icontains')
+    
     class Meta:
         model = Orders
-        fields = ['number','patient__patient_id','patient__name']
+        fields = ['order_date','number','patient__patient_id','patient__name']
         
 class PatientFilter(django_filters.FilterSet):
     patient_id = django_filters.CharFilter(lookup_expr='icontains')

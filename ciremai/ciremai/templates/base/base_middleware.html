@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
 <meta name="description" content="{% block meta_description %}{% endblock %}">
-<title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+<title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %} [Middleware]</title>
 <link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
 
 
@@ -94,11 +94,9 @@
 
               	    <p class="centered">
                     
-                        <a href="{% url 'avatar_change_middleware' %}">{% if avatar %}
+                        <a href="{% url 'avatar_change_middleware' %}">
                         {% avatar user 60 class="img-thumbnail" width="60" height="60" %}
-                        {% else %}
-                        <img src="/media/avatars/avatar.jpg" width="60" height="60" alt="no avatar" class="img-thumbnail">
-                        {% endif %}</a>
+                        </a>
                         <h5 class="centered">
                             <a href="{% url 'profile_update_middleware' user.pk %}">
                                 {{ user }}
@@ -109,10 +107,10 @@
                     <li><a href="/admin/"><i class="fa fa-gears"></i>Administration</a></li>
                     {% endif %}
                     {% if perms.billing %}
-                    <li><a href="/billing/"><i class="fa fa-gears"></i>Billing</a></li>
+                    <li><a href="/billing/"><i class="fa fa-money"></i>Billing</a></li>
                     {% endif %}
-                    {% if perms.middleware %}
-                    <li class="active"><a href="/middleware/" ><i class="fa fa-gears"></i>Middleware</a></li>
+                    {% if perms.inventory %}
+                    <li><a href="/inventory/" ><i class="fa fa-gears"></i>Inventory</a></li>
                     {% endif %}
                     
                   {% else %}
@@ -131,13 +129,13 @@
                   </li>
                   
                   <li class="sub-menu">
-                      <a {% if request.path == '/middleware/rcvsample/' or request.path == '/middleware/orders/' %} class="active"{% endif %} href="javascript:;" >
+                      <a {% if request.path == '/middleware/workarea/' %} class="active"{% endif %} href="javascript:;" >
                           <i class="fa fa-list"></i>
                           <span>Routine task</span>
                       </a>
                     
                       <ul class="sub">
-                          {% if perms.billing.view_orders %} <li {% if request.path == '/middleware/orders/'%} class="active"{% endif %} ><a href="/middleware/orders/">Orders</a></li>{% endif %}
+                          {% if perms.billing.view_orders %} <li {% if request.path == '/middleware/workarea/'%} class="active"{% endif %} ><a href="/middleware/workarea/">Workarea</a></li>{% endif %}
                       </ul>
                   </li>
                   

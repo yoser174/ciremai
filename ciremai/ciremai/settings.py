@@ -25,7 +25,7 @@ SECRET_KEY = 'dare7z2*px2lwmab_(04ghyt4s)2f8g!&oo^66n$f6!20@l#=r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 SITE_TITLE = 'ciremai'
 
 ANONYMOUS_USER_ID = -1
@@ -78,6 +78,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'ciremai.urls'
 
+
+
 #########
 # PATHS #
 #########
@@ -91,8 +93,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # HL7 Message
 HL7_ORDER_DIR = 'C:\\HL7'
-# label barcode printer port
-LABEL_PRINTER_PORT = 'COM10'
+
 # report file
 RESULT_REPORT_FILE_HEADER = 'D:\\git\\ciremai\\report_jrxml\\ciremaiHeader.jrxml'
 RESULT_REPORT_FILE_MAIN = 'D:\\git\\ciremai\\report_jrxml\\ciremaiReport.jrxml'
@@ -106,7 +107,7 @@ JASPER_CONN = {
         'username': 'root',
         'password': 'P455word',
         'host': '127.0.0.1',
-        'database': 'ciremai'
+        'database': 'ciremai_rs'
     }
 
 #########################
@@ -145,7 +146,7 @@ WSGI_APPLICATION = 'ciremai.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'ciremai',
+        'NAME': 'ciremai_rs',
         'USER': 'root',
         'PASSWORD': 'P455word',
         'HOST': 'localhost',
@@ -204,6 +205,12 @@ USE_L10N = True
 USE_TZ = True
 
 AVATAR_AUTO_GENERATE_SIZES = (60,)
+AVATAR_PROVIDERS = (
+    'avatar.providers.PrimaryAvatarProvider',
+    #'avatar.providers.GravatarAvatarProvider',
+    'avatar.providers.DefaultAvatarProvider',
+)
+AVATAR_DEFAULT_URL = 'http://127.0.0.1:8000/media/avatars/avatar.jpg'
 
 
 # Static files (CSS, JavaScript, Images)
@@ -215,11 +222,17 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    '/var/www/static/',
+    'D:\\git\\ciremai\\ciremai\\static',
 ]
 
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_ROOT = 'D://git//ciremai//ciremai//media'
 MEDIA_URL = '/media/'
+
+#PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+#PROJECT_DIR = 'D://git//ciremai//ciremai//'
+#STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+
+#print STATIC_ROOT
 
 

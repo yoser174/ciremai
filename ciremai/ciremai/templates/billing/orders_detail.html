@@ -153,22 +153,39 @@
 
 
 </div>
-
 {% endblock %}
 
 {% block main_footer %}
-    <a href="print/receipt" target="_blank" class="btn btn-info" role="button">
-    <span class="fa fa-print"></span>&nbsp;{% trans "Print Receipt" %}</a>
+	{% if MENU_BTN_PRINT_RECEIPT.num_value == 1 %}
+	    <a href="print/receipt" target="_blank" class="btn btn-info" role="button">
+	    <span class="fa fa-print"></span>&nbsp;{% trans "Print Receipt" %}</a>
+    {% endif %}
     
-    <a href="print/bill" target="_blank" class="btn btn-info" role="button">
-    <span class="fa fa-print"></span>&nbsp;{% trans "Print Bill" %}</a>
+    {% if MENU_BTN_PRINT_RECEIPT.num_value == 1 %}
+	    <a href="print/bill" target="_blank" class="btn btn-info" role="button">
+	    <span class="fa fa-print"></span>&nbsp;{% trans "Print Bill" %}</a>
+    {% endif %}
     
-    <a href="print/worklist" target="_blank" class="btn btn-info" role="button">
-    <span class="fa fa-print"></span>&nbsp;{% trans "Print Worklist" %}</a>
-    
-    <a href="print/barcode" class="btn btn-info" role="button">
-    <span class="fa fa-barcode"></span>&nbsp;{% trans "Print Barcode" %}</a>
-    
+    {% if MENU_BTN_PRINT_WORKLIST.num_value == 1 %}
+	    <a href="print/worklist" target="_blank" class="btn btn-info" role="button">
+	    <span class="fa fa-print"></span>&nbsp;{% trans "Print Worklist" %}</a>
+	{% endif %}
+	
+	{% if MENU_BTN_PRINT_BARCODE.num_value == 1 %}
+	<div class="btn-group">
+	    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+	      Print Label
+	      <span class="caret"></span>
+	    </button>
+	    <ul class="dropdown-menu">
+	    {% for lp in labelprinters %}
+	      <li><a href="label?printer={{ lp.id }}">{{ lp.name }}</a></li>
+	     {% endfor %}
+	    </ul>
+	</div>
+	{% endif %}
+							
+						
     <!-- <a href="send/lis" class="btn btn-info" role="button">
     <span class="fa fa-paper-plane-o"></span>&nbsp;{% trans "Send to LIS" %}</a> -->
     

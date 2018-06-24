@@ -46,14 +46,14 @@ class ProductTable(tables.Table):
     )
     class Meta:
         model = Product
-        exclude = ('id',  'dateofcreation', 'lastmodification', 'lastmodifiedby')
-        sequence = ('number', 'name','active','lot_controlled', 'supplier', 'vendor', 'temperature_condition', 'lead_time')
+        exclude = ('id',  'dateofcreation', 'lastmodification', 'lastmodifiedby', 'vendor', 'temperature_condition', 'lead_time')
+        sequence = ('number', 'name','lot_controlled', 'supplier')
         order_by = ('id',)
         
 class StockinTable(tables.Table):
-    base_unit = CssFieldColumn('record.product.base_unit.name',verbose_name=_('Unit'),orderable=False)
+    #base_unit = CssFieldColumn('record.product.base_unit.name',verbose_name=_('Unit'),orderable=False)
     description = 'record.name'
-    product = LabelIconColumn(verbose_name=_('Product'))
+    product = tables.TemplateColumn('<a href="{{ record.product.get_absolute_url }}">{{record.product}}</a>')
     lastmodifiedby = CssFieldColumn('record.lastmodifiedby',verbose_name=_('Created by'))
     
     edit_lot = ButtonColumn(gl_icon="hourglass-end",
@@ -70,8 +70,8 @@ class StockinTable(tables.Table):
     )
     class Meta:
         model = StockIn
-        exclude = ('id', 'lastmodification')
-        sequence = ('date_in','supplier','storage','product','quantity','base_unit', 'lastmodifiedby')
+        exclude = ('id', 'lastmodification','unit')
+        sequence = ('date_in','storage','product','quantity', 'lastmodifiedby')
         order_by = ('id',)
     
 class UsingProductTable(tables.Table):

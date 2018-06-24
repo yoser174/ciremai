@@ -11,7 +11,20 @@
 {% block main %}
 
 <div class="row mtbox">
-            
+            <div class="col-md-2 col-sm-2 col-md-offset-1 box0">
+                <div class="box1" onclick="window.location.assign('{% url 'orders_list' %}')">
+                    <span class="fa fa-file-text-o"></span>
+                    <h3>{{ ordercount_today }}</h3>
+                </div>
+                    <p>you have {{ ordercount_today }} {% trans 'order(s) today.' %}</p>
+            </div>
+            <div class="col-md-2 col-sm-2 box0">
+                <div class="box1" onclick="window.location.assign('{% url 'patients_list' %}')">
+                    <span class="fa fa-address-book-o"></span>
+                    <h3>{{ patientcount_today }}</h3>
+                </div>
+                    <p>register new {{ patientcount_today }} {% trans 'patient(s) today.' %}</p>
+            </div>
  </div>
 
 {% endblock %}

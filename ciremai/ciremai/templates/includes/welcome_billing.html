@@ -2,7 +2,18 @@
     <h1>Welcome to billing</h1>
     <h5>Registrasi Laboratorium</h5>
     <br><br>
+	<fieldset>
+    
+    <br><br>
+
+		<legend>{% for lab_name in org_lab_name %}{{ lab_name.char_value }}{% endfor %}</legend>
+		{% for lab_addr in org_lab_address %}{{ lab_addr.char_value }}{% endfor %}
+    
+    </fieldset>
     {% if not request.user.is_authenticated %}
-    <p>Please <a href="/inventory/login/">login</a></p>
+    
+    
+    
+    <p>Please <a href="/billing/login/">login</a></p>
     {% endif %}
 </div>

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
-from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect,HttpResponseRedirect
 
 from braces.views import PermissionRequiredMixin, LoginRequiredMixin
 from extra_views.advanced import UpdateWithInlinesView,NamedFormsetsMixin, CreateWithInlinesView,InlineFormSet,ModelFormMixin
@@ -20,9 +20,10 @@ from avatar.views import _get_avatars
 from avatar.models import Avatar
 from avatar.signals import avatar_updated
 from avatar.utils import invalidate_cache
+from utils import is_float
 
 from . import models,tables,filters,forms
-from billing.models import Orders,OrderTests,Tests
+from billing.models import Orders,OrderTests,Tests,Parameters
 
 import os
 from pyreportjasper import JasperPy
@@ -32,6 +33,7 @@ from pyreportjasper import JasperPy
 # ######################
 # ##   Helper Views   ##
 # ######################
+@login_required(login_url='login_middleware')
 class UpdateUserProfileMW(LoginRequiredMixin,NamedFormsetsMixin,UpdateWithInlinesView):
     model = User
     fields = ['first_name', 'last_name', 'email']
@@ -40,20 +42,27 @@ class UpdateUserProfileMW(LoginRequiredMixin,NamedFormsetsMixin,UpdateWithInline
 
 def login_user(request):
     logout(request)
+    next_url = request.GET.get('next','')
     if request.POST:
         username = request.POST.get('username', '')
         password = request.POST.get('password', '')
+        next_url = request.POST.get('next','')
 
         user = authenticate(username=username, password=password)
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return redirect(reverse_lazy('dashboard_middleware'), permanent=True)
+                if next_url<>'':
+                    return HttpResponseRedirect(next_url)
+                else:
+                    return redirect(reverse_lazy('dashboard_middleware'), permanent=True)
         else:
             messages.error(request, _("Wrong username and/or password."))
+            
+    context = {'next':next_url}
+    return render(request,'registration/login_middleware.html',context)
 
-    return render(request,'registration/login_middleware.html')
-
+@login_required(login_url='login_middleware')
 def show_dashboard(request):
     #suppliercount = models.Supplier.objects.all().count()
     #productcount = models.Product.objects.all().count()
@@ -61,7 +70,7 @@ def show_dashboard(request):
     context = {}
     return render(request,'dashboard_middleware.html',context)
 
-
+@login_required(login_url='login_middleware')
 def AvatarChange(request,extra_context=None,next_override=None,upload_form=UploadAvatarForm,primary_form=PrimaryAvatarForm,
                  *args,**kwargs):
     if extra_context is None:
@@ -88,7 +97,7 @@ def AvatarChange(request,extra_context=None,next_override=None,upload_form=Uploa
             messages.success(request, _("Successfully updated your avatar."))
         if updated:
             avatar_updated.send(sender=Avatar, user=request.user, avatar=avatar)
-        return render(request,'auth/avatar_change_middldeware.html')
+        return render(request,'auth/avatar_change_middleware.html')
     
     context = {
         'avatar':avatar,
@@ -98,10 +107,10 @@ def AvatarChange(request,extra_context=None,next_override=None,upload_form=Uploa
         'next':next_override
         }
     context.update(extra_context)
-    template_name = 'auth/avatar_change_middldeware.html'
+    template_name = 'auth/avatar_change_middleware.html'
     return render(request, template_name, context)
     
-            
+@login_required(login_url='login_middleware')           
 def AvatarAdd(request,extra_context=None,next_override=None,upload_form=UploadAvatarForm,*args,**kwargs):
     if extra_context is None:
         extra_context = {}
@@ -118,7 +127,7 @@ def AvatarAdd(request,extra_context=None,next_override=None,upload_form=UploadAv
             invalidate_cache(request.user)
             messages.success(request, _("Successfully uploaded a new avatar."))
             avatar_updated.send(sender=Avatar, user=request.user, avatar=avatar)
-            return render(request,'auth/avatar_change.html')
+            return render(request,'auth/avatar_change_middleware.html')
     context = {
         'avatar': avatar,
         'avatars': avatars,
@@ -126,13 +135,13 @@ def AvatarAdd(request,extra_context=None,next_override=None,upload_form=UploadAv
         'next': next_override,
     }
     context.update(extra_context)
-    template_name = 'auth/avatar_add_middldeware.html'
+    template_name = 'auth/avatar_add_middleware.html'
     return render(request, template_name, context)    
 
 
 
 
-
+@login_required(login_url='login_middleware')
 class FilteredSingleTableView(SingleTableView):
     filter_class = None
 
@@ -146,9 +155,21 @@ class FilteredSingleTableView(SingleTableView):
         context['filter'] = self.filter
         return context
     
-    
 
-def show_all_orders(request):
+
+#####################
+# Middleware function
+#####################
+@login_required(login_url='login_middleware')
+def home(request):
+    template = 'index_middleware.html'
+    org_lab_name = Parameters.objects.filter(name = 'ORG_LAB_NAME')
+    org_lab_address = Parameters.objects.filter(name = 'ORG_LAB_ADDRESS')
+    context = {'org_lab_name':org_lab_name,'org_lab_address':org_lab_address}
+    return render(request,template,context) 
+
+@login_required(login_url='login_middleware')
+def show_workarea(request):
     data = Orders.objects.all()
     if request.GET.get('order_date'):
         d_range = request.GET.get('order_date')
@@ -179,10 +200,11 @@ def show_all_orders(request):
     
     RequestConfig(request).configure(ordertable)
     
-    tempate = 'middleware/list_orders.html'
+    tempate = 'middleware/workarea.html'
     context = {'ordertable':ordertable,'filter':filter}
     return render(request,tempate,context)
 
+@login_required(login_url='login_middleware')
 def order_results_history(request,pk):
     order = Orders.objects.get(pk=pk)
     data = models.HistoryOrders.objects.filter(order_id=pk)
@@ -211,11 +233,13 @@ def order_results_history(request,pk):
     context = {'order':order,'orderhist':orderhist,'filter':filter}
     return render(request,tempate,context)
 
+@login_required(login_url='login_middleware')
 def order_results_validate(request,pk):
     if request.user.is_authenticated():
         order_res = models.OrderResults.objects.filter(order_id=pk,validation_status=1).update(validation_status=2,validation_user=str(request.user),validation_date=datetime.now())
     return redirect('order_results', pk=pk)
 
+@login_required(login_url='login_middleware')
 def order_results_techval(request,pk):
     if request.user.is_authenticated():
         # create history
@@ -231,6 +255,7 @@ def order_results_techval(request,pk):
         order_res = models.OrderResults.objects.filter(order_id=pk,validation_status=1).update(validation_status=2,techval_user=str(request.user),techval_date=datetime.now())
     return redirect('order_results', pk=pk)
 
+@login_required(login_url='login_middleware')
 def order_results_medval(request,pk):
     if request.user.is_authenticated():
         # create history
@@ -244,6 +269,7 @@ def order_results_medval(request,pk):
         order_res = models.OrderResults.objects.filter(order_id=pk,validation_status=2).update(validation_status=3,medval_user=str(request.user),medval_date=datetime.now())
     return redirect('order_results', pk=pk)
 
+@login_required(login_url='login_middleware')
 def order_results_repeat(request,pk):
     if request.user.is_authenticated():
         #test = Tests.objects.get(pk=)
@@ -270,6 +296,7 @@ def order_results_repeat(request,pk):
         his_order.save()
     return redirect('order_results', pk=pk)
 
+@login_required(login_url='login_middleware')
 def order_results_print(request,pk):
     order = Orders.objects.get(pk=pk)
     
@@ -315,13 +342,14 @@ def order_results_print(request,pk):
     template = 'middleware/result_pdf_preview.html'
     context = {'order':order,'url_pdf' : url_pdf}
     return render(request,template,context)
-    
+
+@login_required(login_url='login_middleware')
 def order_result_report(request,pk):
-    
     template = 'middleware/result_pdf_preview.html'
     context = {'order':order,'url_pdf' : url_pdf}
     return render(request,template,context)
 
+@login_required(login_url='login_middleware')
 def order_results(request,pk):
     order = Orders.objects.get(pk=pk)
     if request.method == 'POST': 
@@ -340,91 +368,80 @@ def order_results(request,pk):
                         pass
                     
                     if not cr_res_a == request.POST.get( p_tes, ''):
-                        if request.user.is_authenticated():      
-                            o_result = models.Results(order=o_order,test=o_test,alfa_result=request.POST.get( p_tes, ''))
+                        if request.user.is_authenticated():
+                            alfa_res = request.POST.get( p_tes, '')
+                            o_result = models.Results(order=o_order,test=o_test,alfa_result=alfa_res)
                             o_result.save()
+                            
+                            flag = None
+                            
+                            ord_res = models.OrderResults.objects.get(order=o_order,test=o_test)
+                            
+                            
+                            if is_float(alfa_res) and ord_res.ref_range:
+                                if str(ord_res.ref_range).find(' - ') > 0:
+                                    # range
+                                    range = str(ord_res.ref_range).split(' - ')
+                                    if float(range[0])  <= float(alfa_res) <= float(range[1]):
+                                        flag = 'N'
+                                    elif float(alfa_res) >= float(range[1]):
+                                        flag = 'H'
+                                    else:
+                                        flag = 'L'
+                                elif '<' in str(ord_res.ref_range) or '>' in str(ord_res.ref_range):
+                                    range = str(ord_res.ref_range).split(' ')
+                                    if str(range[0]) == '>':
+                                        if float(alfa_res) > float(range[1]):
+                                            flag = 'N'
+                                        else:
+                                            flag = 'L'
+                                    elif str(range[0]) == '<':
+                                        if float(alfa_res) < float(range[1]):
+                                            flag = 'N'
+                                        else:
+                                            flag = 'H'
+                                    elif str(range[0]) == '>=':
+                                        if float(alfa_res) >= float(range[1]):
+                                            flag = 'N'
+                                        else:
+                                            flag = 'H'
+                                    elif str(range[0]) == '<=':
+                                        if float(alfa_res) <= float(range[1]):
+                                            flag = 'N'
+                                        else:
+                                            flag = 'H'
+                           
+                            else:
+                                flag = 'A'
+                                
+                            
+                            ord_res.result = o_result
+                            ord_res.patologi_mark = flag
+                            ord_res.validation_status = 1
+                            ord_res.save()
+
+                                
+                            # get test
                             # try delete existing result
-                            try:
-                                o_orderresult = models.OrderResults.objects.get(order=o_order,test=o_test)
-                                o_orderresult.delete()
-                            except models.OrderResults.DoesNotExist,e:
-                                pass
+                            #try:
+                            #    o_orderresult = models.OrderResults.objects.get(order=o_order,test=o_test)
+                            #    o_orderresult.delete()
+                            #except models.OrderResults.DoesNotExist,e:
+                            #    pass
                             # try get unit
-                            s_unit = ''
-                            try:
-                                test_unit = models.TestParameters.objects.get(test=o_test)
-                                s_unit = test_unit.unit
-                            except models.TestParameters.DoesNotExist,e:
-                                pass
-                            o_orderresult = models.OrderResults.objects.get_or_create(order=o_order,test=o_test,result=o_result,validation_status=1,unit=s_unit)
+                            #s_unit = ''
+                            #try:
+                            #    test_unit = models.TestParameters.objects.get(test=o_test)
+                            #    s_unit = test_unit.unit
+                            #except models.TestParameters.DoesNotExist,e:
+                            #    pass
+                            #o_orderresult = models.OrderResults.objects.get_or_create(order=o_order,test=o_test,result=o_result,validation_status=1,unit=s_unit)
                             
                             # create history
                             act_txt = 'Result %s set for analyt %s ' % (request.POST.get( p_tes, ''),o_test)
                             his_order = models.HistoryOrders(order=o_order,test=o_test,action_code='RESENTRY',action_user=str(request.user),action_date=datetime.now(),action_text=act_txt)
                             his_order.save()
-    else:
-        order_tests = OrderTests.objects.filter(order_id=pk)
-        #print order_tests
-        for ot in order_tests:
-            # try get unit
-            o_tes,c = models.OrderResults.objects.get_or_create(order_id=pk,test_id=ot.test_id)
-            if not o_tes.result_id:
-                o_tes_res,c = models.Results.objects.get_or_create(order_id=pk,test_id=ot.test_id)
-                o_tes.result_id = o_tes_res.id
-                o_tes.save()
-                     
-            s_unit = ''
-            try:
-                test_unit = models.TestParameters.objects.get(pk=ot.test_id)
-                s_unit = test_unit.unit
-            except models.TestParameters.DoesNotExist,e:
-                pass
-                
-            o_tes = models.OrderResults.objects.get(order_id=pk,test_id=ot.test_id)
-            #if o_tes.unit == '':
-            #    o_tes.unit = s_unit
-            #    o_tes.save()
-            # try get child
-            try:
-                m_tes = Tests.objects.filter(parent_id=ot.test_id)
-                if m_tes.count() > 0:
-                    c_tes = models.OrderResults.objects.get(order_id=pk,test_id=ot.test_id)
-                    c_tes.is_header=1
-                    c_tes.save()
-                    for child in  m_tes:
-                        s_unit = ''
-                        try:
-                            test_unit = models.TestParameters.objects.get(pk=child.id)
-                            s_unit = test_unit.unit
-                        except models.TestParameters.DoesNotExist,e:
-                            pass           
-                        m_child,c = models.OrderResults.objects.get_or_create(order_id=pk,test_id=child.id)
-                        if not o_tes.result_id:
-                            m_child_res,c = models.Results.objects.get_or_create(order_id=pk,test_id=ot.test_id)
-                            m_child.result_id = m_child_res.id
-                            #m_child.unit = s_unit
-                            #print m_child.unit
-                            m_child.save()
-                        try:
-                            m_child_child = Tests.objects.filter(parent_id=child.id)
-                            if m_child_child.count()>0:
-                                c_child = models.OrderResults.objects.get(order_id=pk,test_id=child.id)
-                                c_child.is_header=1
-                                c_child.save()                    
-                            for child_child in m_child_child:                    
-                                m_child_child = models.OrderResults.objects.get_or_create(order_id=pk,test_id=child_child.id)
-                                if not m_child_child:
-                                    m_child_child_res,c = models.Results.objects.get_or_create(order_id=pk,test_id=ot.test_id)
-                                    m_child_child.result_id = m_child_child_res.id
-                                    m_child_child.save()
-                        except Tests.DoesNotExist,e:
-                            pass
-            except Tests.DoesNotExist,e:
-                pass
-            
-            
-            #print o_tes
-            
+    
     # Reference Range update from 
 
     orders = Orders.objects.get(pk=pk)
@@ -449,21 +466,13 @@ def order_results(request,pk):
 
 
 
-#####################
-# Middleware function
-#####################
 
-def orders(request):
-    template = 'middleware/list_orders.html'
-    #context = {'form':forms.PatientForm}
-    context = {}
-    return render(request,template,context)
 
 
 # ###################
 # ##   Base Views  ##
 # ###################
-
+"""
 class ListReceivedSample(LoginRequiredMixin, PermissionRequiredMixin, FilteredSingleTableView):    
     model = models.ReceivedSamples
     permission_required = 'billing.view_orders'
@@ -483,5 +492,5 @@ class ListResults(LoginRequiredMixin, PermissionRequiredMixin, FilteredSingleTab
     context_table_name = 'orderstable'
     filter_class = filters.OrderFilter
     table_pagination = 10
-    
+"""   
 

@@ -1,29 +1,28 @@
 from __future__ import unicode_literals
 
 from django.conf.urls import  url
-from billing.views import direct_to_template
 from . import views
 
 urlpatterns = [
     
-    url("^$", direct_to_template, {"template": "index_middleware.html"}, name="home_middleware"),
+    url("^$", views.home, name="home_middleware"),
     url(r'^dashboard/$', views.show_dashboard, name='dashboard_middleware'),
     url(r'^login/$', views.login_user, name='login_middleware'),
     url(r'^logout/$', views.login_user, name='logout_middleware'),
     url(r'^avatarchange/$', views.AvatarChange, name='avatar_change_middleware'),
     url(r'^avataradd/$', views.AvatarAdd, name='avatar_add_middleware'),
     #url(r'^avatar/', include('avatar.urls')),
-    url(r'^profileupdate/(?P<pk>\d+)/$', views.UpdateUserProfileMW.as_view(), name='profile_update_middleware'),
+    url(r'^profileupdate/(?P<pk>\d+)/$', views.UpdateUserProfileMW, name='profile_update_middleware'),
     
     #################
     # Receive sample
     #################
-    url(r'^rcvsample/$', views.ListReceivedSample.as_view(), name='receivedsample_list'),
+    #url(r'^rcvsample/$', views.ListReceivedSample.as_view(), name='receivedsample_list'),
     
     #################
     # Order Results
     #################
-    url(r'^orders/$', views.show_all_orders, name='orders'),
+    url(r'^workarea/$', views.show_workarea, name='workarea'),
     url(r'^orders/results/(?P<pk>\d+)/$', views.order_results, name='order_results'),
     #url(r'^orders/results/(?P<pk>\d+)/validate/$', views.order_results_validate, name='order_results_validate'),
     url(r'^orders/results/(?P<pk>\d+)/techval/$', views.order_results_techval, name='order_results_techval'),

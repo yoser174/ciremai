@@ -12,7 +12,7 @@
 {% endblock %}
 
 {% block breadcrumb_menu %}
-    <li class="active"><a href="{% url 'orders' %}">{% trans "Orders" %}</a></li>
+    <li class="active"><a href="{% url 'workarea' %}">{% trans "Workarea" %}</a></li>
     <li class="active"><a href="{% url 'order_results' pk=order.id %}">{{ order }}</a></li>
     <li class="active">{% trans "History" %}</li>
 {% endblock %}

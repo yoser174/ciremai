@@ -28,7 +28,7 @@
 
 import logging.config
 import yaml
-import configparser
+import ConfigParser
 import glob
 import hl7
 import MySQLdb
@@ -48,6 +48,13 @@ MY_DB = 'ciremai'
 with open('host_hl7.yaml', 'rt') as f:
     config = yaml.safe_load(f.read())
     logging.config.dictConfig(config)
+
+# read ini file
+config = ConfigParser.ConfigParser()
+config.read('host_hl7.ini')
+DIR_IN = config.get('General','dir_in')
+MY_SERVER = config.get('General','my_server')
+MY_DB = config.get('General','my_db')
 
 my_conn = MySQLdb.connect(host=MY_SERVER,
                   user=MY_USER,
@@ -86,15 +93,10 @@ def my_update(sql):
         my_conn.rollback()
 
 def main():
-    # read ini file
-    config = configparser.ConfigParser()
-    config.read('host_hl7.ini')
-    DIR_IN = config.get('General','dir_in')
-    MY_SERVER = config.get('General','my_server')
-
     logging.debug('starting host hl7 version: %s' % VERSION)
     logging.debug('DIR_IN %s' % DIR_IN)
     logging.debug('MY_SERVER: %s' % MY_SERVER)
+    logging.debug('MY_DB: %s' % MY_DB)
 
     files = glob.glob(DIR_IN)
     for name in files:
@@ -102,7 +104,7 @@ def main():
         line = open(name).read()
         h = hl7.parse(line)
         order_no = ''
-        order_no = str(h.segment('ORC')[3]).strip()
+        order_no = str(h.segment('ORC')[2]).strip()
         data = my_select(" SELECT id FROM billing_orders WHERE number = '%s' " % order_no )
         logging.info(data)
         if len(data)>0:
@@ -153,6 +155,14 @@ def main():
                         logging.info('update OK')
                     else:
                         logging.error('update fail.')
+
+                    # update order extended
+                    data = my_select(" SELECT order_id FROM middleware_orderextended WHERE order_id = '%s' " % order_id )
+                    logging.info(data)
+                    if not (len(data)>0):
+                        my_insert(" INSERT INTO middleware_orderextended (order_id,lastmodification) values ('%s',NOW()) " % order_id)
+                        
+                    
 
 
         # remove file

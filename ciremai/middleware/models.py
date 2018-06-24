@@ -8,7 +8,7 @@ from django_extensions.db.fields import CreationDateTimeField, ModificationDateT
 from django.conf import settings
 from datetime import datetime, date
 
-from billing.models import Orders,SuperGroups,Tests,OrderTests,Genders,OrderSamples
+from billing.models import Orders,Tests,OrderTests,Genders,OrderSamples,SuperGroups
 
 
 class ReceivedSamples(models.Model):
@@ -214,7 +214,7 @@ class TestRefRanges(models.Model):
     test = models.ForeignKey(Tests,on_delete=models.PROTECT,verbose_name=_("Test"),related_name='refranges_test')
     gender = models.ForeignKey(Genders,on_delete=models.PROTECT,verbose_name=_("Gender"),related_name='refranges_gender',blank=True,null=True)
     age_from = models.IntegerField(verbose_name=_("Age from"), null=True,blank=True)
-    age_type =  models.CharField(
+    age_from_type =  models.CharField(
         max_length=3,
         verbose_name=_("Age from unit"),
         choices=AGE_UNIT,
@@ -222,7 +222,7 @@ class TestRefRanges(models.Model):
         blank=True,
     )
     age_to = models.IntegerField(verbose_name=_("Age to"), null=True,blank=True)
-    age_type =  models.CharField(
+    age_to_type =  models.CharField(
         max_length=3,
         verbose_name=_("Age to unit"),
         choices=AGE_UNIT,
@@ -315,7 +315,7 @@ class Results(models.Model):
                      
    
     def save(self, *args, **kwargs):
-        refrange = TestRefRanges.objects.filter(test=self.test).values('any_age','gender','age_type','age_from','age_to','operator','operator_value','lower','upper','alfa_value','special_info','gender_id')
+        refrange = TestRefRanges.objects.filter(test=self.test).values('any_age','gender','age_from_type','age_from','age_to','operator','operator_value','lower','upper','alfa_value','special_info','gender_id')
         if refrange.count()>0:
             for range in refrange:
                 # any age & any gender
@@ -339,7 +339,7 @@ class Results(models.Model):
                 else:
                     # date range
                     # Days
-                    if range['age_type']=='D':
+                    if range['age_from_type']=='D':
                         #print str((self.order.order_date - self.order.patient.dob).days)
                         if int(range['age_from']) <= (self.order.order_date - self.order.patient.dob).days <= int(range['age_to']):
                             if (not range['gender']) or (range['gender'] == self.order.patient.gender_id) :
@@ -349,7 +349,7 @@ class Results(models.Model):
                                          lower=range['lower'],
                                          upper=range['upper'])
                     # Months
-                    if range['age_type']=='M':
+                    if range['age_from_type']=='M':
                         if int(range['age_from']) <= (self.order.order_date - self.order.patient.dob).months <= int(range['age_to']):
                             if (not range['gender']) or (range['gender'] == self.order.patient.gender_id) :
                                 self.setup_range(alfa_value=range['alfa_value'],
@@ -358,7 +358,7 @@ class Results(models.Model):
                                          lower=range['lower'],
                                          upper=range['upper'])
                     # Years
-                    if range['age_type']=='Y':
+                    if range['age_from_type']=='Y':
                         if int(range['age_from']) <= (self.order.order_date - self.order.patient.dob).months <= int(range['age_to']):
                             if (not range['gender']) or (range['gender'] == self.order.patient.gender_id) :
                                 self.setup_range(alfa_value=range['alfa_value'],
@@ -378,8 +378,8 @@ class Results(models.Model):
 class TestParameters(models.Model):
     test = models.OneToOneField(Tests,on_delete=models.CASCADE,primary_key=True,)
     method = models.CharField(max_length=100,verbose_name=_("Method"),null=True,blank=True)
-    unit = models.CharField(max_length=100,verbose_name=_("Test unit"),null=True)
-    decimal = models.IntegerField(verbose_name=_("Decimal place"),null=True)
+    unit = models.CharField(max_length=100,verbose_name=_("Test unit"),null=True,blank=True)
+    decimal = models.IntegerField(verbose_name=_("Decimal place"),null=True,default=1)
     special_information = models.CharField(max_length=1000,verbose_name=_("Special information"),null=True,blank=True)
     
     lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
@@ -393,6 +393,7 @@ class TestParameters(models.Model):
 
 class OrderResults(models.Model):
     order =  models.ForeignKey(Orders,on_delete=models.PROTECT,verbose_name=_("Order"),related_name='orderresults_order')
+    sample = models.ForeignKey(OrderSamples,on_delete=models.PROTECT,verbose_name=_("Order Sample"),related_name='sampleresults_order',null=True)
     test = models.ForeignKey(Tests,on_delete=models.PROTECT,verbose_name=_("Test"),related_name='orderresults_test')
     is_header = models.BooleanField(default=False,verbose_name=_("is header?"))
     result = models.ForeignKey(Results,on_delete=models.PROTECT,verbose_name=_("Result"),related_name='orderresults_result',null=True)

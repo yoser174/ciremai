@@ -15,8 +15,8 @@ from num2words import num2words
 
 class Parameters(models.Model):
     name = models.CharField(max_length=100,verbose_name=_("Name"))
-    char_value = models.CharField(max_length=100,verbose_name=_("Char value"))
-    num_value = models.IntegerField(verbose_name=_("Numeric value"))
+    char_value = models.CharField(max_length=100,verbose_name=_("Char value"),null=True,blank=True)
+    num_value = models.IntegerField(verbose_name=_("Numeric value"),null=True,blank=True)
     lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
     lastmodifiedby = models.ForeignKey(
         settings.AUTH_USER_MODEL, limit_choices_to={'is_staff': True},
@@ -135,7 +135,7 @@ class Genders(models.Model):
         return reverse('priority_detail', args=[str(self.id)])
     
     def __str__(self):
-        return self.name
+        return ('%s (%s)' % (self.name,self.ext_code))
 
     class Meta:
         verbose_name = _("Gender")
@@ -288,11 +288,11 @@ class Patients(models.Model):
     
     def create_order(self):
         order = Orders(patient=self)
-        order.doctor_id = 1
-        order.origin_id = 1
-        order.insurence_id = 1
-        order.priority_id = 1
-        order.lastmodifiedby_id = 1
+        #order.doctor_id = 1
+        #order.origin_id = 1
+        #order.insurence_id = 1
+        #order.priority_id = 1
+        #order.lastmodifiedby_id = 1
         order.save()
         return order
     
@@ -322,26 +322,12 @@ def auto_order_no():
         par_upd.save()
         return dtf + ("%04d" % (num_value,))
     
-#class OrdersManager(models.Manager):
-#    def get_test_with_price(self,id):
-#        from django.db import connection
-#        with connection.cursor() as cursor:
-#            cursor.execute("""
-#            SELECT t.name,tp.tariff, tp.service,tp.tariff + tp.service subtotal
-#            FROM billing_orders o
-#            LEFT JOIN billing_ordertests ot ON o.id = ot.order_id
-#            LEFT JOIN billing_tests t ON ot.test_id = t.id
-#            LEFT JOIN billing_testprices tp oN t.id = tp.test_id AND tp.priority_id = o.priority_id
-#            WHERE o.id = %s
-#            ORDER BY ot.id """,id)
-#            result_list = cursor.fetchall()
-#        return result_list
     
 class Orders(models.Model):
     order_date = models.DateField(verbose_name=_("Order date"),auto_now_add=True)
     number = models.CharField(max_length=100,verbose_name=_("Number"),default=auto_order_no,blank=True,null=True,unique=True)
-    origin = models.ForeignKey(Origins,on_delete=models.PROTECT,verbose_name=_("Origin"))
-    doctor = models.ForeignKey(Doctors,on_delete=models.PROTECT,verbose_name=_("Sender doctor"))
+    origin = models.ForeignKey(Origins,on_delete=models.PROTECT,verbose_name=_("Origin"),null=True,blank=True)
+    doctor = models.ForeignKey(Doctors,on_delete=models.PROTECT,verbose_name=_("Sender doctor"),null=True,blank=True)
     diagnosis = models.ForeignKey(Diagnosis,on_delete=models.PROTECT,verbose_name=_("Diagnosis"),null=True,blank=True)
     priority = models.ForeignKey(Priority,on_delete=models.PROTECT,verbose_name=_("Order priority"),null=True,blank=True)
     insurance = models.ForeignKey(Insurance,on_delete=models.PROTECT,verbose_name=_("Insurance"),null=True,blank=True)
@@ -449,7 +435,7 @@ class OrderTests(models.Model):
 class OrderSamples(models.Model):
     order = models.ForeignKey(Orders,on_delete=models.PROTECT,verbose_name=_("Order"),related_name='sample_order')
     specimen = models.ForeignKey(Specimens,on_delete=models.PROTECT,verbose_name=_("Specimen"),related_name='sample_specimen')
-    sample_no = models.CharField(max_length=100,verbose_name=_("Name"),help_text=_("Patient Name"))
+    sample_no = models.CharField(max_length=100,verbose_name=_("sample id"),help_text=_("Sample id"))
     dateofcreation = CreationDateTimeField(verbose_name=_("Created at"),auto_now_add=True)
     lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
     lastmodifiedby = models.ForeignKey(
@@ -469,4 +455,19 @@ class OrderSamples(models.Model):
             ('view_ordersamples', 'Can view order samples'),
         )
         ordering = ['order','sample_no']
+        
+class LabelPrinters(models.Model):
+    name = models.CharField(max_length=100,verbose_name=_("Name"),help_text=_("Printer barcode name"))
+    active = models.BooleanField(default=True,verbose_name=_("is active?"))
+    com_port = models.CharField(max_length=100,verbose_name=_("Com serial port name"),help_text=_("eq: COM10,COM11"))
+    lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
+    lastmodifiedby = models.ForeignKey(
+        settings.AUTH_USER_MODEL, limit_choices_to={'is_staff': True},
+        blank=True, verbose_name=_("Last modified by"), null=True)
+    
+    def get_absolute_url(self):
+        return reverse('ordersamples_detail', args=[str(self.id)])
+    
+    def __str__(self):
+        return '%s (%s)' % (self.name,self.com_port)
     
