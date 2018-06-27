@@ -37,7 +37,7 @@ from labels import Label
 # ######################
 # ##   Helper Views   ##
 # ######################
-@login_required
+@login_required(login_url='login_billing')
 class UpdateUserProfile(LoginRequiredMixin,NamedFormsetsMixin,UpdateWithInlinesView):
     model = User
     fields = ['first_name', 'last_name', 'email']
@@ -71,7 +71,7 @@ def login_user(request):
     context = {'next':next_url}
     return render(request,'registration/login_billing.html',context)
 
-@login_required
+@login_required(login_url='login_billing')
 def show_dashboard(request):
     today = datetime.now().date()
     ordercount_today = models.Orders.objects.filter(order_date__gte=today).count()
@@ -84,7 +84,7 @@ def show_dashboard(request):
     else:
         return render(request,'dashboard_billing.html',context)
 
-@login_required
+@login_required(login_url='login_billing')
 def AvatarChange(request,extra_context=None,next_override=None,upload_form=UploadAvatarForm,primary_form=PrimaryAvatarForm,
                  *args,**kwargs):
     if extra_context is None:
@@ -157,7 +157,7 @@ def AvatarAdd(request,extra_context=None,next_override=None,upload_form=UploadAv
 # #################################
 # ##         Report Views        ##
 # #################################
-@login_required
+@login_required(login_url='login_billing')
 def report_tests(request):
     template = 'report/insurance.html'
     data = models.Orders.objects.values('order_items__test__name').annotate(Count('number')).order_by()
@@ -189,7 +189,7 @@ def report_tests(request):
     context = {'orderstable':orderstable,'filter':filter}
     return render(request,template,context)  
 
-@login_required
+@login_required(login_url='login_billing')
 def report_insurance(request):
     template = 'report/insurance.html'
     data = models.Orders.objects.values('insurance__name').annotate(Count('number')).order_by()
@@ -221,7 +221,7 @@ def report_insurance(request):
     context = {'orderstable':orderstable,'filter':filter}
     return render(request,template,context)  
 
-@login_required
+@login_required(login_url='login_billing')
 def report_origin(request):
     template = 'report/origin.html'
     data = models.Orders.objects.values('origin__name').annotate(Count('number')).order_by()
@@ -253,7 +253,7 @@ def report_origin(request):
     context = {'orderstable':orderstable,'filter':filter}
     return render(request,template,context)  
     
-@login_required
+@login_required(login_url='login_billing')
 def report_jm(request):
     template = 'report/jm.html'
     data = models.Orders.objects.all()
@@ -291,7 +291,7 @@ def report_jm(request):
 # #################################
 # ##   Billing Function Views  ##
 # #################################
-@login_required
+@login_required(login_url='login_billing')
 def home(request):
     template = 'index_billing.html'
     org_lab_name = models.Parameters.objects.filter(name = 'ORG_LAB_NAME')
@@ -299,7 +299,7 @@ def home(request):
     context = {'org_lab_name':org_lab_name,'org_lab_address':org_lab_address}
     return render(request,template,context) 
 
-@login_required
+@login_required(login_url='login_billing')
 def order_patient(request):
     if request.method == 'POST':  
         patient_pk = request.POST.get('patient','')  
@@ -320,7 +320,7 @@ def order_patient(request):
         context = {'patienttable':patienttable,'filter':filter}
         return render(request,template,context)  
     
-@login_required
+@login_required(login_url='login_billing')
 def order_add_patient(request):
     if request.method == 'POST':
         form = forms.PatientForm(request.POST)
@@ -428,6 +428,7 @@ def order_send_lis(request,order_pk):
 # ###################
 # ##   Base Views  ##
 # ###################
+
 class PaginatedTableView(SingleTableView):
     filter_class = None
 

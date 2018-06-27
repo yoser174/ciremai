@@ -6,7 +6,7 @@
 	<parameter name="ORDER_ID" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[select billing_testgroups.name grup,billing_tests.name testname,middleware_results.alfa_result,middleware_orderresults.unit
-,middleware_orderresults.patologi_mark,middleware_results.ref_range,middleware_testparameters.method,middleware_testparameters.special_information
+,middleware_orderresults.patologi_mark,middleware_orderresults.ref_range,middleware_testparameters.method,middleware_testparameters.special_information
 from
 middleware_orderresults
 left join middleware_results on middleware_orderresults.result_id = middleware_results.id
@@ -41,7 +41,7 @@ order by billing_tests.sort]]>
 	</field>
 	<field name="ref_range" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="ref_range"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="middleware_results"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="middleware_orderresults"/>
 	</field>
 	<field name="method" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="method"/>
@@ -52,7 +52,7 @@ order by billing_tests.sort]]>
 		<property name="com.jaspersoft.studio.field.tree.path" value="middleware_testparameters"/>
 	</field>
 	<variable name="Variable_1" class="java.lang.String">
-		<variableExpression><![CDATA[ new Date()]]></variableExpression>
+		<variableExpression><![CDATA[new Date()]]></variableExpression>
 	</variable>
 	<variable name="V_CURRENT_PAGE_NUMBER" class="java.lang.Integer" resetType="Page">
 		<variableExpression><![CDATA[1]]></variableExpression>
@@ -232,7 +232,7 @@ order by billing_tests.sort]]>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{method}]]></textFieldExpression>
 			</textField>
-			<textField isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement x="453" y="0" width="100" height="20" uuid="2ccca766-55a9-4f99-96d5-9c8781a804df">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6a91fc2d-a721-4a40-89d5-a2cf6b6767bc"/>
 				</reportElement>

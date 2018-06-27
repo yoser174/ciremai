@@ -169,33 +169,10 @@ def home(request):
     return render(request,template,context) 
 
 @login_required(login_url='login_middleware')
-def show_workarea(request):
+def show_workarea(request):   
     data = Orders.objects.all()
-    if request.GET.get('order_date'):
-        d_range = request.GET.get('order_date')
-        #04/01/2018 - 04/30/2018
-        start_date = d_range[:10]
-        end_date = d_range[13:23]
-        
-        data = data.filter(order_date__range=[start_date,end_date] )
-    
-    
-    if request.GET.get('number'):
-        #print request.GET.get('number')
-        data = data.filter(number__contains=request.GET.get('number'))
-    
-    if request.GET.get('patient__patient_id'):
-        #print request.GET.get('patient__patient_id')
-        data = data.filter(patient__patient_id__contains=request.GET.get('patient__patient_id'))
-        
-    if request.GET.get('patient__name'):
-        #print request.GET.get('patient__name')
-        data = data.filter(patient__name__contains=request.GET.get('patient__name'))
-
     filter = filters.OrderFilter(request.GET,queryset=data)
-
-    
-    ordertable = tables.OrderResultTable(data)
+    ordertable = tables.OrderResultTable(filter.qs)
     ordertable.paginate(page=request.GET.get('page', 1), per_page=10)
     
     RequestConfig(request).configure(ordertable)

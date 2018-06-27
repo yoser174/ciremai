@@ -14,7 +14,12 @@ django-filters==0.2.1
 django-simple-history==1.9.0
 django-tables2==1.16.0
 django-widget-tweaks==1.4.1
+django-mptt
+django-select2
 num2words
 tablib
 reportlab
+pyserial
+pyreportjasper
+
 

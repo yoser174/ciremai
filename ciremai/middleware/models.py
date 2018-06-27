@@ -144,7 +144,7 @@ class Instruments(models.Model):
         blank=True,
     )
     tcp_host = models.GenericIPAddressField(verbose_name=_("TCP Host name (IP Address)"),blank=True,null=True)
-    tcp_port = models.IntegerField(verbose_name=_("Driver name"),blank=True,null=True)
+    tcp_port = models.IntegerField(verbose_name=_("TCP Port"),blank=True,null=True)
     lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
     lastmodifiedby = models.ForeignKey(
         settings.AUTH_USER_MODEL, limit_choices_to={'is_staff': True},
@@ -379,7 +379,7 @@ class TestParameters(models.Model):
     test = models.OneToOneField(Tests,on_delete=models.CASCADE,primary_key=True,)
     method = models.CharField(max_length=100,verbose_name=_("Method"),null=True,blank=True)
     unit = models.CharField(max_length=100,verbose_name=_("Test unit"),null=True,blank=True)
-    decimal = models.IntegerField(verbose_name=_("Decimal place"),null=True,default=1)
+    decimal_place = models.IntegerField(verbose_name=_("Decimal place"),null=True,default=1)
     special_information = models.CharField(max_length=1000,verbose_name=_("Special information"),null=True,blank=True)
     
     lastmodification = ModificationDateTimeField(verbose_name=_("Last modified"))
