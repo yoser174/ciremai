@@ -15,6 +15,56 @@ class Label(object):
         self.order_id = ord_id
         return
     
+    def print_label_test(self):
+        LF  = b'\x0A'
+        try:
+            label_com = serial.Serial(port= port_com.com_port,baudrate=9600,
+                                            timeout=10, writeTimeout=10,stopbits=serial.STOPBITS_ONE,
+                                            bytesize=serial.EIGHTBITS,parity=serial.PARITY_NONE)
+            zpl_str = ''
+            zpl_str = '^XA^LH0,'
+            zpl_str += '0^FO16,'
+            zpl_str += '8^A^A0N,'
+            zpl_str += '24,'
+            zpl_str += '24^FWN^FDOrderNo^FS^FO104,'
+            zpl_str += '8^A^A0N,'
+            zpl_str += '24,'
+            zpl_str += '24^FWN^FD180XXXXXXX^FS^FO16,'
+            zpl_str += '56^A^A0N,'
+            zpl_str += '24,'
+            zpl_str += '24^FWN^FDNo.MR^FS^FO16,'
+            zpl_str += '32^A^A0N,'
+            zpl_str += '24,'
+            zpl_str += '24^FWN^FDNAMA PASIEN^FS^FO88,'
+            zpl_str += '56^A^A0N,'
+            zpl_str += '24,'
+            zpl_str += '24^FWN^FDXXXXXX^FS^FO248,'
+            zpl_str += '56^A^A0N,'
+            zpl_str += '24,'
+            zpl_str += '24^FWN^FD01/01/1999^FS^FO32,'
+            zpl_str += '80^A^A0N,'
+            zpl_str += '0,'
+            zpl_str += '0^FWN^FD^FS^FO368,'
+            zpl_str += '120^A^A0N,'
+            zpl_str += '27,'
+            zpl_str += '27^FWB^FDURINE^FS^FO192,'
+            zpl_str += '56^A^A0N,'
+            zpl_str += '24,'
+            zpl_str += '24^FWN^FDFemale^FS^FO32,'
+            zpl_str += '80^BY2^BCN,'
+            zpl_str += '136,'
+            zpl_str += 'Y^FD180XXXXXXXU^FS^XZ,'
+            zpl_str += '~HM'+LF
+            
+            label_com.write(zpl_str.encode())
+            time.sleep(0.1)
+        except Exception as e:
+            return False,str(e)
+        
+        return True,_("Printer [%s] OK with serial port [%s]." % (port_com.name,port_com.com_port))
+
+        
+    
     def print_label(self):
         order = models.Orders.objects.get(pk=self.order_id)
         samples = models.OrderTests.objects.filter(order = order).values('test__specimen__id','test__specimen__suffix_code').distinct()
@@ -38,23 +88,44 @@ class Label(object):
                                             timeout=10, writeTimeout=10,stopbits=serial.STOPBITS_ONE,
                                             bytesize=serial.EIGHTBITS,parity=serial.PARITY_NONE)
             for label in labels:
-                #print label
+                
                 zpl_str = ''
-                zpl_str = LF+'N'+LF
-                zpl_str += 'A32,80,0,0,1,1,N,""'+LF
-                zpl_str += 'A136,8,0,0,1,1,N,"'+order.number+'"'+LF
-                zpl_str += 'A368,120,3,0,1,1,N,"'+label['specimen__name']+'"'+LF
-                zpl_str += 'A16,32,0,0,1,1,N,"'+order.patient.name+'"'+LF
-                zpl_str += 'A16,8,0,0,1,1,N,"Order Id :"'+LF
-                zpl_str += 'A16,56,0,0,1,1,N,"RM :"'+LF
-                zpl_str += 'A336,64,3,0,1,1,N,""'+LF # nomor urut
-                zpl_str += 'A208,48,0,0,1,1,N,"'+order.patient.dob.strftime("%Y-%m-%d")+'"'+LF
-                zpl_str += 'A72,48,0,0,1,1,N,"'+order.patient.patient_id+'"'+LF
-                zpl_str += 'B32,80,0,1,2,4,136,B,"'+label['sample_no']+'"'+LF
-                zpl_str += 'P1'+LF+LF
+                zpl_str = '^XA^LH0,'
+                zpl_str += '0^FO16,'
+                zpl_str += '8^A^A0N,'
+                zpl_str += '24,'
+                zpl_str += '24^FWN^FDOrderNo^FS^FO104,'
+                zpl_str += '8^A^A0N,'
+                zpl_str += '24,'
+                zpl_str += '24^FWN^FD'+order.number+'^FS^FO16,'
+                zpl_str += '56^A^A0N,'
+                zpl_str += '24,'
+                zpl_str += '24^FWN^FDNo.MR^FS^FO16,'
+                zpl_str += '32^A^A0N,'
+                zpl_str += '24,'
+                zpl_str += '24^FWN^FD'+order.patient.name+'^FS^FO88,'
+                zpl_str += '56^A^A0N,'
+                zpl_str += '24,'
+                zpl_str += '24^FWN^FD'+order.patient.patient_id+'^FS^FO248,'
+                zpl_str += '56^A^A0N,'
+                zpl_str += '24,'
+                zpl_str += '24^FWN^FD'+order.patient.dob.strftime("%Y-%m-%d")+'^FS^FO32,'
+                zpl_str += '80^A^A0N,'
+                zpl_str += '0,'
+                zpl_str += '0^FWN^FD^FS^FO368,'
+                zpl_str += '120^A^A0N,'
+                zpl_str += '27,'
+                zpl_str += '27^FWB^FD'+label['specimen__name']+'^FS^FO192,'
+                zpl_str += '56^A^A0N,'
+                zpl_str += '24,'
+                zpl_str += '24^FWN^FD'+order.patient.gender.ext_code+'^FS^FO32,'
+                zpl_str += '80^BY2^BCN,'
+                zpl_str += '136,'
+                zpl_str += 'Y^FD'+label['sample_no']+'^FS^XZ,'
+                zpl_str += '~HM'+LF
                 
                 label_com.write(zpl_str.encode())
-                time.sleep(0.1)
+                time.sleep(0.3)
         except Exception as e:
             return False,str(e)
         
