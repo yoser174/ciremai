@@ -77,7 +77,6 @@ def show_dashboard(request):
     ordercount_today = models.Orders.objects.filter(order_date__gte=today).count()
     patientcount_today = models.Patients.objects.filter(dateofcreation__gte=today).count()
     context = {'ordercount_today': ordercount_today,'patientcount_today':patientcount_today}
-    print request.GET
     next_url = request.GET.get('next')
     if next_url:
         return HttpResponseRedirect(next_url)
@@ -171,8 +170,6 @@ def report_tests(request):
         data = data.filter(order_date__range=[start_date,end_date] )
         
         
-    print data.query
-    
     filter = filters.TestsFilter(request.GET,queryset=data)
     orderstable = TestsTable(data)
     orderstable.paginate(page=request.GET.get('page', 1), per_page=10)
@@ -203,8 +200,6 @@ def report_insurance(request):
         data = data.filter(order_date__range=[start_date,end_date] )
         
         
-    print data.query
-    
     filter = filters.InsuranceFilter(request.GET,queryset=data)
     orderstable = InsuranceTable(data)
     orderstable.paginate(page=request.GET.get('page', 1), per_page=10)
@@ -235,8 +230,6 @@ def report_origin(request):
         data = data.filter(order_date__range=[start_date,end_date] )
         
         
-    print data.query
-    
     filter = filters.OriginFilter(request.GET,queryset=data)
     orderstable = OriginTable(data)
     orderstable.paginate(page=request.GET.get('page', 1), per_page=10)
