@@ -1,14 +1,14 @@
 {% load i18n %}
 
-    {% if perms.billing.add_orders %}
+    {% if perms.billing.add_doctors %}
         <button class="btn btn-default" onclick="location.href=
-                '{% url 'order_add_patient' %}'" title="{% trans 'Add new patient order' %}"
+                '{% url 'doctor_create' %}'" title="{% trans 'Register new doctor' %}"
                 data-toggle="tooltip" data-placement="top">
             <span class="glyphicon glyphicon-plus"></span></button>
     {% endif %}
-    {% if perms.billing.change_orders %}
+    {% if perms.billing.change_doctors %}
         <button class="btn btn-info" onclick="location.href=
-                '{% url 'order_edit' pk %}'" title="{% trans 'Edit order' %}"
+                '{% url 'doctor_edit' doctors.pk %}'" title="{% trans 'Edit doctor' %}"
                 data-toggle="tooltip" data-placement="top">
             <span class="glyphicon glyphicon-pencil"></span></button>
     {% endif %}

@@ -110,14 +110,6 @@
                             </a>
                         </h5>
                     </p>
-                    {% if perms.admin %}
-                    <li><a href="/admin/"><i class="fa fa-gears"></i>Administration</a></li>
-                    {% endif %}
-                    {% if perms.middleware %}
-                    <li><a href="/middleware/" ><i class="fa fa-arrows-alt"></i>Middleware</a></li>
-                    {% endif %}
-
-
                   {% else %}
 
                       <li><a href="/billing/login/"><i class="fa fa-sign-in"></i>Login</a></li>
@@ -134,15 +126,18 @@
                   </li>
                   
                   <li class="sub-menu">
-                      <a {% if request.path == '/billing/orders/' or request.path == '/billing/patients/' %} class="active"{% endif %} href="javascript:;" >
+                      <a {% if request.path == '/billing/orders/' or request.path == '/billing/patients/' or request.path == '/billing/doctors/' %} class="active"{% endif %} href="javascript:;" >
                           <i class="fa fa-list"></i>
                           <span>Routine task</span>
                       </a>
                       <ul class="sub">
-                          {% if perms.billing.view_orders %} <li {% if request.path == '/billing/orders/' %} class="active"{% endif %} ><a href="/billing/orders/">Orders</a></li>{% endif %}
+                          {% if perms.billing.view_orders %} <li {% if request.path == '/billing/orders/' %} class="active"{% endif %} ><a href="/billing/orders/">{% trans "Orders" %}</a></li>{% endif %}
                       </ul>
                       <ul class="sub">
-                          {% if perms.billing.view_orders %} <li {% if request.path == '/billing/patients/'%} class="active"{% endif %} ><a href="/billing/patients/">Patients</a></li>{% endif %}
+                          {% if perms.billing.view_orders %} <li {% if request.path == '/billing/patients/'%} class="active"{% endif %} ><a href="/billing/patients/">{% trans "Patients" %}</a></li>{% endif %}
+                      </ul>
+                      <ul class="sub">
+                          {% if perms.billing.view_orders %} <li {% if request.path == '/billing/doctors/'%} class="active"{% endif %} ><a href="/billing/doctors/">{% trans "Doctors" %}</a></li>{% endif %}
                       </ul>
                   </li>
                   

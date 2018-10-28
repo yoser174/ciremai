@@ -9,8 +9,22 @@
 {% trans "Order detail" %}
 {% endblock %} 
 
+
+{% block extra_css %}
+	<link rel="stylesheet" href="{% static "css/bootstrap-treeview.min.css" %}">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" type="text/css" media="screen" rel="stylesheet" />
+{% endblock %}
+
+
 {% block extra_js %} 
-{% endblock %} 
+	<script type="text/javascript" src="{% static "js/bootstrap-treeview.min.js" %}"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/i18n/id.js"></script>
+	<script type="text/javascript" src="/static/django_select2/django_select2.js"></script>
+	
+	
+{% endblock %}
+
 
 {% block breadcrumb_menu %}
 <li class="active"><a href="{% url 'orders_list' %}">{% trans "Orders" %}</a></li>
@@ -23,11 +37,29 @@
 
 {% block main_toolbar %}
 <div class="btn-group" role="group">{% include 'includes/billing/orders_edit_toolbar.html' %}</div>
+
+{% if orders.status == "0" %}
+		<div class="btn">
+			<form class="form-inline" role="form">
+				<div class="form-group">
+						<div class="col-md-9">
+						<select name="test" id="id_test" data-allow-clear="false" data-minimum-input-length="0" class="form-control django-select2" title="">
+							<option></option>
+							{% for test in tests %}
+							<option value="{{ test.id }}">{{ test.name }}</option>
+						{% endfor %}
+						</select>
+					</div>
+				</div>
+				<button type="submit" class="btn btn-theme">{% trans "Add test" %}</button>
+			</form>
+		</div><!-- /form-panel -->
+{% endif %}
+
 {% endblock %} 
 
 {% block main_inner %}
-<div class="col-lg-4">
-	<div style="margin-top: -20px;">
+<div style="margin-top: -20px;">
 		<br>
 		<table>
 			<tr>
@@ -38,10 +70,16 @@
 				<td><small>{% trans 'Last modified' %}:&nbsp;</small></td>
 				<td><small>{{ orders.lastmodification }}</small></td>
 			</tr>
+			<tr>
+				<td><small>{% trans 'Last modified by' %}:&nbsp;</small></td>
+				<td><small>{{ orders.lastmodifiedby }}</small></td>
+			</tr>
 		</table>
 	</div>
+<div class="col-lg-4">
+	<div class="panel">
 	<h2>{{ orders.number }}</h2>
-	<table>
+		<table>
 		<tr>
 			<td>{% trans 'Priority' %}:&nbsp;</td>
 			<td><b>{{ orders.priority }}</b></td>
@@ -52,41 +90,31 @@
 		</tr>
 		<tr>
 			<td>{% trans 'Sender doctor' %}:&nbsp;</td>
-			<td><b>{{ orders.doctor }}</b></td>
+			<td><b>{{ orders.doctor|default:'-' }}</b></td>
 		</tr>
 		<tr>
 			<td>{% trans 'Diagnosis' %}:&nbsp;</td>
-			<td><b>{{ orders.diagnosis }}</b></td>
+			<td><b>{{ orders.diagnosis|default:'-' }}</b></td>
 		</tr>
 		<tr>
-			<td>{% trans 'Insurence' %}:&nbsp;</td>
-			<td><b>{{ orders.insurence }}</b></td>
-		</tr>
-		<tr>
-			<td>{% trans 'Created / Modified by' %}:&nbsp;</td>
-			<td><b>{{ orders.lastmodifiedby }}</b></td>
-		</tr>
-		<td>{% trans 'Created at' %}:&nbsp;</td>
-		<td><b>{{ orders.dateofcreation }}</b></td>
+			<td>{% trans 'Note' %}:&nbsp;</td>
+			<td><b>{{ orders.note|default:'-' }}</b></td>
 		</tr>
 	</table>
-
-	<br> <br>
+	</div>
 </div>
 <div class="col-lg-4">
-	<fieldset>
+	<div class="panel">
+		<fieldset>
 		<legend>{% trans 'Patient Data' %}</legend>
 		<table>
 			<tr>
 				<td>{% trans 'Patient ID' %}:&nbsp;</td>
-				<td><h4>
-						{{ orders.patient.patient_id }}
-						<h4></td>
+				<td>{{ orders.patient.patient_id }}</td>
 			</tr>
 			<tr>
 				<td>{% trans 'Name' %}:&nbsp;</td>
-				<td><h4><a href="{{ orders.patient.get_absolute_url }}">{{ orders.patient.name }}</a>
-						<h4></td>
+				<td><a href="{{ orders.patient.get_absolute_url }}">{{ orders.patient.name }}</a></td>
 			</tr>
 			<tr>
 				<td>{% trans 'Gender' %}:&nbsp;</td>
@@ -96,11 +124,61 @@
 				<td>{% trans 'Date of Birth' %}:&nbsp;</td>
 				<td><b>{{ orders.patient.dob }}</b></td>
 			</tr>
-			<td>{% trans 'Address' %}:&nbsp;</td>
-			<td><b>{{ orders.patient.address }}</b></td>
+			<tr>
+				<td>{% trans 'Address' %}:&nbsp;</td>
+				<td><b>{{ orders.patient.address|default:'-' }}</b></td>
+			</tr>
+			<tr>
+				<td>{% trans 'Note' %}:&nbsp;</td>
+				<td><b>{{ orders.patient.note|default:'-' }}</b></td>
 			</tr>
 		</table>
 	</fieldset>
+	</div>
+	
+</div>
+
+
+<div class="col-lg-4">
+	<div class="panel">
+		<fieldset>
+		<legend>{% trans 'Last 5 previous order' %}</legend>
+		<table>
+		{% if prev_orders %}
+		<thead>
+			<td>Date</td>
+			<td>Order No</td>
+			<td>Tests</td>
+			<td></td>
+		</thead>
+		<tbody>
+		
+			{% for od in prev_orders %}
+			<tr>
+				<td>{{ od.order_date }}&nbsp;&nbsp;</td>
+				<td><a href="{% url 'order_detail' od.id %}">{{ od.number }}</a>&nbsp;&nbsp;</td>
+				<td>{{ od.get_tests| join:", " }}</td>
+				<td>
+				{% if orders.status == "0" %}
+				<a href="replace_test_from?id={{ od.id }}" class="btn btn-info  btn-sm" role="button">
+				<i class="glyphicon glyphicon-repeat"></i>
+				</a>
+				{% endif %}
+	    	
+	    		</td>
+			</tr>
+			{% endfor %}
+		{% else %}
+			<tr collspan="3">
+				<td>{% trans "No data" %}</td>
+			</tr>
+		{% endif %}
+		</tbody>
+			
+		</table>
+	</fieldset>
+	</div>
+	
 </div>
 
 {% if samples %}
@@ -128,50 +206,130 @@
 <table class="table">
 	<thead>
 		<tr>
-			<td>Test</td>
-			<td>Tariff</td>
-			<td>Service</td>
-			<td>SubTotal</td>
+			<td>{% trans "Group" %}</td>
+			<td>{% trans "Test" %}</td>
+			<td>{% trans "Tariff" %}</td>
+			<td></td>
 		</tr>
 	</thead>
+	{% if orders.get_total_price > 0 %}
 	{% for tes in orders.get_test_price %}
 	<tr>
+		<td>{{ tes.order_items__test__test_group__name }}</td>
 		<td>{{ tes.order_items__test__name }}</td>
-		<td>{{ tes.order_items__test__test_price__tariff|intcomma }}</td>
-		<td>{{ tes.order_items__test__test_price__service|intcomma }}</td>
-		<td>{{ tes.sub_total|intcomma }}</td>
+		<td>{{ tes.order_items__test__test_price__tariff|intcomma|default:'0' }}</td>
+		<td>
+		{% if orders.status == "0" %}
+			<a href="delete?test_id={{ tes.order_items__test__id }}" class="btn btn-danger btn-sm" role="button">
+	    	<span class="glyphicon glyphicon-trash"></span></a>
+	    {% endif %}
+		</td>
 	</tr>
 	{% endfor %}
+	
 	<tr>
-		<td class="text-center">Total</td>
-		<td>{{ orders.get_sub_total_price.tariff_subtotal|intcomma }}</td>
-		<td>{{ orders.get_sub_total_price.service_subtotal|intcomma }}</td>
-		<td><u><strong>{{ orders.get_total_price.total|intcomma }}</strong></u></td>
+		<td class="text-right" colspan="3">{% trans "Sub total" %}</td>
+		<td><u><strong>{{ orders.get_sub_total_price.subtotal|intcomma }}</strong></u></td>
 	</tr>
+	<tr>
+	{% if orders.status == "0" %}
+		<td colspan="4" class="text-right">
+			<form class="form-inline align-right" role="form" method="POST">
+				
+				<div class="form-group align-right">
+					{% csrf_token %}
+					<label  for="discount">{% trans "Discount (%)" %}</label>
+					<input type="text" style="width:80px" name="discount" class="form-control" id="discount" placeholder="Enter amount in %" value="{{ orders.discount|intcomma }}" >
+				</div>
+				<button type="submit" class="btn btn-light btn-sm">
+					<span class="glyphicon glyphicon-floppy-disk"></span>
+					{% trans "Save" %}
+				</button>
+			</form>
+		</td>
+	{% else %}
+	<td class="text-right" colspan="3">{% trans "Discount (%)" %}</td>
+		<td><u><strong>{{ orders.discount|intcomma }}</strong></u></td>
+		
+	{% endif %}
+	</tr>
+	<tr>
+		<td class="text-right" colspan="3">{% trans "Discount amount" %}</td>
+		<td><u><strong>{{ orders.discount_amount|intcomma|default:'0' }}</strong></u></td>
+	</tr>
+	<tr>
+		<td class="text-right" colspan="3">{% trans "Total" %}</td>
+		<td><u><strong>{{ orders.get_total_price|intcomma|default:'0' }}</strong></u></td>
+	</tr>
+	{% else %}
+	<tr><td colspan="5" align="center" >{% trans "No requested test yet." %}</td></tr>
+	{% endif %}
+
 </table>
 </div>
 
 
-</div>
+
 {% endblock %}
 
 {% block main_footer %}
-	{% if MENU_BTN_PRINT_RECEIPT.num_value == 1 %}
+
+{% if orders.status == "0" %}
+<! -- MODALS -->
+	<button class="btn btn-info" data-toggle="modal" data-target="#paymentModal">
+	<i class="glyphicon glyphicon-usd"></i>
+	  {% trans "Payment" %}
+	</button>
+	
+	<!-- Modal -->
+	<div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title" id="paymentModalLabel">{% trans "Payment" %}</h4>
+	      </div>
+	      <div class="modal-body">
+  
+
+ 		<form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">{% trans "Amount :" %}</label>
+            <input type="text" class="form-control" id="recipient-name" value="{{ orders.get_total_price|intcomma|default:'0' }}" disabled="">
+          </div>
+        </form>
+  
+	      </div>
+	      
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">{% trans "Close" %}</button>
+
+	        <a href="payment" class="btn btn-primary" role="button">
+	    	{% trans "Save" %}</a>    	
+	    	
+	      </div>
+	    </div>
+	  </div>
+	</div>      				
+      				
+{% endif %}
+
+	{% if orders.status == "1" %}
 	    <a href="print/receipt" target="_blank" class="btn btn-info" role="button">
 	    <span class="fa fa-print"></span>&nbsp;{% trans "Print Receipt" %}</a>
     {% endif %}
     
-    {% if MENU_BTN_PRINT_RECEIPT.num_value == 1 %}
+    {% if MENU_BTN_PRINT_RECEIPT.num_value == "1" %}
 	    <a href="print/bill" target="_blank" class="btn btn-info" role="button">
 	    <span class="fa fa-print"></span>&nbsp;{% trans "Print Bill" %}</a>
     {% endif %}
     
-    {% if MENU_BTN_PRINT_WORKLIST.num_value == 1 %}
+    {% if MENU_BTN_PRINT_WORKLIST.num_value == "1" %}
 	    <a href="print/worklist" target="_blank" class="btn btn-info" role="button">
 	    <span class="fa fa-print"></span>&nbsp;{% trans "Print Worklist" %}</a>
 	{% endif %}
 	
-	{% if MENU_BTN_PRINT_BARCODE.num_value == 1 %}
+	{% if MENU_BTN_PRINT_BARCODE.num_value == "1" %}
 	<div class="btn-group dropup">
 	    <button type="button dropup" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
 	      Print Label
@@ -185,8 +343,9 @@
 	</div>
 	{% endif %}
 							
-						
-    <!-- <a href="send/lis" class="btn btn-info" role="button">
-    <span class="fa fa-paper-plane-o"></span>&nbsp;{% trans "Send to LIS" %}</a> -->
-    
+	{% if orders.status == "1" %}			
+     <a href="send/lis" class="btn btn-info" role="button">
+    <span class="fa fa-paper-plane-o"></span>&nbsp;{% trans "Send to LIS" %}</a>
+    {% endif %}
+
 {% endblock %}

@@ -1,0 +1,17 @@
+{% load i18n %}
+
+<div class="btn-group btn-group-sm" role="group">
+	{% if perms.billing.view_doctors %}
+        <button class="btn btn-default" onclick="location.href=
+                '{% url 'doctor_detail' record.pk %}'" title="{% trans 'Doctor detail' %}"
+                data-toggle="tooltip" data-placement="top">
+            <span class="glyphicon glyphicon-search"></span></button>
+    {% endif %}
+    {% if perms.billing.change_doctors %}
+        <button class="btn btn-info" onclick="location.href=
+        	'{% url 'doctor_edit' record.pk %}'" title="{% trans 'Edit doctor' %}"
+                data-toggle="tooltip" data-placement="top">
+            <span class="glyphicon glyphicon-pencil"></span></button>
+    {% endif %}
+    
+</div>

@@ -2,7 +2,10 @@
 from datetimewidget.widgets import DateWidget
 from django import forms
 from crispy_forms.helper import FormHelper
-from .models import TestGroups,Tests,Patients,Orders,OrderTests,Origins,Insurance,Doctors,Diagnosis,Priority
+from .models import TestGroups,Tests,Patients,Orders,OrderTests,Origins,\
+Insurance,Doctors,Diagnosis,Priority,Salutation, Genders,OrderPayments
+from django.utils.translation import ugettext_lazy as _
+from collections import OrderedDict as SortedDict
 
 from itertools import groupby
 from django.forms.models import (
@@ -72,36 +75,68 @@ class TestForm(forms.ModelForm):
         fields = ('test_group','name','sort')
         
 class PatientForm(forms.ModelForm):
+    ordered_field_names = ['patient_id','salutation','name','gender','age','dob','address','mobile','phone','email','note']
+    
+    salutation = forms.ModelChoiceField(queryset=Salutation.objects.all(), widget=Select2Widget,empty_label=None,required=False)
+    gender = forms.ModelChoiceField(queryset=Genders.objects.all(), widget=Select2Widget,empty_label=None,required=True)
+    age = forms.CharField(label=_("Age (year)"), max_length="4",required=False)
+    
+    def __init__(self, *args, **kwargs):
+        super(PatientForm, self).__init__(*args, **kwargs)
+        # Your field initialisation code
+        self.rearrange_field_order()
+    
+    
+    def rearrange_field_order(self):
+
+        original_fields = self.fields
+        new_fields = SortedDict()
+
+        for field_name in self.ordered_field_names:
+            field = original_fields.get(field_name)
+            if field:
+                new_fields[field_name] = field
+
+        self.fields = new_fields
+        
     class Meta:
         model = Patients
-        fields = ('patient_id','name','gender','dob','address','data0','data1','data2')
+        fields = ('patient_id','salutation','name','gender','dob','address','mobile','phone','email','note')
+        
+    
+
+class DoctorForm(forms.ModelForm):
+    class Meta:
+        model = Doctors
+        fields = ('name','address','mobile','phone','email')
 
 
 
-class OrderForm(forms.ModelForm):
+
+class OrderForm2(forms.ModelForm):
     origin = forms.ModelChoiceField(queryset=Origins.objects.all(), widget=Select2Widget,empty_label=None)
     priority = forms.ModelChoiceField(queryset=Priority.objects.all(), widget=Select2Widget,empty_label=None)
-    insurance = forms.ModelChoiceField(queryset=Insurance.objects.all(), widget=Select2Widget,empty_label=None,required=False)
+    #insurance = forms.ModelChoiceField(queryset=Insurance.objects.all(), widget=Select2Widget,empty_label=None,required=False)
     doctor = forms.ModelChoiceField(queryset=Doctors.objects.all(), widget=Select2Widget,empty_label=None,required=False)
     diagnosis = forms.ModelChoiceField(queryset=Diagnosis.objects.all(),
                                        widget=Select2Widget,
                                        empty_label=None,
                                        required=False)
-    test_selections = forms.ModelMultipleChoiceField(queryset=Tests.objects.filter(can_request=True),
-                                          widget=Select2MultipleWidget,
+    #test_selections = forms.ModelMultipleChoiceField(queryset=Tests.objects.filter(can_request=True),
+    #                                      widget=Select2MultipleWidget,
                                           #empty_label=None,
-                                          required=False)
+    #                                      required=False)
     def __init__(self, *args, **kwargs):
-        super(OrderForm, self).__init__(*args, **kwargs)
+        super(OrderForm2, self).__init__(*args, **kwargs)
         instance = getattr(self, 'instance', None)
-        if instance and instance.pk:
-            self.fields['test_selections'].initial = list(Orders.objects.get(id=instance.pk).order_items.all().filter(test__can_request=True).values_list('test_id',flat=True).order_by('id'))
+        #if instance and instance.pk:
+        #    self.fields['test_selections'].initial = list(Orders.objects.get(id=instance.pk).order_items.all().filter(test__can_request=True).values_list('test_id',flat=True).order_by('id'))
         
     class Meta:
         model = Orders
-        fields = ('id','number','priority','origin','insurance','doctor','diagnosis','note')
+        fields = ('id','number','status','priority','origin','doctor','diagnosis','note')
 
-class OrderForm2(forms.ModelForm):
+class OrderForm(forms.ModelForm):
     origin = forms.ModelChoiceField(queryset=Origins.objects.all(), widget=Select2Widget,empty_label=None)
     priority = forms.ModelChoiceField(queryset=Priority.objects.all(), widget=Select2Widget,empty_label=None)
     insurance = forms.ModelChoiceField(queryset=Insurance.objects.all(), widget=Select2Widget,empty_label=None,required=False)
@@ -131,4 +166,10 @@ class OrderForm2(forms.ModelForm):
             return self.cleaned_data['number']
     class Meta:
         model = Orders
-        fields = ('id','number','origin','priority','insurance','doctor','diagnosis','note')
+        fields = ('id','number','status','origin','priority','insurance','doctor','diagnosis','note')
+        
+class PaymentForm(forms.ModelForm):
+    #type = forms.ModelChoiceField(queryset=OrderPayments.objects.all(), widget=Select2Widget,empty_label=None,required=False)
+    class Meta:
+        model = OrderPayments
+        fields = ('type',)

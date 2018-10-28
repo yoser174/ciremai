@@ -416,6 +416,9 @@ class OrderResults(models.Model):
     def __str__(self):
         return "%s %s %s" % (self.order,self.test,self.result)
     
+    def previous_result(self):
+        return 'xxx'
+    
 class HistoryOrders(models.Model):
     order =  models.ForeignKey(Orders,on_delete=models.PROTECT,verbose_name=_("Order"),related_name='historyorder_order')
     test = models.ForeignKey(Tests,on_delete=models.PROTECT,verbose_name=_("Test"),related_name='historyorder_test')

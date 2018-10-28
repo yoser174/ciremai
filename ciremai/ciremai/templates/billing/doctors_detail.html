@@ -1,0 +1,81 @@
+{% extends "base/main_section_base_billing.html" %} 
+{% load i18n staticfiles %} {% load humanize %} 
+
+{% block meta_title %} 
+{% trans "Doctor detail" %} {{ doctors.doctor_id }}
+{% endblock %} 
+
+{% block title %} 
+{% trans "Doctor detail" %}
+{% endblock %} 
+
+{% block extra_js %} 
+{% endblock %} 
+
+{% block breadcrumb_menu %}
+<li class="active"><a href="{% url 'doctors_list' %}">{% trans "Doctors" %}</a></li>
+<li class="active">{{ doctors.doctor_id }}</li>
+{% endblock %} 
+
+{% block main_header %} 
+{% trans "Doctor Details" %} 
+{% endblock %} 
+
+{% block main_toolbar %}
+<div class="btn-group" role="group">{% include 'includes/billing/doctors_edit_toolbar.html' %}</div>
+{% endblock %} 
+
+{% block main_inner %}
+<div class="col-lg-4">
+	<div style="margin-top: -20px;">
+		<br>
+		<table>
+			<tr>
+				<td><small>{% trans 'Created' %}:&nbsp;</small></td>
+				<td><small>{{ doctors.dateofcreation }}</small></td>
+			</tr>
+			<tr>
+				<td><small>{% trans 'Last modified' %}:&nbsp;</small></td>
+				<td><small>{{ doctors.lastmodification }}</small></td>
+			</tr>
+		</table>
+	</div>
+	<table>
+		<tr>
+			<td>{% trans 'Name' %}:&nbsp;</td>
+			<td><b>{{ doctors.name }}</b></td>
+		</tr>
+		<tr>
+			<td>{% trans 'Address' %}:&nbsp;</td>
+			<td><b>{{ doctors.address }}</b></td>
+		</tr>
+		<tr>
+			<td>{% trans 'Phone' %}:&nbsp;</td>
+			<td><b>{{ doctors.phone }}</b></td>
+		</tr>
+		<tr>
+			<td>{% trans 'Mobile' %}:&nbsp;</td>
+			<td><b>{{ doctors.mobile }}</b></td>
+		</tr>
+		<tr>
+			<td>{% trans 'Email' %}:&nbsp;</td>
+			<td><b>{{ doctors.email }}</b></td>
+		</tr>
+		<tr>
+			<td>{% trans 'Created / Modified by' %}:&nbsp;</td>
+			<td><b>{{ doctors.lastmodifiedby }}</b></td>
+		</tr>
+		<td>{% trans 'Created at' %}:&nbsp;</td>
+		<td><b>{{ doctors.dateofcreation }}</b></td>
+		</tr>
+	</table>
+
+	<br> <br>
+</div>
+
+
+
+{% endblock %}
+
+{% block main_footer %} 
+{% endblock %}

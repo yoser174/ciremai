@@ -51,7 +51,7 @@
 			<th>Instrument</th>
 			<th>Tech.Val</th>
 			<th>Med.Val</th>
-			<th>&nbsp;&nbsp;</th>
+			<th>previous</th>
 		</tr>
 	</thead>
 	
@@ -97,12 +97,7 @@
 	     	<td>{{ o.result__instrument__name|default:"" }}</td>
 	     	<td>{{ o.techval_user|default:"" }}</td>
 	     	<td>{{ o.medval_user|default:"" }}</td>
-	     <!--	<td class="edit_order">
-	     		<div class="btn-group btn-group-sm" role="group">
-            			<a href="repeat?test_id={{ o.test_id }}" class="btn btn-info" role="button">
-    <span class="glyphicon glyphicon-repeat"></span></a>
-            	</div>	
-            </td> -->
+	     	<td>{{ o.test__name|initial_letter_filter }}</td>
 	     	{% endif %}
 	     	
 	     	

@@ -57,18 +57,22 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'mptt',
     'django_select2',
+    'rest_framework',
+    'corsheaders',
     #'dal',
     #'dal_select2',
     #
     'inventory',
     'billing',
     'middleware',
+    #'pa',
     
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -79,6 +83,15 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'ciremai.urls'
 
 
+REST_FRAMEWORK = {
+ 'DEFAULT_PERMISSION_CLASSES': [
+ 'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+ ]
+}
+CORS_ORIGIN_WHITELIST = (
+ '127.0.0.1:8080',
+ 'localhost:8080',
+)
 
 #########
 # PATHS #
@@ -107,7 +120,7 @@ JASPER_CONN = {
         'username': 'root',
         'password': 'P455word',
         'host': '127.0.0.1',
-        'database': 'ciremai_rs'
+        'database': 'db_gs'
     }
 
 #########################
@@ -146,7 +159,7 @@ WSGI_APPLICATION = 'ciremai.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'ciremai_rs',
+        'NAME': 'db_gs',
         'USER': 'root',
         'PASSWORD': 'P455word',
         'HOST': 'localhost',
@@ -216,6 +229,14 @@ AVATAR_DEFAULT_URL = 'http://127.0.0.1:8000/media/avatars/avatar.jpg'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
+
 CRISPY_TEMPLATE_PACK="bootstrap3"
 
 STATIC_URL = '/static/'
@@ -234,5 +255,8 @@ MEDIA_URL = '/media/'
 #STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 
 #print STATIC_ROOT
+
+
+
 
 

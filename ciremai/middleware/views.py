@@ -30,9 +30,29 @@ from pyreportjasper import JasperPy
 
 
 
+
 # ######################
 # ##   Helper Views   ##
 # ######################
+
+from django import template
+from django.utils.html import conditional_escape
+from django.utils.safestring import mark_safe
+
+register = template.Library()
+
+@register.filter(needs_autoescape=True)
+def initial_letter_filter(text, autoescape=True):
+    first, other = text[0], text[1:]
+    if autoescape:
+        esc = conditional_escape
+    else:
+        esc = lambda x: x
+    result = '<strong>%s</strong>%s' % (esc(first), esc(other))
+    return mark_safe(result)
+
+
+
 @login_required(login_url='login_middleware')
 class UpdateUserProfileMW(LoginRequiredMixin,NamedFormsetsMixin,UpdateWithInlinesView):
     model = User
@@ -397,23 +417,6 @@ def order_results(request,pk):
                             ord_res.validation_status = 1
                             ord_res.save()
 
-                                
-                            # get test
-                            # try delete existing result
-                            #try:
-                            #    o_orderresult = models.OrderResults.objects.get(order=o_order,test=o_test)
-                            #    o_orderresult.delete()
-                            #except models.OrderResults.DoesNotExist,e:
-                            #    pass
-                            # try get unit
-                            #s_unit = ''
-                            #try:
-                            #    test_unit = models.TestParameters.objects.get(test=o_test)
-                            #    s_unit = test_unit.unit
-                            #except models.TestParameters.DoesNotExist,e:
-                            #    pass
-                            #o_orderresult = models.OrderResults.objects.get_or_create(order=o_order,test=o_test,result=o_result,validation_status=1,unit=s_unit)
-                            
                             # create history
                             act_txt = 'Result %s set for analyt %s ' % (request.POST.get( p_tes, ''),o_test)
                             his_order = models.HistoryOrders(order=o_order,test=o_test,action_code='RESENTRY',action_user=str(request.user),action_date=datetime.now(),action_text=act_txt)
@@ -434,7 +437,8 @@ def order_results(request,pk):
                                                                            'validation_status',
                                                                            'result__instrument__name',
                                                                            'techval_user',
-                                                                           'medval_user').order_by('test__test_group__sort','test__sort')
+                                                                           'medval_user'
+                                                                           ).order_by('test__test_group__sort','test__sort')
     # save report URL
     oe, _created = models.OrderExtended.objects.get_or_create(order_id=pk)
     tempate = 'middleware/order_results.html'

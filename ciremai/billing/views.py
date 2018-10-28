@@ -2,7 +2,7 @@ from django.shortcuts import render,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.template.response import TemplateResponse
 
-from . import models,tables,forms,filters
+from . import models,tables,forms,filters,utils
 from braces.views import PermissionRequiredMixin, LoginRequiredMixin
 from django_tables2 import SingleTableView, RequestConfig
 from django.conf import settings
@@ -17,7 +17,7 @@ from django.core.urlresolvers import reverse_lazy
 from extra_views.advanced import UpdateWithInlinesView,NamedFormsetsMixin, CreateWithInlinesView,InlineFormSet,ModelFormMixin
 from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 from .custom.mixins import UpdateWithInlinesAndModifiedByMixin,CreateWithInlinesAndModifiedByMixin
-from avatar.forms import PrimaryAvatarForm,UploadAvatarForm 
+from avatar.forms import PrimaryAvatarForm,UploadAvatarForm
 from avatar.views import _get_avatars
 from avatar.models import Avatar
 from avatar.signals import avatar_updated
@@ -27,6 +27,11 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.utils.dateformat import DateFormat
 from django_tables2.config import RequestConfig
 from django_tables2.export.export import TableExport
+from django.contrib.humanize.templatetags.humanize import intcomma
+from django.utils import formats,timezone
+
+
+
 import serial,time
 
 from datetime import datetime, timedelta, time
@@ -151,6 +156,68 @@ def AvatarAdd(request,extra_context=None,next_override=None,upload_form=UploadAv
     template_name = 'auth/avatar_add_billing.html'
     return render(request, template_name, context)    
 
+
+@login_required(login_url='login_billing')   
+def order_payment(request,order_pk):
+    order = models.Orders.objects.get(pk=order_pk)
+    order.status = 1
+    order.save()
+    return redirect('order_detail', pk=order.pk)
+
+@login_required(login_url='login_billing')
+def order_entry(request,pk):
+    template = 'billing/orders_detail.html'
+    order = models.Orders.objects.get(pk=pk)
+    # check if test request
+    if request.method == 'GET':
+        if request.GET.get('test') <> '':
+            # add test
+            test_id = request.GET.get('test')
+            if test_id:
+                # delete data
+                order_test_old = models.OrderTests.objects.filter(order_id = pk,test_id=test_id)
+                order_test_old.delete()
+                # add
+                order_test = models.OrderTests(order_id = pk,test_id=test_id)
+                order_test.save()
+                # last modification
+                order.lastmodifiedby = request.user
+                order.lastmodification = timezone.now()
+                order.save()
+    if request.method == 'POST':
+        print 'POST'
+        discount = request.POST.get('discount')
+        if discount:
+            print discount
+            discount = utils.get_decimal(discount)
+            print discount
+            if utils.is_float(discount):
+                order.discount = discount
+                # last modification
+                order.lastmodifiedby = request.user
+                order.lastmodification = timezone.now()
+                order.save()
+                
+            else:
+                print 'not float'
+                messages.error(request, 'Discount must number',extra_tags='danger')
+                
+                
+    order = models.Orders.objects.get(pk=pk)
+    
+    context = {}
+    context['paymentform'] = forms.PaymentForm
+    context['pk'] = pk
+    context['orders'] = order
+    context['prev_orders'] = models.Orders.objects.filter(patient_id = order.patient_id, id__lt = pk).exclude(id=pk).order_by('-id')[:5] 
+    context['samples'] = models.OrderSamples.objects.filter(order_id=pk)
+    context['tests'] = models.Tests.objects.filter(is_active=1,can_request=1).order_by('sort')
+    context['labelprinters'] = models.LabelPrinters.objects.filter(active=True)
+    context['MENU_BTN_PRINT_RECEIPT'] = models.Parameters.objects.filter(name='MENU_BTN_PRINT_RECEIPT')[0]
+    context['MENU_BTN_PRINT_BILL'] = models.Parameters.objects.filter(name='MENU_BTN_PRINT_BILL')[0]
+    context['MENU_BTN_PRINT_BARCODE'] = models.Parameters.objects.filter(name='MENU_BTN_PRINT_BARCODE')[0]
+    context['MENU_BTN_SEND_LIS'] = models.Parameters.objects.filter(name='MENU_BTN_SEND_LIS')[0]
+    return render(request,template,context)  
 
 
 # #################################
@@ -386,25 +453,50 @@ def order_print_barcode(request,order_pk):
     else:
         messages.error(request, 'Error when printer label [%s]' % msg,extra_tags='danger')
         
+@login_required(login_url='login_billing') 
+def order_delete_test(request,order_pk):
+    order = models.Orders.objects.get(pk=order_pk)
     
+    MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+    }
     
-        
+    test_id = request.GET.get('test_id')
+    
+    if test_id:
+        ordertest = models.OrderTests.objects.filter(order=order,test_id=test_id)
+        ordertest.delete()
         
     return redirect('order_detail', pk=order.pk)
 
 @login_required(login_url='login_billing') 
 def order_send_lis(request,order_pk):
     order = models.Orders.objects.get(pk=order_pk)
+    # def
+    doctor_code = ""
+    doctor_name = ""
+    # variabel
+    patient_id = order.patient.patient_id or ''
+    patient_name = order.patient.name or ''
+    patient_gender = order.patient.gender.ext_code or ''
+    patient_address = order.patient.address or ''
+    if order.doctor:
+        doctor_code = order.doctor.ext_code or ''
+        doctor_name = order.doctor.name
+
+    order_no = order.number or ''
+    origin_code = order.origin.ext_code or ''
+    origin_name = order.origin.name or ''
+    priority = order.priority.ext_code or ''
     # seding to LIS here
-    ts = datetime.datetime.today().strftime('%Y%m%d%H%M%S')
+    ts = datetime.today().strftime('%Y%m%d%H%M%S')
     filename = settings.HL7_ORDER_DIR+'order_'+order.number+'_'+ts+'.hl7'
     handle1=open(filename,'w+')
     content_hl7 = ''
     content_hl7 += 'MSH|^~\&|BIL|BIL-DREAM|CIT-INFINITY|LabPK|||ORM^O01|'+ts+'||||||ER|\r'
-    content_hl7 += 'PID|||'+order.patient.patient_id+'||'+order.patient.name+'||'+order.patient.gender.ext_code+'|'+DateFormat(order.patient.dob).format('Ymd')+'|||'+order.patient.address+'^^^||\r'
-    #content_hl7 += 'PV1|||||||||||'+order.doctor.ext_code+'^'+order.doctor.name+'^'+order.diagnosis.ext_code+'^'+order.diagnosis.name+'^^||\r'
-    content_hl7 += 'PV1|||||||||||'+order.doctor.ext_code+'^'+order.doctor.name+'^^^^||\r'
-    content_hl7 += 'ORC|NW|'+order.number+'|||'+order.origin.ext_code+'|'+order.origin.name+'|'+order.priority.ext_code+'|'+order.insurance.ext_code+'^'+order.insurance.name+'|'+ts+'||||||01||\r'
+    content_hl7 += 'PID|||'+patient_id+'||'+patient_name+'||'+patient_gender+'|'+DateFormat(order.patient.dob).format('Ymd')+'|||'+patient_address+'^^^||\r'
+    content_hl7 += 'PV1|||||||||||'+doctor_code+'^'+doctor_name+'^^^^||\r'
+    content_hl7 += 'ORC|NW|'+order_no+'|||'+origin_code+'|'+origin_name+'|'+priority+'||'+ts+'||||||01||\r'
     i = 1
     for tes in order.order_items.all():
         content_hl7 += 'OBR|'+str(i)+'|||'+tes.test.ext_code+'|'+tes.test.name+'||'+ts+'||||A\r'
@@ -415,7 +507,23 @@ def order_send_lis(request,order_pk):
     return redirect('order_detail', pk=order.pk)
     
     
+@login_required(login_url='login_billing') 
+def replace_test_from(request,order_pk):
+    order = models.Orders.objects.get(pk=order_pk)
+    # replace
+    if request.GET.get('id'):
+        prev_id = request.GET.get('id')
+        # delete order item first
+        order_item = models.OrderTests.objects.filter(order=order)
+        print order_item
+        order_item.delete()
+        # copy from last order id
+        last_item = models.OrderTests.objects.filter(order_id=prev_id)
+        for a in last_item:
+            models.OrderTests.objects.create(order_id=order_pk,test_id=a.test_id)
+        
     
+    return redirect('order_detail', pk=order.pk)   
     
 
 # ###################
@@ -554,12 +662,12 @@ class EditOrder(LoginRequiredMixin, PermissionRequiredMixin, NamedFormsetsMixin,
         if form.is_valid():
             form.save()
             tes = models.OrderTests.objects.filter(order=order)
-            tes.delete()
-            for test in form.cleaned_data['test_selections']:
-                order_item = models.OrderTests()
-                order_item.order = order
-                order_item.test = test
-                order_item.save()
+            #tes.delete()
+            #for test in form.cleaned_data['test_selections']:
+            #    order_item = models.OrderTests()
+            #    order_item.order = order
+            #    order_item.test = test
+            #    order_item.save()
             return redirect('order_detail', pk=order.pk)
         
         return render(request,self.template_name,{'form':form})
@@ -572,10 +680,12 @@ class ViewOrder(LoginRequiredMixin, PermissionRequiredMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super(ViewOrder, self).get_context_data(**kwargs)
         context['samples'] = models.OrderSamples.objects.filter(order_id=self.kwargs['pk'])
+        context['tests'] = models.Tests.objects.filter(is_active=1,can_request=1)
         context['labelprinters'] = models.LabelPrinters.objects.filter(active=True)
         context['MENU_BTN_PRINT_RECEIPT'] = models.Parameters.objects.filter(name='MENU_BTN_PRINT_RECEIPT')[0]
         context['MENU_BTN_PRINT_BILL'] = models.Parameters.objects.filter(name='MENU_BTN_PRINT_BILL')[0]
         context['MENU_BTN_PRINT_BARCODE'] = models.Parameters.objects.filter(name='MENU_BTN_PRINT_BARCODE')[0]
+        context['MENU_BTN_SEND_LIS'] = models.Parameters.objects.filter(name='MENU_BTN_SEND_LIS')[0]
         return context
 
 
@@ -602,7 +712,7 @@ class CreatePatient(LoginRequiredMixin,PermissionRequiredMixin,
     model = models.Patients
     permission_required = 'billing.add_patients'
     login_url = settings.LOGIN_URL_BILLING
-    fields = ['patient_id','name','gender','dob','address',]
+    form_class = forms.PatientForm
     success_url = reverse_lazy('patients_list')
     
 class ViewPatients(LoginRequiredMixin, PermissionRequiredMixin, DetailView):
@@ -623,6 +733,55 @@ class DeletePatient(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     permission_required = 'billing.delete_patient'
     login_url = settings.LOGIN_URL_BILLING
     success_url = reverse_lazy('patient_list')
+    table_pagination = 10
+
+
+class ListDoctors(LoginRequiredMixin, PermissionRequiredMixin, FilteredSingleTableView):    
+    model = models.Doctors
+    permission_required = 'billing.view_doctors'
+    login_url = settings.LOGIN_URL_BILLING
+    table_class = tables.DoctorsTable
+    table_data = models.Doctors.objects.all()
+    context_table_name = 'doctorstable'
+    filter_class = filters.PatientFilter
+    table_pagination = 10    
+    
+class CreateDoctor(LoginRequiredMixin,PermissionRequiredMixin,
+                     NamedFormsetsMixin,CreateWithInlinesView):
+    model = models.Doctors
+    permission_required = 'billing.adddoctors'
+    login_url = settings.LOGIN_URL_BILLING
+    form_class = forms.DoctorForm
+    success_url = reverse_lazy('doctors_list')
+    
+    def form_valid(self, form):
+        instance = form.save(commit=False)
+        instance.lastmodifiedby = self.request.user
+        super(MyUpdateView, self).save(form)
+    
+class ViewDoctors(LoginRequiredMixin, PermissionRequiredMixin, DetailView):
+    model = models.Doctors
+    permission_required = 'billing.view_doctor'
+    login_url = settings.LOGIN_URL_BILLING
+    
+class EditDoctor(LoginRequiredMixin, PermissionRequiredMixin, NamedFormsetsMixin, UpdateWithInlinesAndModifiedByMixin):
+    model = models.Doctors
+    permission_required = 'billing.change_doctor'
+    login_url = settings.LOGIN_URL_BILLING
+    success_url = reverse_lazy('doctors_list')
+    form_class = forms.DoctorForm
+     
+    def form_valid(self, form):
+        instance = form.save(commit=False)
+        instance.lastmodifiedby = self.request.user
+        super(MyUpdateView, self).save(form)
+
+
+class DeleteDoctor(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
+    model = models.Patients
+    permission_required = 'billing.delete_doctor'
+    login_url = settings.LOGIN_URL_BILLING
+    success_url = reverse_lazy('doctors_list')
     table_pagination = 10
     
 class Listjm(LoginRequiredMixin, PermissionRequiredMixin, FilteredSingleTableView):    

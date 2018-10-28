@@ -41,12 +41,15 @@ urlpatterns = [
     url(r'^orders/delete/(?P<pk>\d+)/$', views.DeleteOrder.as_view(), name='order_delete'),
     url(r'^orders/add/patient/$', views.order_add_patient, name='order_add_patient'),
     url(r'^orders/patient/create/(?P<patient_pk>\d+)/$', views.create_order_from_patient, name='create_order_from_patient'),
-    url(r'^orders/detail/(?P<pk>\d+)/$', views.ViewOrder.as_view(), name='order_detail'),
+    url(r'^orders/detail/(?P<pk>\d+)/$', views.order_entry, name='order_detail'),
+    url(r'^orders/detail/(?P<order_pk>\d+)/payment', views.order_payment, name='order_payment'),
+    url(r'^orders/detail/(?P<order_pk>\d+)/delete', views.order_delete_test, name='order_delete_test'),
     url(r'^orders/detail/(?P<order_pk>\d+)/print/receipt$', views.order_print_receipt, name='order_print_receipt'),
     url(r'^orders/detail/(?P<order_pk>\d+)/print/bill$', views.order_print_bill, name='order_print_bill'),
     url(r'^orders/detail/(?P<order_pk>\d+)/print/worklist$', views.order_print_worklist, name='order_print_worklist'),
-    url(r'^orders/detail/(?P<order_pk>\d+)/label', views.order_print_barcode, name='order_barcode'),
+    url(r'^orders/detail/(?P<order_pk>\d+)/label', views.order_print_barcode, name='order_barcode'), 
     url(r'^orders/detail/(?P<order_pk>\d+)/send/lis$', views.order_send_lis, name='order_send_lis'),
+    url(r'^orders/detail/(?P<order_pk>\d+)/replace_test_from$', views.replace_test_from, name='replace_test_from'),
     
     # #############
     # Patient urls
@@ -56,6 +59,15 @@ urlpatterns = [
     url(r'^patients/create/$', views.CreatePatient.as_view(), name='patient_create'),
     url(r'^patients/edit/(?P<pk>\d+)/$', views.EditPatient.as_view(), name='patient_edit'),
     url(r'^patients/delete/(?P<pk>\d+)/$', views.DeletePatient.as_view(), name='patient_delete'),
+    
+    # #############
+    # Doctors urls
+    # #############
+    url(r'^doctors/$', views.ListDoctors.as_view(), name='doctors_list'),
+    url(r'^doctors/detail/(?P<pk>\d+)/$', views.ViewDoctors.as_view(), name='doctor_detail'),
+    url(r'^doctors/create/$', views.CreateDoctor.as_view(), name='doctor_create'),
+    url(r'^doctors/edit/(?P<pk>\d+)/$', views.EditDoctor.as_view(), name='doctor_edit'),
+    url(r'^doctors/delete/(?P<pk>\d+)/$', views.DeleteDoctor.as_view(), name='doctor_delete'),
     
      # #############
     # Report urls

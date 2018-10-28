@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Tests,TestPrices,TestGroups,Priority,Insurance,Doctors, \
 Genders,Patients,Orders,OrderTests,Parameters,Origins,Diagnosis,SuperGroups, \
-Specimens,LabelPrinters
+Specimens,LabelPrinters, Salutation, Article
 
 class TestsInline(admin.TabularInline):
     model = Tests
@@ -56,8 +56,10 @@ admin.site.register(Origins,NameExtAdmin)
 admin.site.register(Insurance,NameExtAdmin)
 admin.site.register(Doctors,NameExtAdmin)
 admin.site.register(Genders,NameExtAdmin)
+admin.site.register(Salutation)
 admin.site.register(Patients)
 admin.site.register(Orders)
+admin.site.register(Article)
 admin.site.register(OrderTests)
 admin.site.register(Diagnosis)
 admin.site.register(SuperGroups)

@@ -1,0 +1,56 @@
+{% extends "base/form_view_base_billing.html" %}
+{% load i18n bootstrap3 static %}
+
+{% block meta_title %}
+    {% trans "Doctor" %}
+    {{ doctors.doctor_id }} {{ doctors.name }}
+{% endblock %}
+
+{% block extra_css %}
+{{ form.media.css }}
+{% endblock %}
+    
+{% block extra_js %}
+{{ form.media.js }}
+<script type="text/javascript" src="{% static "django_select2/django_select2.js" %}"></script>
+{% endblock %}
+
+{% block title %}
+    {% trans "Doctors" %}
+{% endblock %}
+
+{% block breadcrumb_menu %}
+    <li class="active"><a href="{% url 'doctors_list' %}">{% trans "Doctors" %}</a></li>
+    <li class="active">{% if doctors %}{% trans "Edit Doctor" %}{% else %}{% trans "Create Doctor" %}{% endif%} </li>
+{% endblock %}
+
+{% block main_header %}
+    {% if doctors %}{% trans "Edit doctor" %}{% else %}{% trans "Create doctor" %}{% endif%}
+    <br>{{ doctors.doctor_id }} <br>{{ doctors.name }}
+{% endblock %}
+
+{% block main_toolbar %}
+    <button type='submit' class='btn btn-primary'>
+        {% trans "Save" %}
+    </button>
+
+    <button type="button" class="btn btn-default"
+            onclick="window.location.assign('{% url 'doctors_list' %}')">
+        {% trans "Cancel" %}
+    </button>
+{% endblock %}
+
+{% block main_inner %}
+    {% bootstrap_form form layout='horizontal' %}
+{% endblock %}
+
+{% block main_footer %}
+    <button type='submit' class='btn btn-primary'>
+        {% trans "Save" %}
+    </button>
+
+    <button type="button" class="btn btn-default"
+            onclick="window.location.assign('{% url 'doctors_list' %}')">
+        {% trans "Cancel" %}
+    </button>
+{% endblock %}

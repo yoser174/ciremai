@@ -1,9 +1,18 @@
 {% extends "base/form_view_base_billing.html" %}
-{% load i18n bootstrap3 %}
+{% load i18n bootstrap3 static %}
 
 {% block meta_title %}
     {% trans "Patient" %}
     {{ patients.patient_id }} {{ patients.name }}
+{% endblock %}
+
+{% block extra_css %}
+{{ form.media.css }}
+{% endblock %}
+    
+{% block extra_js %}
+{{ form.media.js }}
+<script type="text/javascript" src="{% static "django_select2/django_select2.js" %}"></script>
 {% endblock %}
 
 {% block title %}
@@ -11,7 +20,7 @@
 {% endblock %}
 
 {% block breadcrumb_menu %}
-    <li class="active"><a href="{% url 'testgroups_list' %}">{% trans "Orders" %}</a></li>
+    <li class="active"><a href="{% url 'patients_list' %}">{% trans "Patients" %}</a></li>
     <li class="active">{% if patients %}{% trans "Edit Patient" %}{% else %}{% trans "Create Patient" %}{% endif%} </li>
 {% endblock %}
 
@@ -44,4 +53,38 @@
             onclick="window.location.assign('{% url 'patients_list' %}')">
         {% trans "Cancel" %}
     </button>
+{% endblock %}
+
+
+{% block extrascript %}
+<script type="text/javascript">
+// Salutation vs Gender change
+// salutation == 1 set gender == 1
+// salutation == 2 set gender also == 2
+// else empty
+
+$("#id_salutation").on("change", function () {
+if (this.value == "1") 
+{
+  	$('#id_gender').val('1').trigger("change");
+}
+else if(this.value == "2")
+{
+	$('#id_gender').val('2').trigger("change");
+}
+else
+{
+	$('#id_gender').val('').trigger("change");
+}
+  
+});
+
+// Age calculation
+$("#id_age").on("input", function () {
+
+	var year = (new Date()).getFullYear();
+	var age = Number(this.value);
+	$('#id_dob').val("01-01-"+(year-age)).trigger("change");
+});
+</script>
 {% endblock %}

@@ -1,6 +1,21 @@
 from django.conf import settings
 from . import models
 
+
+def is_float(str):
+    try:
+      fl = float(str)
+      return True
+    except ValueError:
+      return False
+  
+def get_decimal(str_value):
+    str_value = str(str_value).replace(".", "")
+    str_value = str(str_value).replace(",", ".")
+    return str_value
+
+
+
 class MiddlewareTask(object):
     order_id = 0
     

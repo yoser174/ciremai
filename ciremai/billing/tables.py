@@ -1,7 +1,7 @@
 import django_tables2 as tables
 from pprint import pprint
 
-from .models import TestGroups,Tests,Orders,Patients
+from .models import TestGroups,Tests,Orders,Patients,Doctors
 from .custom.custom_columns import ModelDetailLinkColumn, IncludeColumn, CssFieldColumn, LabelIconColumn,ButtonColumn
 from django.contrib.humanize.templatetags.humanize import intcomma
 
@@ -41,21 +41,26 @@ class TestsTable(tables.Table):
         order_by = ('sort',)
         
 class OrdersTable(tables.Table):
-    total_price = CssFieldColumn('record.get_total_price.total',verbose_name=_('Total Price'),attrs = {"td":{"align":"right"}})
+    get_total_price = tables.Column(verbose_name= _('Price' ))
     edit_order = IncludeColumn(
         'includes/billing/orders_row_edit_toolbar.html',
         attrs={"th": {"width": "120px"}},
         verbose_name=" ",
         orderable=False
     )
+    
+    def render_get_total_price(self, value):
+        return intcomma(value)
         
     
     class Meta:
         model = Orders
         exclude = ('id')
         #sequence = ('number')
-        fields = ('order_date','number','priority','origin','patient.patient_id','patient.name','total_price')
+        fields = ('order_date','status','number','priority','origin','patient.patient_id','patient.name','get_total_price')
         order_by = ('-number',)
+        
+        
         
         
 class PatientsTable(tables.Table):
@@ -74,15 +79,33 @@ class PatientsTable(tables.Table):
         
 class SelectPatientsTable(tables.Table):
     use_product = ButtonColumn(gl_icon="external-link",
-                            extra_class="btn-info",
+                            extra_class="btn-primary",
                             condition = '1',
                             onclick = "location.href='{% url 'create_order_from_patient' record.pk %}'",
                             verbose_name=_(''),orderable=False)
     
     class Meta:
         model = Patients
+        fields = ('patient_id','name','gender','dob','address',)
         exclude = ('id')
         
+
+class DoctorsTable(tables.Table):
+    edit_order = IncludeColumn(
+        'includes/billing/doctor_row_edit_toolbar.html',
+        attrs={"th": {"width": "120px"}},
+        verbose_name=" ",
+        orderable=False
+    )
+    
+    class Meta:
+        model = Doctors
+        fields = ('name','address',)
+        exclude = ('id')
+        
+
+
+
 class JMTable(tables.Table):
     export_formats = ['csv', 'xls']
     ColumnWithThausandSeparator('get_sub_total_price_tariff')

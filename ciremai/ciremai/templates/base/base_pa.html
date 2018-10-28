@@ -2,6 +2,7 @@
 <html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
 {% load i18n staticfiles avatar_tags  %}
 {% load bootstrap3 %}
+{% load avatar_tags %}
 
 
 <head>
@@ -23,10 +24,15 @@
     {% block extra_css %}
     {% endblock %}
 
+    <script src="{% static "assets/js/common-scripts.js" %}"></script>
     <script src="{% static "assets/js/chart-master/Chart.js" %}"></script>
-    <script src="{% static "assets/js/jquery.js" %}"></script>
+    <script src="{% static "assets/js/jquery-3.3.1.js" %}"></script>
+    <script src="{% static "assets/js/jquery-1.8.3.min.js" %}"></script>
     <script src="{% static "assets/js/bootstrap.min.js" %}"></script>
     <script src="{% static "assets/js/jquery.formset.js" %}"></script>
+    <script src="{% static "assets/js/jquery.nicescroll.js" %}" type="text/javascript"></script>
+    <script src="{% static "assets/js/jquery.scrollTo.min.js" %}"></script>
+    <script class="include" type="text/javascript" src="{% static "assets/js/jquery.dcjqaccordion.2.7.js" %}"></script>
 
     {% block extra_js %}
     {% endblock %}
@@ -54,8 +60,8 @@
               </div>
             <!--logo start-->
             <p style="float: left;margin-top: -8px;">
-                <a href="/billing" class="logo" style="float: left"><b>Billing</b></a>
-                <br><span style="float: left" class="muted small">Registrasi pasien</span>
+                <a href="/pa" class="logo" style="float: left"><b>Pathology Anatomy</b></a>
+                <br><span style="float: left" class="muted small">Laboratory</span>
             </p>
             <!--logo end-->
 
@@ -74,7 +80,7 @@
             </div>
             {% if user.is_authenticated %}
             <div class="top-menu nav pull-right" style="margin-top: 12px;">
-                 <li><a href="/billing/logout/"><i class="fa fa-sign-out"></i>Logout</a></li>
+                 <li><a href="/pa/logout/"><i class="fa fa-sign-out"></i>Logout</a></li>
             </div>
             {% endif %}
         </header>
@@ -93,53 +99,69 @@
 
               	    <p class="centered">
                     
-                        <a href="{% url 'avatar_change' %}">{% if avatar %}
+                        <a href="{% url 'avatar_change_pa' %}">
+                        
                         {% avatar user 60 class="img-thumbnail" width="60" height="60" %}
-                        {% else %}
-                        <img src="/media/avatars/avatar.jpg" width="60" height="60" alt="no avatar" class="img-thumbnail">
-                        {% endif %}</a>
+                
+                        </a>
                         <h5 class="centered">
-                            <a href="{% url 'profile_update' user.pk %}">
+                            <a href="{% url 'profile_update_pa' user.pk %}">
                                 {{ user }}
                             </a>
                         </h5>
                     </p>
+                    {% if perms.admin %}
                     <li><a href="/admin/"><i class="fa fa-gears"></i>Administration</a></li>
-                    
+                    {% endif %}
+                    {% if perms.middleware %}
+                    <li><a href="/middleware/" ><i class="fa fa-arrows-alt"></i>Middleware</a></li>
+                    {% endif %}
+
 
                   {% else %}
 
-                      <li><a href="/billing/login/"><i class="fa fa-sign-in"></i>Login</a></li>
+                      <li><a href="/pa/login/"><i class="fa fa-sign-in"></i>Login</a></li>
 
                   {% endif %}
 
                   {% if user.is_authenticated %}
                   
                   <li class="mt">
-                      <a {% if request.path == '/billing/dashboard/' %} class="active"{% endif %} href="/billing/dashboard/">
+                      <a {% if request.path == '/pa/dashboard/' %} class="active"{% endif %} href="/pa/dashboard/">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
                   </li>
                   
                   <li class="sub-menu">
-                      <a {% if request.path == '/billing/orders/'%} class="active"{% endif %} href="javascript:;" >
+                      <a {% if request.path == '/pa/orders/' or request.path == '/pa/patients/' %} class="active"{% endif %} href="javascript:;" >
                           <i class="fa fa-list"></i>
                           <span>Routine task</span>
                       </a>
                       <ul class="sub">
-                          {% if perms.billing.view_orders %} <li {% if request.path == '/billing/orders/' %} class="active"{% endif %} ><a href="/billing/orders/">Orders</a></li>{% endif %}
-                          
+                          {% if perms.pa.view_orders %} <li {% if request.path == '/pa/orders/' %} class="active"{% endif %} ><a href="/pa/orders/">Orders</a></li>{% endif %}
+                      </ul>
+                      <ul class="sub">
+                          {% if perms.pa.view_orders %} <li {% if request.path == '/pa/patients/'%} class="active"{% endif %} ><a href="/pa/patients/">Patients</a></li>{% endif %}
                       </ul>
                   </li>
                   
                   <li class="sub-menu">
-                      <a {% if request.path == '/billing/reptest/' %} class="active"{% endif %} href="javascript:;" >
+                      <a {% if request.path == '/pa/reptest/' or request.path == '/pa/reports/jm/' or request.path == '/pa/reports/insurance/' or request.path == '/pa/reports/tests/' %} class="active"{% endif %} href="javascript:;" >
                           <i class="fa fa-file-o"></i>
                           <span>Report</span>
                       </a>
                       <ul class="sub">
-                          
+                          {% if perms.pa.view_orders %} <li {% if request.path == '/pa/reports/jm/'%} class="active"{% endif %} ><a href="/pa/reports/jm/">Order list</a></li>{% endif %}
+                      </ul>
+                      <ul class="sub">
+                          {% if perms.pa.view_orders %} <li {% if request.path == '/pa/reports/origin/'%} class="active"{% endif %} ><a href="/pa/reports/origin/">Origin</a></li>{% endif %}
+                      </ul>
+                      <ul class="sub">
+                          {% if perms.pa.view_orders %} <li {% if request.path == '/pa/reports/insurance/'%} class="active"{% endif %} ><a href="/pa/reports/insurance/">Cara bayar</a></li>{% endif %}
+                      </ul>
+                      <ul class="sub">
+                          {% if perms.pa.view_orders %} <li {% if request.path == '/pa/reports/tests/'%} class="active"{% endif %} ><a href="/pa/reports/tests/">Test</a></li>{% endif %}
                       </ul>
                   </li>
                   
@@ -168,7 +190,7 @@
                         <div style="margin-top: 10px;">
                             <ul class="breadcrumb" style="background-color: white;">
                             {% spaceless %}
-                                <li id="breadcrumb-menu-home"><a href="/billing">Home</a></li>
+                                <li id="breadcrumb-menu-home"><a href="/pa">Home</a></li>
                             {% block breadcrumb_menu %}
                                 
                             {% endblock %}

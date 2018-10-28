@@ -16,6 +16,7 @@ django-tables2==1.16.0
 django-widget-tweaks==1.4.1
 django-mptt
 django-select2
+djangorestframework
 num2words
 tablib
 reportlab
